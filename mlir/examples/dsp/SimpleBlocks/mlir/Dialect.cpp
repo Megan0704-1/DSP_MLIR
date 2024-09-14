@@ -246,16 +246,15 @@ mlir::LogicalResult ConstantOp::verify() {
 //===----------------------------------------------------------------------===//
 
 void IntegerConstantOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,
-                       int value) {
+                       int64_t value) {
   auto dataType = RankedTensorType::get({}, builder.getI64Type());
-  auto dataAttribute = DenseIntElementsAttr::get(dataType, value);
+  auto dataAttribute = mlir::DenseIntElementsAttr::get(dataType, value);
   IntegerConstantOp::build(builder, state, dataType, dataAttribute);
 }
 
 mlir::ParseResult IntegerConstantOp::parse(mlir::OpAsmParser &parser,
                                     mlir::OperationState &result) {
   mlir::DenseIntElementsAttr value;
-  printf("Parse Integer constant success for MLIRgen.\n");
   if (parser.parseOptionalAttrDict(result.attributes) ||
       parser.parseAttribute(value, "value", result.attributes))
     return failure();

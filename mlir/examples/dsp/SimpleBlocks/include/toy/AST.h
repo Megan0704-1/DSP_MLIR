@@ -37,8 +37,6 @@ public:
   enum ExprASTKind {
     Expr_VarDecl,
     Expr_Return,
-    // test for int and double
-    //Expr_Num,
     Expr_Int,
     Expr_Double,
     Expr_Literal,
@@ -64,29 +62,14 @@ private:
 /// A block-list of expressions.
 using ExprASTList = std::vector<std::unique_ptr<ExprAST>>;
 
-// test for int and double
-/// Expression class for numeric literals like "1.0".
-//class NumberExprAST : public ExprAST {
-  //double val;
-//
-//public:
-  //NumberExprAST(Location loc, double val)
-      //: ExprAST(Expr_Num, std::move(loc)), val(val) {}
-//
-  //double getValue() { return val; }
-//
-  ///// LLVM style RTTI
-  //static bool classof(const ExprAST *c) { return c->getKind() == Expr_Num; }
-//};
-
 class IntExprAST : public ExprAST {
     int val;
 
 public:
-    IntExprAST(Location loc, int val)
+    IntExprAST(Location loc, int64_t val)
         : ExprAST(Expr_Int, std::move(loc)), val(val) {}
     
-    int getInt() { return val; }
+    int64_t getInt() { return val; }
 
     static bool classof(const ExprAST *c) { return c->getKind() == Expr_Int; }
 };

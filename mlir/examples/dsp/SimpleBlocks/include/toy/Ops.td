@@ -118,7 +118,7 @@ def IntegerConstantOp : Dsp_Op<"integer_constant", [Pure]> {
     }]>,
     
     // Build a constant with a given constant int64 value.
-    OpBuilder<(ins "int":$value)>,
+    OpBuilder<(ins "int64_t":$value)>,
   ];
 
   // Indicate that additional verification for this operation is necessary.

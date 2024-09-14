@@ -42,8 +42,6 @@ private:
   void dump(VarDeclExprAST *varDecl);
   void dump(ExprAST *expr);
   void dump(ExprASTList *exprList);
-  //  test for int and double
- //  void dump(NumberExprAST *num);
   void dump(IntExprAST *num);
   void dump(DoubleExprAST *num);
   void dump(LiteralExprAST *node);
@@ -143,13 +141,12 @@ void printLitHelper(ExprAST *litOrNum) {
     //return;
   //}
 
-    if(auto *num = llvm::dyn_cast<IntExprAST>(litOrNum)) {
-        llvm::errs() << num->getInt();
-        return;
-    }
-
     if(auto *num = llvm::dyn_cast<DoubleExprAST>(litOrNum)) {
         llvm::errs() << num->getDouble();
+        return;
+    }
+    if(auto *num = llvm::dyn_cast<IntExprAST>(litOrNum)) {
+        llvm::errs() << num->getInt();
         return;
     }
 

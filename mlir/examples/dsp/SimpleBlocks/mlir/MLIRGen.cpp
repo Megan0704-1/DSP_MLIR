@@ -67,6 +67,7 @@ public:
 
   /// Public API: convert the AST for a Toy module (source file) to an MLIR
   /// Module operation.
+  
   mlir::ModuleOp mlirGen(ModuleAST &moduleAST) {
     // We create an empty MLIR module and codegen functions one at a time and
     // add them to the module.
@@ -282,15 +283,10 @@ private:
                                  std::multiplies<int>()));
     collectData(lit, data);
 
-    std::cout << "\n===\nMK printing: " << std::endl;
-    for(auto v : data) {
-        std::cout << v << ",  ";
-    }
-    std::cout << "\n===\nEnd printing.\n===\n" << std::endl;
-    // The type of this attribute is tensor of 64-bit floating-point with the
     // shape of the literal.
     mlir::Type elementType = builder.getF64Type();
     auto dataType = mlir::RankedTensorType::get(lit.getDims(), elementType);
+
 
     // This is the actual attribute that holds the list of values for this
     // tensor literal.
@@ -770,11 +766,6 @@ private:
     return mlir::success();
   }
 
-  // test for int and double
-  /// Emit a constant for a single number (FIXME: semantic? broadcast?)
-  //mlir::Value mlirGen(NumberExprAST &num) {
-    //return builder.create<ConstantOp>(loc(num.loc()), num.getValue());
-  //}
   mlir::Value mlirGen(IntExprAST &num) {
       return builder.create<IntegerConstantOp>(loc(num.loc()), num.getInt());
   }
@@ -794,9 +785,6 @@ private:
       return mlirGen(cast<LiteralExprAST>(expr));
     case dsp::ExprAST::Expr_Call:
       return mlirGen(cast<CallExprAST>(expr));
-    // test for int and double
-    //case dsp::ExprAST::Expr_Num:
-      //return mlirGen(cast<NumberExprAST>(expr));
     case dsp::ExprAST::Expr_Int:
       return mlirGen(cast<IntExprAST>(expr));
     case dsp::ExprAST::Expr_Double:

@@ -75,17 +75,6 @@ private:
     return std::make_unique<ReturnExprAST>(std::move(loc), std::move(expr));
   }
 
-  // test for int and double
-  /// Parse a literal number.
-  /// numberexpr ::= number
-  //std::unique_ptr<ExprAST> parseNumberExpr() {
-    //auto loc = lexer.getLastLocation();
-    //auto result =
-        //std::make_unique<NumberExprAST>(std::move(loc), lexer.getValue());
-    //lexer.consume(tok_number);
-    //return std::move(result);
-  //}
-
 
   std::unique_ptr<ExprAST> parseIntExpr() {
       auto loc = lexer.getLastLocation();
