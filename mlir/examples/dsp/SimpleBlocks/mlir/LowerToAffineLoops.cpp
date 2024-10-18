@@ -7243,7 +7243,7 @@ void ToyToAffineLoweringPass::runOnOperation() {
     // We define the specific operations, or dialects, that are legal targets for
     // this lowering. In our case, we are lowering to a combination of the
     // `Affine`, `Arith`, `Func`, and `MemRef` dialects.
-    target.addLegalDialect<affine::AffineDialect, BuiltinDialect, tosa::TosaDialect,
+    target.addLegalDialect<affine::AffineDialect, BuiltinDialect,
         arith::ArithDialect, func::FuncDialect,
         memref::MemRefDialect, math::MathDialect,
         scf::SCFDialect>();
@@ -7281,27 +7281,7 @@ void ToyToAffineLoweringPass::runOnOperation() {
       RunLenEncodingOpLowering, FIRFilterResSymmOptimizedOpLowering,
       LengthOpLowering, ReverseInputOpLowering, PaddingOpLowering,
       FIRFilterYSymmOptimizedOpLowering, FFT1DRealSymmOpLowering,
-      FFT1DImgConjSymmOpLowering, FFTRealOpLowering, FFTImagOpLowering>(&getContext());
-    // Now that the conversion target has been defined, we just need to provide
-    // the set of patterns that will lower the Toy operations.
-    RewritePatternSet patterns(&getContext());
-    patterns.add<AddOpLowering, ConstantOpLowering, FuncOpLowering, MulOpLowering, 
-        PrintOpLowering, ReturnOpLowering, TransposeOpLowering ,
-        DelayOpLowering, GainOpLowering, SubOpLowering, FIRFilterResponseOpLowering, 
-        SlidingWindowAvgOpLowering, DownSamplingOpLowering, 
-        UpSamplingOpLowering, LowPassFilter1stOrderOpLowering, 
-        HighPassFilterOpLowering, FFT1DOpLowering, IFFT1DOpLowering,
-        HammingWindowOpLowering, DCTOpLowering, filterOpLowering, DivOpLowering,
-        SumOpLowering, SinOpLowering, CosOpLowering, SquareOpLowering,
-        FFT1DRealOpLowering, FFT1DImgOpLowering, SincOpLowering, GetElemAtIndxOpLowering,
-        SetElemAtIndxOpLowering ,LowPassFIRFilterOpLowering, HighPassFIRFilterOpLowering,
-        GetRangeOfVectorOpLowering, FIRFilterHammingOptimizedOpLowering, HighPassFIRHammingOptimizedOpLowering, 
-        LMSFilterOpLowering ,ThresholdOpLowering, QuantizationOpLowering, LMSFilterResponseOpLowering,
-        RunLenEncodingOpLowering, FIRFilterResSymmOptimizedOpLowering,
-        LengthOpLowering, ReverseInputOpLowering, PaddingOpLowering,
-        FIRFilterYSymmOptimizedOpLowering , FFT1DRealSymmOpLowering,
-        FFT1DImgConjSymmOpLowering, Conv2DOpLowering >(
-                &getContext());
+      FFT1DImgConjSymmOpLowering, FFTRealOpLowering, FFTImagOpLowering, Conv2DOpLowering>(&getContext());
 
     // With the target and rewrite patterns defined, we can now attempt the
     // conversion. The conversion will signal failure if any of our `illegal`
