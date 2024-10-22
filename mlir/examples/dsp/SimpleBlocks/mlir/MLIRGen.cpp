@@ -821,7 +821,15 @@ private:
       }
       return builder.create<FFT1DImgConjSymmOp>(location, operands[0]);
     }
-
+    // qam modulation
+    if (callee == "qam_modulate") {
+      if (call.getArgs().size() != 1) {
+        emitError(location, "MLIR codegen encountered an error: dsp.qam_modulate "
+                            "accepts only 1 arguments");
+        return nullptr;
+      }
+      return builder.create<QamModulateOp>(location, operands[0]);
+    }
    if(callee == "conv2d") {
        if(call.getArgs().size() != 3) {
            emitError(location, "MLIR codegen encountered an error: dsp.Conv2DOp "

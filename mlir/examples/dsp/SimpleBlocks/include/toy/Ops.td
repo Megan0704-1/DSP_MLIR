@@ -343,7 +343,7 @@ def PrintOp : Dsp_Op<"print"> {
 
   // The print operation takes an input tensor to print.
   // We also allow a F64MemRef to enable interop during partial lowering.
-  let arguments = (ins AnyTypeOf<[F64Tensor, F64MemRef]>:$input);
+  let arguments = (ins AnyTypeOf<[TensorOf<[AnyComplex]>, F64Tensor, F64MemRef]>:$input);
 
   let assemblyFormat = "$input attr-dict `:` type($input)";
 }
@@ -1989,6 +1989,31 @@ def FFT1DImgConjSymmOp : Dsp_Op<"fft1DimgConjSymm",
   let hasVerifier = 1;
 }
 
+<<<<<<< Updated upstream
+=======
+//===----------------------------------------------------------------------===//
+// qam_modulate
+//===----------------------------------------------------------------------===//
+def QamModulateOp : Dsp_Op<"qam_modulate" ,
+    [Pure , DeclareOpInterfaceMethods<ShapeInferenceOpInterface>]> {
+  let summary = "project binary input signal to cartisian plane";
+  let description = [{
+      This operation takes a sequence of binary data (0, 1) and converts it into complex symbols using 4-QAM modulation.
+  }];
+
+  let arguments = (ins F64Tensor:$input);
+  let results = (outs TensorOf<[AnyComplex]>); 
+  
+
+  let builders = [
+    OpBuilder<(ins "Value":$input)>
+  ];
+
+  
+  let hasVerifier = 1;
+
+}
+>>>>>>> Stashed changes
 
 
 //===----------------------------------------------------------------------===//

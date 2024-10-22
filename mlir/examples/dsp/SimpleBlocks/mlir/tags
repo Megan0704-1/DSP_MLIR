@@ -1,0 +1,371 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BinaryOpLowering	LowerToAffineLoops.cpp	/^  BinaryOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::BinaryOpLowering
+BinaryOpLowering	LowerToAffineLoops.cpp	/^struct BinaryOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+BitwiseAndOpLowering	LowerToAffineLoops.cpp	/^  BitwiseAndOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::BitwiseAndOpLowering
+BitwiseAndOpLowering	LowerToAffineLoops.cpp	/^struct BitwiseAndOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+ConstantOpLowering	LowerToAffineLoops.cpp	/^struct ConstantOpLowering : public OpRewritePattern<dsp::ConstantOp> {$/;"	s	namespace:__anon7	file:
+DCTOpLowering	LowerToAffineLoops.cpp	/^  DCTOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::DCTOpLowering
+DCTOpLowering	LowerToAffineLoops.cpp	/^struct DCTOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+DEBUG_TYPE	ShapeInferencePass.cpp	30;"	d	file:
+DelayOpLowering	LowerToAffineLoops.cpp	/^  DelayOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::DelayOpLowering
+DelayOpLowering	LowerToAffineLoops.cpp	/^struct DelayOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+DownSamplingOpLowering	LowerToAffineLoops.cpp	/^  DownSamplingOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::DownSamplingOpLowering
+DownSamplingOpLowering	LowerToAffineLoops.cpp	/^struct DownSamplingOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFT1DImgConjSymmOpLowering	LowerToAffineLoops.cpp	/^  FFT1DImgConjSymmOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FFT1DImgConjSymmOpLowering
+FFT1DImgConjSymmOpLowering	LowerToAffineLoops.cpp	/^struct FFT1DImgConjSymmOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFT1DImgOpLowering	LowerToAffineLoops.cpp	/^  FFT1DImgOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FFT1DImgOpLowering
+FFT1DImgOpLowering	LowerToAffineLoops.cpp	/^struct FFT1DImgOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFT1DOpLowering	LowerToAffineLoops.cpp	/^  FFT1DOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FFT1DOpLowering
+FFT1DOpLowering	LowerToAffineLoops.cpp	/^struct FFT1DOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFT1DRealOpLowering	LowerToAffineLoops.cpp	/^  FFT1DRealOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FFT1DRealOpLowering
+FFT1DRealOpLowering	LowerToAffineLoops.cpp	/^struct FFT1DRealOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFT1DRealSymmOpLowering	LowerToAffineLoops.cpp	/^  FFT1DRealSymmOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FFT1DRealSymmOpLowering
+FFT1DRealSymmOpLowering	LowerToAffineLoops.cpp	/^struct FFT1DRealSymmOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFTImagOpLowering	LowerToAffineLoops.cpp	/^  FFTImagOpLowering(MLIRContext *ctx) $/;"	f	struct:__anon7::FFTImagOpLowering
+FFTImagOpLowering	LowerToAffineLoops.cpp	/^struct FFTImagOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFTRealOpLowering	LowerToAffineLoops.cpp	/^  FFTRealOpLowering(MLIRContext *ctx) $/;"	f	struct:__anon7::FFTRealOpLowering
+FFTRealOpLowering	LowerToAffineLoops.cpp	/^struct FFTRealOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FIRFilterHammingOptimizedOpLowering	LowerToAffineLoops.cpp	/^  FIRFilterHammingOptimizedOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FIRFilterHammingOptimizedOpLowering
+FIRFilterHammingOptimizedOpLowering	LowerToAffineLoops.cpp	/^struct FIRFilterHammingOptimizedOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FIRFilterResSymmOptimizedOpLowering	LowerToAffineLoops.cpp	/^  FIRFilterResSymmOptimizedOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FIRFilterResSymmOptimizedOpLowering
+FIRFilterResSymmOptimizedOpLowering	LowerToAffineLoops.cpp	/^struct FIRFilterResSymmOptimizedOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FIRFilterResponseOpLowering	LowerToAffineLoops.cpp	/^  FIRFilterResponseOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FIRFilterResponseOpLowering
+FIRFilterResponseOpLowering	LowerToAffineLoops.cpp	/^struct FIRFilterResponseOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FIRFilterYSymmOptimizedOpLowering	LowerToAffineLoops.cpp	/^  FIRFilterYSymmOptimizedOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FIRFilterYSymmOptimizedOpLowering
+FIRFilterYSymmOptimizedOpLowering	LowerToAffineLoops.cpp	/^struct FIRFilterYSymmOptimizedOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FuncOpLowering	LowerToAffineLoops.cpp	/^struct FuncOpLowering : public OpConversionPattern<dsp::FuncOp> {$/;"	s	namespace:__anon7	file:
+GEN_PASS_DEF_TOSATOLINALG	TosaToLinalgPass.cpp	50;"	d	file:
+GET_OP_CLASSES	Dialect.cpp	2568;"	d	file:
+GET_OP_LIST	Dialect.cpp	109;"	d	file:
+GainOpLowering	LowerToAffineLoops.cpp	/^  GainOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::GainOpLowering
+GainOpLowering	LowerToAffineLoops.cpp	/^struct GainOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+GetElemAtIndxOpLowering	LowerToAffineLoops.cpp	/^  GetElemAtIndxOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::GetElemAtIndxOpLowering
+GetElemAtIndxOpLowering	LowerToAffineLoops.cpp	/^struct GetElemAtIndxOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+GetRangeOfVectorOpLowering	LowerToAffineLoops.cpp	/^  GetRangeOfVectorOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::GetRangeOfVectorOpLowering
+GetRangeOfVectorOpLowering	LowerToAffineLoops.cpp	/^struct GetRangeOfVectorOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+HammingWindowOpLowering	LowerToAffineLoops.cpp	/^  HammingWindowOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::HammingWindowOpLowering
+HammingWindowOpLowering	LowerToAffineLoops.cpp	/^struct HammingWindowOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+HighPassFIRFilterOpLowering	LowerToAffineLoops.cpp	/^  HighPassFIRFilterOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::HighPassFIRFilterOpLowering
+HighPassFIRFilterOpLowering	LowerToAffineLoops.cpp	/^struct HighPassFIRFilterOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+HighPassFIRHammingOptimizedOpLowering	LowerToAffineLoops.cpp	/^  HighPassFIRHammingOptimizedOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::HighPassFIRHammingOptimizedOpLowering
+HighPassFIRHammingOptimizedOpLowering	LowerToAffineLoops.cpp	/^struct HighPassFIRHammingOptimizedOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+HighPassFilterOpLowering	LowerToAffineLoops.cpp	/^  HighPassFilterOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::HighPassFilterOpLowering
+HighPassFilterOpLowering	LowerToAffineLoops.cpp	/^struct HighPassFilterOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+IFFT1DOpLowering	LowerToAffineLoops.cpp	/^  IFFT1DOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::IFFT1DOpLowering
+IFFT1DOpLowering	LowerToAffineLoops.cpp	/^struct IFFT1DOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+LMSFilterOpLowering	LowerToAffineLoops.cpp	/^  LMSFilterOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::LMSFilterOpLowering
+LMSFilterOpLowering	LowerToAffineLoops.cpp	/^struct LMSFilterOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+LMSFilterResponseOpLowering	LowerToAffineLoops.cpp	/^  LMSFilterResponseOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::LMSFilterResponseOpLowering
+LMSFilterResponseOpLowering	LowerToAffineLoops.cpp	/^struct LMSFilterResponseOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+LengthOpLowering	LowerToAffineLoops.cpp	/^  LengthOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::LengthOpLowering
+LengthOpLowering	LowerToAffineLoops.cpp	/^struct LengthOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+LowPassFIRFilterOpLowering	LowerToAffineLoops.cpp	/^  LowPassFIRFilterOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::LowPassFIRFilterOpLowering
+LowPassFIRFilterOpLowering	LowerToAffineLoops.cpp	/^struct LowPassFIRFilterOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+LowPassFilter1stOrderOpLowering	LowerToAffineLoops.cpp	/^  LowPassFilter1stOrderOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::LowPassFilter1stOrderOpLowering
+LowPassFilter1stOrderOpLowering	LowerToAffineLoops.cpp	/^struct LowPassFilter1stOrderOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+MLIRGenImpl	MLIRGen.cpp	/^  MLIRGenImpl(mlir::MLIRContext &context) : builder(&context) {}$/;"	f	class:__anon2::MLIRGenImpl
+MLIRGenImpl	MLIRGen.cpp	/^class MLIRGenImpl {$/;"	c	namespace:__anon2	file:
+PaddingOpLowering	LowerToAffineLoops.cpp	/^  PaddingOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::PaddingOpLowering
+PaddingOpLowering	LowerToAffineLoops.cpp	/^struct PaddingOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+PrintOpLowering	LowerToAffineLoops.cpp	/^struct PrintOpLowering : public OpConversionPattern<dsp::PrintOp> {$/;"	s	namespace:__anon7	file:
+PrintOpLowering	LowerToLLVM.cpp	/^  explicit PrintOpLowering(MLIRContext *context)$/;"	f	class:__anon5::PrintOpLowering
+PrintOpLowering	LowerToLLVM.cpp	/^class PrintOpLowering : public ConversionPattern {$/;"	c	namespace:__anon5	file:
+QuantizationOpLowering	LowerToAffineLoops.cpp	/^  QuantizationOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::QuantizationOpLowering
+QuantizationOpLowering	LowerToAffineLoops.cpp	/^struct QuantizationOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+ReturnOpLowering	LowerToAffineLoops.cpp	/^struct ReturnOpLowering : public OpRewritePattern<dsp::ReturnOp> {$/;"	s	namespace:__anon7	file:
+ReverseInputOpLowering	LowerToAffineLoops.cpp	/^  ReverseInputOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::ReverseInputOpLowering
+ReverseInputOpLowering	LowerToAffineLoops.cpp	/^struct ReverseInputOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+RunLenEncodingOpLowering	LowerToAffineLoops.cpp	/^  RunLenEncodingOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::RunLenEncodingOpLowering
+RunLenEncodingOpLowering	LowerToAffineLoops.cpp	/^struct RunLenEncodingOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+SetElemAtIndxOpLowering	LowerToAffineLoops.cpp	/^  SetElemAtIndxOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::SetElemAtIndxOpLowering
+SetElemAtIndxOpLowering	LowerToAffineLoops.cpp	/^struct SetElemAtIndxOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+ShapeInferencePass	ShapeInferencePass.cpp	/^struct ShapeInferencePass$/;"	s	namespace:__anon4	file:
+SimplifyBack2BackDelay	ToyCombine.cpp	/^  SimplifyBack2BackDelay(mlir::MLIRContext *context) $/;"	f	struct:SimplifyBack2BackDelay
+SimplifyBack2BackDelay	ToyCombine.cpp	/^struct SimplifyBack2BackDelay: public mlir::OpRewritePattern<DelayOp>{$/;"	s	file:
+SimplifyBack2BackGain	ToyCombine.cpp	/^  SimplifyBack2BackGain(mlir::MLIRContext *context) $/;"	f	struct:SimplifyBack2BackGain
+SimplifyBack2BackGain	ToyCombine.cpp	/^struct SimplifyBack2BackGain: public mlir::OpRewritePattern<GainOp>{$/;"	s	file:
+SimplifyFFTImgAtInputRealSymm	ToyCombine.cpp	/^  SimplifyFFTImgAtInputRealSymm(MLIRContext *context)$/;"	f	struct:SimplifyFFTImgAtInputRealSymm
+SimplifyFFTImgAtInputRealSymm	ToyCombine.cpp	/^struct SimplifyFFTImgAtInputRealSymm : public OpRewritePattern<FFT1DImgOp> {$/;"	s	file:
+SimplifyFFTRealAndImg	ToyCombine.cpp	/^  SimplifyFFTRealAndImg(MLIRContext *context)$/;"	f	struct:SimplifyFFTRealAndImg
+SimplifyFFTRealAndImg	ToyCombine.cpp	/^struct SimplifyFFTRealAndImg : public OpRewritePattern<FFT1DRealOp> {$/;"	s	file:
+SimplifyFFTRealAtInputRealSymm	ToyCombine.cpp	/^  SimplifyFFTRealAtInputRealSymm(MLIRContext *context)$/;"	f	struct:SimplifyFFTRealAtInputRealSymm
+SimplifyFFTRealAtInputRealSymm	ToyCombine.cpp	/^struct SimplifyFFTRealAtInputRealSymm : public OpRewritePattern<FFT1DRealOp> {$/;"	s	file:
+SimplifyFFTSquare	ToyCombine.cpp	/^  SimplifyFFTSquare(mlir::MLIRContext *context)$/;"	f	struct:SimplifyFFTSquare
+SimplifyFFTSquare	ToyCombine.cpp	/^struct SimplifyFFTSquare : public mlir::OpRewritePattern<SquareOp> {$/;"	s	file:
+SimplifyFIRFilterRespnseWithSymmFilter	ToyCombine.cpp	/^  SimplifyFIRFilterRespnseWithSymmFilter(mlir::MLIRContext *context)$/;"	f	struct:SimplifyFIRFilterRespnseWithSymmFilter
+SimplifyFIRFilterRespnseWithSymmFilter	ToyCombine.cpp	/^struct SimplifyFIRFilterRespnseWithSymmFilter : public mlir::OpRewritePattern<FIRFilterResponseOp> {$/;"	s	file:
+SimplifyFilterMulHamming	ToyCombine.cpp	/^  SimplifyFilterMulHamming(mlir::MLIRContext *context)$/;"	f	struct:SimplifyFilterMulHamming
+SimplifyFilterMulHamming	ToyCombine.cpp	/^struct SimplifyFilterMulHamming : public mlir::OpRewritePattern<MulOp> {$/;"	s	file:
+SimplifyFilterRespX_ReverseXYSymmFilter	ToyCombine.cpp	/^  SimplifyFilterRespX_ReverseXYSymmFilter(mlir::MLIRContext *context)$/;"	f	struct:SimplifyFilterRespX_ReverseXYSymmFilter
+SimplifyFilterRespX_ReverseXYSymmFilter	ToyCombine.cpp	/^struct SimplifyFilterRespX_ReverseXYSymmFilter : public mlir::OpRewritePattern<FIRFilterResponseOp> {$/;"	s	file:
+SimplifyGainwZero	ToyCombine.cpp	/^  SimplifyGainwZero(mlir::MLIRContext *context) $/;"	f	struct:SimplifyGainwZero
+SimplifyGainwZero	ToyCombine.cpp	/^struct SimplifyGainwZero: public mlir::OpRewritePattern<GainOp>{$/;"	s	file:
+SimplifyHighPassFIRHamming	ToyCombine.cpp	/^  SimplifyHighPassFIRHamming(mlir::MLIRContext *context)$/;"	f	struct:SimplifyHighPassFIRHamming
+SimplifyHighPassFIRHamming	ToyCombine.cpp	/^struct SimplifyHighPassFIRHamming : public mlir::OpRewritePattern<MulOp> {$/;"	s	file:
+SimplifyLMSFilterResponsewithGain	ToyCombine.cpp	/^  SimplifyLMSFilterResponsewithGain(mlir::MLIRContext *context) $/;"	f	struct:SimplifyLMSFilterResponsewithGain
+SimplifyLMSFilterResponsewithGain	ToyCombine.cpp	/^struct SimplifyLMSFilterResponsewithGain: public mlir::OpRewritePattern<GainOp>{$/;"	s	file:
+SimplifyRedundantTranspose	ToyCombine.cpp	/^  SimplifyRedundantTranspose(mlir::MLIRContext *context)$/;"	f	struct:SimplifyRedundantTranspose
+SimplifyRedundantTranspose	ToyCombine.cpp	/^struct SimplifyRedundantTranspose : public mlir::OpRewritePattern<TransposeOp> {$/;"	s	file:
+SimplifyUpsamplingDownsampling	ToyCombine.cpp	/^  SimplifyUpsamplingDownsampling(mlir::MLIRContext *context)$/;"	f	struct:SimplifyUpsamplingDownsampling
+SimplifyUpsamplingDownsampling	ToyCombine.cpp	/^struct SimplifyUpsamplingDownsampling : public mlir::OpRewritePattern<DownsamplingOp> {$/;"	s	file:
+SincOpLowering	LowerToAffineLoops.cpp	/^  SincOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::SincOpLowering
+SincOpLowering	LowerToAffineLoops.cpp	/^struct SincOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+SlidingWindowAvgOpLowering	LowerToAffineLoops.cpp	/^  SlidingWindowAvgOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::SlidingWindowAvgOpLowering
+SlidingWindowAvgOpLowering	LowerToAffineLoops.cpp	/^struct SlidingWindowAvgOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+SquareOpLowering	LowerToAffineLoops.cpp	/^  SquareOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::SquareOpLowering
+SquareOpLowering	LowerToAffineLoops.cpp	/^struct SquareOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+SumOpLowering	LowerToAffineLoops.cpp	/^  SumOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::SumOpLowering
+SumOpLowering	LowerToAffineLoops.cpp	/^struct SumOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+ThresholdOpLowering	LowerToAffineLoops.cpp	/^  ThresholdOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::ThresholdOpLowering
+ThresholdOpLowering	LowerToAffineLoops.cpp	/^struct ThresholdOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+ToyInlinerInterface	Dialect.cpp	/^struct ToyInlinerInterface : public DialectInlinerInterface {$/;"	s	file:
+ToyToAffineLoweringPass	LowerToAffineLoops.cpp	/^struct ToyToAffineLoweringPass$/;"	s	namespace:__anon8	file:
+ToyToLLVMLoweringPass	LowerToLLVM.cpp	/^struct ToyToLLVMLoweringPass$/;"	s	namespace:__anon6	file:
+ToyToLinalg	TosaToLinalgPass.cpp	/^struct ToyToLinalg : public impl::TosaToLinalgBase<ToyToLinalg> {$/;"	s	namespace:__anon1	file:
+TransposeOpLowering	LowerToAffineLoops.cpp	/^  TransposeOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::TransposeOpLowering
+TransposeOpLowering	LowerToAffineLoops.cpp	/^struct TransposeOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+TryAffineForAndAffineIf	LowerToAffineLoops.cpp	165;"	d	file:
+TryAffineIf2	LowerToAffineLoops.cpp	166;"	d	file:
+TryAffineMap	LowerToAffineLoops.cpp	167;"	d	file:
+TryFIRFilter	LowerToAffineLoops.cpp	170;"	d	file:
+TryJustAffineLoop	LowerToAffineLoops.cpp	164;"	d	file:
+TryLoadStoreForWhile	LowerToAffineLoops.cpp	2363;"	d	file:
+TryMultiDimForAndIf	LowerToAffineLoops.cpp	171;"	d	file:
+TryMultiDimLoop	LowerToAffineLoops.cpp	169;"	d	file:
+TryMultiDimLoopAndAffineMap	LowerToAffineLoops.cpp	172;"	d	file:
+TryMultiDimLoopAndAffineSet	LowerToAffineLoops.cpp	173;"	d	file:
+TryPassIterIndex	LowerToAffineLoops.cpp	2364;"	d	file:
+TryRLE	LowerToAffineLoops.cpp	2366;"	d	file:
+TryScf	LowerToAffineLoops.cpp	2365;"	d	file:
+TrySumOfVector	LowerToAffineLoops.cpp	168;"	d	file:
+TryWhileLoop	LowerToAffineLoops.cpp	2362;"	d	file:
+UnaryOpLowering	LowerToAffineLoops.cpp	/^  UnaryOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::UnaryOpLowering
+UnaryOpLowering	LowerToAffineLoops.cpp	/^struct UnaryOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+UpSamplingOpLowering	LowerToAffineLoops.cpp	/^  UpSamplingOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::UpSamplingOpLowering
+UpSamplingOpLowering	LowerToAffineLoops.cpp	/^struct UpSamplingOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+allOperandsInferred	ShapeInferencePass.cpp	/^  static bool allOperandsInferred(Operation *op) {$/;"	f	struct:__anon4::ShapeInferencePass
+areCastCompatible	Dialect.cpp	/^bool CastOp::areCastCompatible(TypeRange inputs, TypeRange outputs) {$/;"	f	class:CastOp
+build	Dialect.cpp	/^void AddOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:AddOp
+build	Dialect.cpp	/^void BitwiseAndOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:BitwiseAndOp
+build	Dialect.cpp	/^void ConstantOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:ConstantOp
+build	Dialect.cpp	/^void CosOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:CosOp
+build	Dialect.cpp	/^void DCTOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:DCTOp
+build	Dialect.cpp	/^void DelayOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:DelayOp
+build	Dialect.cpp	/^void DivOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:DivOp
+build	Dialect.cpp	/^void DownsamplingOp::build(mlir::OpBuilder &builder,$/;"	f	class:DownsamplingOp
+build	Dialect.cpp	/^void FFT1DImgConjSymmOp::build(mlir::OpBuilder &builder,$/;"	f	class:FFT1DImgConjSymmOp
+build	Dialect.cpp	/^void FFT1DImgOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:FFT1DImgOp
+build	Dialect.cpp	/^void FFT1DOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:FFT1DOp
+build	Dialect.cpp	/^void FFT1DRealOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:FFT1DRealOp
+build	Dialect.cpp	/^void FFT1DRealSymmOp::build(mlir::OpBuilder &builder,$/;"	f	class:FFT1DRealSymmOp
+build	Dialect.cpp	/^void FFTImagOp::build(mlir::OpBuilder &builder, mlir::OperationState &state, $/;"	f	class:FFTImagOp
+build	Dialect.cpp	/^void FFTRealOp::build(mlir::OpBuilder &builder, mlir::OperationState &state, $/;"	f	class:FFTRealOp
+build	Dialect.cpp	/^void FIRFilterHammingOptimizedOp::build(mlir::OpBuilder &builder,$/;"	f	class:FIRFilterHammingOptimizedOp
+build	Dialect.cpp	/^void FIRFilterResSymmOptimizedOp::build(mlir::OpBuilder &builder,$/;"	f	class:FIRFilterResSymmOptimizedOp
+build	Dialect.cpp	/^void FIRFilterResponseOp::build(mlir::OpBuilder &builder,$/;"	f	class:FIRFilterResponseOp
+build	Dialect.cpp	/^void FIRFilterYSymmOptimizedOp::build(mlir::OpBuilder &builder,$/;"	f	class:FIRFilterYSymmOptimizedOp
+build	Dialect.cpp	/^void FuncOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:FuncOp
+build	Dialect.cpp	/^void GainOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:GainOp
+build	Dialect.cpp	/^void GenericCallOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:GenericCallOp
+build	Dialect.cpp	/^void GetElemAtIndxOp::build(mlir::OpBuilder &builder,$/;"	f	class:GetElemAtIndxOp
+build	Dialect.cpp	/^void GetRangeOfVectorOp::build(mlir::OpBuilder &builder,$/;"	f	class:GetRangeOfVectorOp
+build	Dialect.cpp	/^void HammingWindowOp::build(mlir::OpBuilder &builder,$/;"	f	class:HammingWindowOp
+build	Dialect.cpp	/^void HighPassFIRFilterOp::build(mlir::OpBuilder &builder,$/;"	f	class:HighPassFIRFilterOp
+build	Dialect.cpp	/^void HighPassFIRHammingOptimizedOp::build(mlir::OpBuilder &builder,$/;"	f	class:HighPassFIRHammingOptimizedOp
+build	Dialect.cpp	/^void HighPassFilterOp::build(mlir::OpBuilder &builder,$/;"	f	class:HighPassFilterOp
+build	Dialect.cpp	/^void IFFT1DOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:IFFT1DOp
+build	Dialect.cpp	/^void LMSFilterOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:LMSFilterOp
+build	Dialect.cpp	/^void LMSFilterResponseOp::build(mlir::OpBuilder &builder,$/;"	f	class:LMSFilterResponseOp
+build	Dialect.cpp	/^void LengthOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:LengthOp
+build	Dialect.cpp	/^void LowPassFIRFilterOp::build(mlir::OpBuilder &builder,$/;"	f	class:LowPassFIRFilterOp
+build	Dialect.cpp	/^void LowPassFilter1stOrderOp::build(mlir::OpBuilder &builder,$/;"	f	class:LowPassFilter1stOrderOp
+build	Dialect.cpp	/^void ModuloOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:ModuloOp
+build	Dialect.cpp	/^void MulOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:MulOp
+build	Dialect.cpp	/^void PaddingOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:PaddingOp
+build	Dialect.cpp	/^void QamModulateOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:QamModulateOp
+build	Dialect.cpp	/^void QuantizationOp::build(mlir::OpBuilder &builder,$/;"	f	class:QuantizationOp
+build	Dialect.cpp	/^void ReverseInputOp::build(mlir::OpBuilder &builder,$/;"	f	class:ReverseInputOp
+build	Dialect.cpp	/^void RunLenEncodingOp::build(mlir::OpBuilder &builder,$/;"	f	class:RunLenEncodingOp
+build	Dialect.cpp	/^void SetElemAtIndxOp::build(mlir::OpBuilder &builder,$/;"	f	class:SetElemAtIndxOp
+build	Dialect.cpp	/^void SinOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:SinOp
+build	Dialect.cpp	/^void SincOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:SincOp
+build	Dialect.cpp	/^void SlidingWindowAvgOp::build(mlir::OpBuilder &builder,$/;"	f	class:SlidingWindowAvgOp
+build	Dialect.cpp	/^void SquareOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:SquareOp
+build	Dialect.cpp	/^void SubOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:SubOp
+build	Dialect.cpp	/^void SumOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:SumOp
+build	Dialect.cpp	/^void ThresholdOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:ThresholdOp
+build	Dialect.cpp	/^void TransposeOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:TransposeOp
+build	Dialect.cpp	/^void UpsamplingOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:UpsamplingOp
+build	Dialect.cpp	/^void filterOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:filterOp
+build	Dialect.cpp	/^void zeroCrossCountOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:zeroCrossCountOp
+builder	MLIRGen.cpp	/^  mlir::OpBuilder builder;$/;"	m	class:__anon2::MLIRGenImpl	file:
+collectData	MLIRGen.cpp	/^  void collectData(ExprAST &expr, std::vector<double> &data) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+convertTensorToMemRef	LowerToAffineLoops.cpp	/^static MemRefType convertTensorToMemRef(RankedTensorType type) {$/;"	f	file:
+createLowerToAffinePass	LowerToAffineLoops.cpp	/^std::unique_ptr<Pass> mlir::dsp::createLowerToAffinePass() {$/;"	f	class:mlir::dsp
+createLowerToLLVMPass	LowerToLLVM.cpp	/^std::unique_ptr<mlir::Pass> mlir::dsp::createLowerToLLVMPass() {$/;"	f	class:mlir::dsp
+createLowerTosaToLinalgPass	TosaToLinalgPass.cpp	/^std::unique_ptr<Pass> mlir::dsp::createLowerTosaToLinalgPass() {$/;"	f	class:mlir::dsp
+createShapeInferencePass	ShapeInferencePass.cpp	/^std::unique_ptr<mlir::Pass> mlir::dsp::createShapeInferencePass() {$/;"	f	class:mlir::dsp
+declare	MLIRGen.cpp	/^  mlir::LogicalResult declare(llvm::StringRef var, mlir::Value value) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+dsp	MLIRGen.cpp	/^namespace dsp {$/;"	n	file:
+filterOpLowering	LowerToAffineLoops.cpp	/^  filterOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::filterOpLowering
+filterOpLowering	LowerToAffineLoops.cpp	/^struct filterOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+final	LowerToAffineLoops.cpp	/^  void runOnOperation() final;$/;"	m	struct:__anon8::ToyToAffineLoweringPass	file:
+final	LowerToLLVM.cpp	/^  void runOnOperation() final;$/;"	m	struct:__anon6::ToyToLLVMLoweringPass	file:
+getArgOperands	Dialect.cpp	/^Operation::operand_range GenericCallOp::getArgOperands() { return getInputs(); }$/;"	f	class:GenericCallOp
+getArgOperandsMutable	Dialect.cpp	/^MutableOperandRange GenericCallOp::getArgOperandsMutable() {$/;"	f	class:GenericCallOp
+getCallableForCallee	Dialect.cpp	/^CallInterfaceCallable GenericCallOp::getCallableForCallee() {$/;"	f	class:GenericCallOp
+getCanonicalizationPatterns	ToyCombine.cpp	/^void DelayOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:DelayOp
+getCanonicalizationPatterns	ToyCombine.cpp	/^void DownsamplingOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:DownsamplingOp
+getCanonicalizationPatterns	ToyCombine.cpp	/^void FFT1DImgOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:FFT1DImgOp
+getCanonicalizationPatterns	ToyCombine.cpp	/^void FFT1DRealOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:FFT1DRealOp
+getCanonicalizationPatterns	ToyCombine.cpp	/^void FIRFilterResponseOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:FIRFilterResponseOp
+getCanonicalizationPatterns	ToyCombine.cpp	/^void GainOp::getCanonicalizationPatterns(RewritePatternSet &results, $/;"	f	class:GainOp
+getCanonicalizationPatterns	ToyCombine.cpp	/^void MulOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:MulOp
+getCanonicalizationPatterns	ToyCombine.cpp	/^void ReshapeOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:ReshapeOp
+getCanonicalizationPatterns	ToyCombine.cpp	/^void SquareOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:SquareOp
+getCanonicalizationPatterns	ToyCombine.cpp	/^void TransposeOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:TransposeOp
+getOrCreateGlobalString	LowerToLLVM.cpp	/^  static Value getOrCreateGlobalString(Location loc, OpBuilder &builder,$/;"	f	class:__anon5::PrintOpLowering	file:
+getOrInsertPrintf	LowerToLLVM.cpp	/^  static FlatSymbolRefAttr getOrInsertPrintf(PatternRewriter &rewriter,$/;"	f	class:__anon5::PrintOpLowering	file:
+getPrintfType	LowerToLLVM.cpp	/^  static LLVM::LLVMFunctionType getPrintfType(MLIRContext *context) {$/;"	f	class:__anon5::PrintOpLowering	file:
+getType	MLIRGen.cpp	/^  mlir::Type getType(ArrayRef<int64_t> shape) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+getType	MLIRGen.cpp	/^  mlir::Type getType(const VarType &type) { return getType(type.shape); }$/;"	f	class:__anon2::MLIRGenImpl	file:
+inferShapes	Dialect.cpp	/^void AddOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:AddOp
+inferShapes	Dialect.cpp	/^void BitwiseAndOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:BitwiseAndOp
+inferShapes	Dialect.cpp	/^void CastOp::inferShapes() { getResult().setType(getInput().getType()); }$/;"	f	class:CastOp
+inferShapes	Dialect.cpp	/^void CosOp::inferShapes() {$/;"	f	class:CosOp
+inferShapes	Dialect.cpp	/^void DCTOp::inferShapes() {$/;"	f	class:DCTOp
+inferShapes	Dialect.cpp	/^void DelayOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:DelayOp
+inferShapes	Dialect.cpp	/^void DivOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:DivOp
+inferShapes	Dialect.cpp	/^void DownsamplingOp::inferShapes() {$/;"	f	class:DownsamplingOp
+inferShapes	Dialect.cpp	/^void FFT1DImgConjSymmOp::inferShapes() {$/;"	f	class:FFT1DImgConjSymmOp
+inferShapes	Dialect.cpp	/^void FFT1DImgOp::inferShapes() {$/;"	f	class:FFT1DImgOp
+inferShapes	Dialect.cpp	/^void FFT1DOp::inferShapes() {$/;"	f	class:FFT1DOp
+inferShapes	Dialect.cpp	/^void FFT1DRealOp::inferShapes() {$/;"	f	class:FFT1DRealOp
+inferShapes	Dialect.cpp	/^void FFT1DRealSymmOp::inferShapes() {$/;"	f	class:FFT1DRealSymmOp
+inferShapes	Dialect.cpp	/^void FFTImagOp::inferShapes(){ getResult().setType(getLhs().getType()); }$/;"	f	class:FFTImagOp
+inferShapes	Dialect.cpp	/^void FFTRealOp::inferShapes(){ getResult().setType(getLhs().getType()); }$/;"	f	class:FFTRealOp
+inferShapes	Dialect.cpp	/^void FIRFilterHammingOptimizedOp::inferShapes() {$/;"	f	class:FIRFilterHammingOptimizedOp
+inferShapes	Dialect.cpp	/^void FIRFilterResSymmOptimizedOp::inferShapes() {$/;"	f	class:FIRFilterResSymmOptimizedOp
+inferShapes	Dialect.cpp	/^void FIRFilterResponseOp::inferShapes() {$/;"	f	class:FIRFilterResponseOp
+inferShapes	Dialect.cpp	/^void FIRFilterYSymmOptimizedOp::inferShapes() {$/;"	f	class:FIRFilterYSymmOptimizedOp
+inferShapes	Dialect.cpp	/^void GainOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:GainOp
+inferShapes	Dialect.cpp	/^void GetElemAtIndxOp::inferShapes() {$/;"	f	class:GetElemAtIndxOp
+inferShapes	Dialect.cpp	/^void GetRangeOfVectorOp::inferShapes() {$/;"	f	class:GetRangeOfVectorOp
+inferShapes	Dialect.cpp	/^void HammingWindowOp::inferShapes() {$/;"	f	class:HammingWindowOp
+inferShapes	Dialect.cpp	/^void HighPassFIRFilterOp::inferShapes() {$/;"	f	class:HighPassFIRFilterOp
+inferShapes	Dialect.cpp	/^void HighPassFIRHammingOptimizedOp::inferShapes() {$/;"	f	class:HighPassFIRHammingOptimizedOp
+inferShapes	Dialect.cpp	/^void HighPassFilterOp::inferShapes() {$/;"	f	class:HighPassFilterOp
+inferShapes	Dialect.cpp	/^void IFFT1DOp::inferShapes() {$/;"	f	class:IFFT1DOp
+inferShapes	Dialect.cpp	/^void LMSFilterOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:LMSFilterOp
+inferShapes	Dialect.cpp	/^void LMSFilterResponseOp::inferShapes() {$/;"	f	class:LMSFilterResponseOp
+inferShapes	Dialect.cpp	/^void LengthOp::inferShapes() {$/;"	f	class:LengthOp
+inferShapes	Dialect.cpp	/^void LowPassFIRFilterOp::inferShapes() {$/;"	f	class:LowPassFIRFilterOp
+inferShapes	Dialect.cpp	/^void LowPassFilter1stOrderOp::inferShapes() {$/;"	f	class:LowPassFilter1stOrderOp
+inferShapes	Dialect.cpp	/^void ModuloOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:ModuloOp
+inferShapes	Dialect.cpp	/^void MulOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:MulOp
+inferShapes	Dialect.cpp	/^void PaddingOp::inferShapes() {$/;"	f	class:PaddingOp
+inferShapes	Dialect.cpp	/^void QamModulateOp::inferShapes() {$/;"	f	class:QamModulateOp
+inferShapes	Dialect.cpp	/^void QuantizationOp::inferShapes() {$/;"	f	class:QuantizationOp
+inferShapes	Dialect.cpp	/^void ReverseInputOp::inferShapes() {$/;"	f	class:ReverseInputOp
+inferShapes	Dialect.cpp	/^void RunLenEncodingOp::inferShapes() {$/;"	f	class:RunLenEncodingOp
+inferShapes	Dialect.cpp	/^void SetElemAtIndxOp::inferShapes() {$/;"	f	class:SetElemAtIndxOp
+inferShapes	Dialect.cpp	/^void SinOp::inferShapes() {$/;"	f	class:SinOp
+inferShapes	Dialect.cpp	/^void SincOp::inferShapes() {$/;"	f	class:SincOp
+inferShapes	Dialect.cpp	/^void SlidingWindowAvgOp::inferShapes() {$/;"	f	class:SlidingWindowAvgOp
+inferShapes	Dialect.cpp	/^void SquareOp::inferShapes() {$/;"	f	class:SquareOp
+inferShapes	Dialect.cpp	/^void SubOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:SubOp
+inferShapes	Dialect.cpp	/^void SumOp::inferShapes() {$/;"	f	class:SumOp
+inferShapes	Dialect.cpp	/^void ThresholdOp::inferShapes() {$/;"	f	class:ThresholdOp
+inferShapes	Dialect.cpp	/^void TransposeOp::inferShapes() {$/;"	f	class:TransposeOp
+inferShapes	Dialect.cpp	/^void UpsamplingOp::inferShapes() {$/;"	f	class:UpsamplingOp
+inferShapes	Dialect.cpp	/^void filterOp::inferShapes() {$/;"	f	class:filterOp
+inferShapes	Dialect.cpp	/^void zeroCrossCountOp::inferShapes() {$/;"	f	class:zeroCrossCountOp
+initialize	Dialect.cpp	/^void DspDialect::initialize() {$/;"	f	class:DspDialect
+insertAllocAndDealloc	LowerToAffineLoops.cpp	/^static Value insertAllocAndDealloc(MemRefType type, Location loc,$/;"	f	file:
+loc	MLIRGen.cpp	/^  mlir::Location loc(const Location &loc) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+lowerOpToLoops	LowerToAffineLoops.cpp	/^static void lowerOpToLoops(Operation *op, ValueRange operands,$/;"	f	file:
+lowerOpToLoopsFIR	LowerToAffineLoops.cpp	/^static void lowerOpToLoopsFIR(Operation *op, ValueRange operands,$/;"	f	file:
+mlir	TosaToLinalgPass.cpp	/^namespace mlir {$/;"	n	file:
+mlirGen	MLIRGen.cpp	/^  mlir::LogicalResult mlirGen(ExprASTList &blockAST) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	MLIRGen.cpp	/^  mlir::LogicalResult mlirGen(PrintExprAST &call) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	MLIRGen.cpp	/^  mlir::LogicalResult mlirGen(ReturnExprAST &ret) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	MLIRGen.cpp	/^  mlir::ModuleOp mlirGen(ModuleAST &moduleAST) {$/;"	f	class:__anon2::MLIRGenImpl
+mlirGen	MLIRGen.cpp	/^  mlir::Value mlirGen(BinaryExprAST &binop) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	MLIRGen.cpp	/^  mlir::Value mlirGen(CallExprAST &call) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	MLIRGen.cpp	/^  mlir::Value mlirGen(ExprAST &expr) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	MLIRGen.cpp	/^  mlir::Value mlirGen(LiteralExprAST &lit) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	MLIRGen.cpp	/^  mlir::Value mlirGen(NumberExprAST &num) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	MLIRGen.cpp	/^  mlir::Value mlirGen(VarDeclExprAST &vardecl) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	MLIRGen.cpp	/^  mlir::Value mlirGen(VariableExprAST &expr) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	MLIRGen.cpp	/^  mlir::dsp::FuncOp mlirGen(FunctionAST &funcAST) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	MLIRGen.cpp	/^  mlir::dsp::FuncOp mlirGen(PrototypeAST &proto) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	MLIRGen.cpp	/^mlir::OwningOpRef<mlir::ModuleOp> mlirGen(mlir::MLIRContext &context,$/;"	f	namespace:dsp
+parse	Dialect.cpp	/^mlir::ParseResult AddOp::parse(mlir::OpAsmParser &parser,$/;"	f	class:AddOp
+parse	Dialect.cpp	/^mlir::ParseResult BitwiseAndOp::parse(mlir::OpAsmParser &parser,$/;"	f	class:BitwiseAndOp
+parse	Dialect.cpp	/^mlir::ParseResult ConstantOp::parse(mlir::OpAsmParser &parser,$/;"	f	class:ConstantOp
+parse	Dialect.cpp	/^mlir::ParseResult DivOp::parse(mlir::OpAsmParser &parser,$/;"	f	class:DivOp
+parse	Dialect.cpp	/^mlir::ParseResult FuncOp::parse(mlir::OpAsmParser &parser,$/;"	f	class:FuncOp
+parse	Dialect.cpp	/^mlir::ParseResult MulOp::parse(mlir::OpAsmParser &parser,$/;"	f	class:MulOp
+parseBinaryOp	Dialect.cpp	/^static mlir::ParseResult parseBinaryOp(mlir::OpAsmParser &parser,$/;"	f	file:
+print	Dialect.cpp	/^void AddOp::print(mlir::OpAsmPrinter &p) { printBinaryOp(p, *this); }$/;"	f	class:AddOp
+print	Dialect.cpp	/^void BitwiseAndOp::print(mlir::OpAsmPrinter &p) { printBinaryOp(p, *this); }$/;"	f	class:BitwiseAndOp
+print	Dialect.cpp	/^void ConstantOp::print(mlir::OpAsmPrinter &printer) {$/;"	f	class:ConstantOp
+print	Dialect.cpp	/^void DivOp::print(mlir::OpAsmPrinter &p) { printBinaryOp(p, *this); }$/;"	f	class:DivOp
+print	Dialect.cpp	/^void FuncOp::print(mlir::OpAsmPrinter &p) {$/;"	f	class:FuncOp
+print	Dialect.cpp	/^void MulOp::print(mlir::OpAsmPrinter &p) { printBinaryOp(p, *this); }$/;"	f	class:MulOp
+printBinaryOp	Dialect.cpp	/^static void printBinaryOp(mlir::OpAsmPrinter &printer, mlir::Operation *op) {$/;"	f	file:
+returnsDynamicShape	ShapeInferencePass.cpp	/^  static bool returnsDynamicShape(Operation *op) {$/;"	f	struct:__anon4::ShapeInferencePass
+runOnOperation	LowerToAffineLoops.cpp	/^void ToyToAffineLoweringPass::runOnOperation() {$/;"	f	class:ToyToAffineLoweringPass
+runOnOperation	LowerToLLVM.cpp	/^void ToyToLLVMLoweringPass::runOnOperation() {$/;"	f	class:ToyToLLVMLoweringPass
+setCalleeFromCallable	Dialect.cpp	/^void GenericCallOp::setCalleeFromCallable(CallInterfaceCallable callee) {$/;"	f	class:GenericCallOp
+symbolTable	MLIRGen.cpp	/^  llvm::ScopedHashTable<StringRef, mlir::Value> symbolTable;$/;"	m	class:__anon2::MLIRGenImpl	file:
+theModule	MLIRGen.cpp	/^  mlir::ModuleOp theModule;$/;"	m	class:__anon2::MLIRGenImpl	file:
+verify	Dialect.cpp	/^mlir::LogicalResult ConstantOp::verify() {$/;"	f	class:ConstantOp
+verify	Dialect.cpp	/^mlir::LogicalResult CosOp::verify() {$/;"	f	class:CosOp
+verify	Dialect.cpp	/^mlir::LogicalResult DCTOp::verify() {$/;"	f	class:DCTOp
+verify	Dialect.cpp	/^mlir::LogicalResult DelayOp::verify() {$/;"	f	class:DelayOp
+verify	Dialect.cpp	/^mlir::LogicalResult DownsamplingOp::verify() {$/;"	f	class:DownsamplingOp
+verify	Dialect.cpp	/^mlir::LogicalResult FFT1DImgConjSymmOp::verify() {$/;"	f	class:FFT1DImgConjSymmOp
+verify	Dialect.cpp	/^mlir::LogicalResult FFT1DImgOp::verify() {$/;"	f	class:FFT1DImgOp
+verify	Dialect.cpp	/^mlir::LogicalResult FFT1DOp::verify() {$/;"	f	class:FFT1DOp
+verify	Dialect.cpp	/^mlir::LogicalResult FFT1DRealOp::verify() {$/;"	f	class:FFT1DRealOp
+verify	Dialect.cpp	/^mlir::LogicalResult FFT1DRealSymmOp::verify() {$/;"	f	class:FFT1DRealSymmOp
+verify	Dialect.cpp	/^mlir::LogicalResult FIRFilterHammingOptimizedOp::verify() {$/;"	f	class:FIRFilterHammingOptimizedOp
+verify	Dialect.cpp	/^mlir::LogicalResult FIRFilterResSymmOptimizedOp::verify() {$/;"	f	class:FIRFilterResSymmOptimizedOp
+verify	Dialect.cpp	/^mlir::LogicalResult FIRFilterResponseOp::verify() {$/;"	f	class:FIRFilterResponseOp
+verify	Dialect.cpp	/^mlir::LogicalResult FIRFilterYSymmOptimizedOp::verify() {$/;"	f	class:FIRFilterYSymmOptimizedOp
+verify	Dialect.cpp	/^mlir::LogicalResult GetElemAtIndxOp::verify() {$/;"	f	class:GetElemAtIndxOp
+verify	Dialect.cpp	/^mlir::LogicalResult GetRangeOfVectorOp::verify() {$/;"	f	class:GetRangeOfVectorOp
+verify	Dialect.cpp	/^mlir::LogicalResult HammingWindowOp::verify() {$/;"	f	class:HammingWindowOp
+verify	Dialect.cpp	/^mlir::LogicalResult HighPassFIRFilterOp::verify() {$/;"	f	class:HighPassFIRFilterOp
+verify	Dialect.cpp	/^mlir::LogicalResult HighPassFIRHammingOptimizedOp::verify() {$/;"	f	class:HighPassFIRHammingOptimizedOp
+verify	Dialect.cpp	/^mlir::LogicalResult HighPassFilterOp::verify() {$/;"	f	class:HighPassFilterOp
+verify	Dialect.cpp	/^mlir::LogicalResult IFFT1DOp::verify() {$/;"	f	class:IFFT1DOp
+verify	Dialect.cpp	/^mlir::LogicalResult LMSFilterOp::verify() {$/;"	f	class:LMSFilterOp
+verify	Dialect.cpp	/^mlir::LogicalResult LMSFilterResponseOp::verify() {$/;"	f	class:LMSFilterResponseOp
+verify	Dialect.cpp	/^mlir::LogicalResult LengthOp::verify() {$/;"	f	class:LengthOp
+verify	Dialect.cpp	/^mlir::LogicalResult LowPassFIRFilterOp::verify() {$/;"	f	class:LowPassFIRFilterOp
+verify	Dialect.cpp	/^mlir::LogicalResult LowPassFilter1stOrderOp::verify() {$/;"	f	class:LowPassFilter1stOrderOp
+verify	Dialect.cpp	/^mlir::LogicalResult PaddingOp::verify() {$/;"	f	class:PaddingOp
+verify	Dialect.cpp	/^mlir::LogicalResult QamModulateOp::verify() {$/;"	f	class:QamModulateOp
+verify	Dialect.cpp	/^mlir::LogicalResult QuantizationOp::verify() {$/;"	f	class:QuantizationOp
+verify	Dialect.cpp	/^mlir::LogicalResult ReturnOp::verify() {$/;"	f	class:ReturnOp
+verify	Dialect.cpp	/^mlir::LogicalResult ReverseInputOp::verify() {$/;"	f	class:ReverseInputOp
+verify	Dialect.cpp	/^mlir::LogicalResult RunLenEncodingOp::verify() {$/;"	f	class:RunLenEncodingOp
+verify	Dialect.cpp	/^mlir::LogicalResult SetElemAtIndxOp::verify() { return mlir::success(); }$/;"	f	class:SetElemAtIndxOp
+verify	Dialect.cpp	/^mlir::LogicalResult SinOp::verify() {$/;"	f	class:SinOp
+verify	Dialect.cpp	/^mlir::LogicalResult SincOp::verify() {$/;"	f	class:SincOp
+verify	Dialect.cpp	/^mlir::LogicalResult SlidingWindowAvgOp::verify() {$/;"	f	class:SlidingWindowAvgOp
+verify	Dialect.cpp	/^mlir::LogicalResult SquareOp::verify() {$/;"	f	class:SquareOp
+verify	Dialect.cpp	/^mlir::LogicalResult SumOp::verify() {$/;"	f	class:SumOp
+verify	Dialect.cpp	/^mlir::LogicalResult ThresholdOp::verify() {$/;"	f	class:ThresholdOp
+verify	Dialect.cpp	/^mlir::LogicalResult TransposeOp::verify() {$/;"	f	class:TransposeOp
+verify	Dialect.cpp	/^mlir::LogicalResult UpsamplingOp::verify() {$/;"	f	class:UpsamplingOp
+verify	Dialect.cpp	/^mlir::LogicalResult filterOp::verify() {$/;"	f	class:filterOp
+zeroCrossCountOpLowering	LowerToAffineLoops.cpp	/^  zeroCrossCountOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::zeroCrossCountOpLowering
+zeroCrossCountOpLowering	LowerToAffineLoops.cpp	/^struct zeroCrossCountOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:

@@ -2678,6 +2678,50 @@ mlir::LogicalResult Conv2DOp::verify() {
   return mlir::success();
 }
 
+<<<<<<< Updated upstream
+=======
+//===----------------------------------------------------------------------===//
+// QamModulateOp
+//===----------------------------------------------------------------------===//
+
+void QamModulateOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,
+                  mlir::Value input) {
+    state.addOperands(input);
+
+    auto shape = llvm::dyn_cast<RankedTensorType>(input.getType()).getShape();
+    auto eleType = builder.getF64Type();
+    auto complexEleType = mlir::ComplexType::get(eleType);
+
+    auto outputType = RankedTensorType::get(shape, complexEleType);
+    state.addTypes(outputType);
+}
+
+void QamModulateOp::inferShapes() {
+    
+    auto shape = getInput().getType().getShape();
+    auto complexEleType = mlir::ComplexType::get(getInput().getType().getElementType());
+    auto outputType = RankedTensorType::get(shape, complexEleType);
+
+    getResult().setType(outputType);
+}
+
+mlir::LogicalResult QamModulateOp::verify() {
+    auto inputType = llvm::dyn_cast<RankedTensorType>(getInput().getType());
+
+    if(!inputType) {
+        return emitOpError() << "expect input to be a ranked tensor.";
+    }
+
+    int64_t rank = inputType.getRank();
+
+    if(rank < 1) {
+        llvm::errs() << "input rank of qam modulation must be larger than 1, get " << rank << "\n";
+        return emitOpError() << "expected rank: <=1";
+    }
+  return mlir::success();
+}
+
+>>>>>>> Stashed changes
 //===----------------------------------------------------------------------===//
 // TableGen'd op method definitions
 //===----------------------------------------------------------------------===//

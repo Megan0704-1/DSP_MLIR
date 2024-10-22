@@ -1,0 +1,912 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ASTDumper	parser/AST.cpp	/^class ASTDumper {$/;"	c	namespace:__anon11	file:
+Action	toyc.cpp	/^enum Action {$/;"	g	namespace:__anon10	file:
+BasePathForLLVM	Output/TryDSPApps/PythonCodeForTest/ExtractOpName.py	/^BasePathForLLVM = "\/mnt\/sharedDrive\/SourceCode\/llvm-project\/"$/;"	v
+BasePathForLLVM	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^BasePathForLLVM = "\/mnt\/sharedDrive\/SourceCode\/llvm-project\/"$/;"	v
+BasePathForLLVM	Output/TryDSPApps/Results/TryResultScript/ScriptForMlirAffine.py	/^BasePathForLLVM = "\/mnt\/sharedDrive\/SourceCode\/llvm-project\/"$/;"	v
+BasePathForLLVM	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^BasePathForLLVM = "\/mnt\/sharedDrive\/SourceCode\/llvm-project\/"$/;"	v
+BinaryExprAST	include/toy/AST.h	/^  BinaryExprAST(Location loc, char op, std::unique_ptr<ExprAST> lhs,$/;"	f	class:dsp::BinaryExprAST
+BinaryExprAST	include/toy/AST.h	/^class BinaryExprAST : public ExprAST {$/;"	c	namespace:dsp
+BinaryOpLowering	mlir/LowerToAffineLoops.cpp	/^  BinaryOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::BinaryOpLowering
+BinaryOpLowering	mlir/LowerToAffineLoops.cpp	/^struct BinaryOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+BitwiseAndOpLowering	mlir/LowerToAffineLoops.cpp	/^  BitwiseAndOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::BitwiseAndOpLowering
+BitwiseAndOpLowering	mlir/LowerToAffineLoops.cpp	/^struct BitwiseAndOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+CallExprAST	include/toy/AST.h	/^  CallExprAST(Location loc, const std::string &callee,$/;"	f	class:dsp::CallExprAST
+CallExprAST	include/toy/AST.h	/^class CallExprAST : public ExprAST {$/;"	c	namespace:dsp
+ConstantOpLowering	mlir/LowerToAffineLoops.cpp	/^struct ConstantOpLowering : public OpRewritePattern<dsp::ConstantOp> {$/;"	s	namespace:__anon7	file:
+DCTOpLowering	mlir/LowerToAffineLoops.cpp	/^  DCTOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::DCTOpLowering
+DCTOpLowering	mlir/LowerToAffineLoops.cpp	/^struct DCTOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+DEBUG_OUTPUT	include/toy/DebugConfig.h	9;"	d
+DEBUG_PRINT_NO_ARGS	include/toy/DebugConfig.h	35;"	d
+DEBUG_PRINT_NO_ARGS	include/toy/DebugConfig.h	40;"	d
+DEBUG_PRINT_WITH_ARGS	include/toy/DebugConfig.h	32;"	d
+DEBUG_PRINT_WITH_ARGS	include/toy/DebugConfig.h	39;"	d
+DEBUG_TYPE	mlir/ShapeInferencePass.cpp	30;"	d	file:
+DelayOpLowering	mlir/LowerToAffineLoops.cpp	/^  DelayOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::DelayOpLowering
+DelayOpLowering	mlir/LowerToAffineLoops.cpp	/^struct DelayOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+DownSamplingOpLowering	mlir/LowerToAffineLoops.cpp	/^  DownSamplingOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::DownSamplingOpLowering
+DownSamplingOpLowering	mlir/LowerToAffineLoops.cpp	/^struct DownSamplingOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+DumpAST	toyc.cpp	/^  DumpAST,$/;"	e	enum:__anon10::Action	file:
+DumpLLVMIR	toyc.cpp	/^  DumpLLVMIR,$/;"	e	enum:__anon10::Action	file:
+DumpMLIR	toyc.cpp	/^  DumpMLIR,$/;"	e	enum:__anon10::Action	file:
+DumpMLIRAffine	toyc.cpp	/^  DumpMLIRAffine,$/;"	e	enum:__anon10::Action	file:
+DumpMLIRLLVM	toyc.cpp	/^  DumpMLIRLLVM,$/;"	e	enum:__anon10::Action	file:
+DumpMLIRLinalg	toyc.cpp	/^  DumpMLIRLinalg,$/;"	e	enum:__anon10::Action	file:
+ExprAST	include/toy/AST.h	/^  ExprAST(ExprASTKind kind, Location location)$/;"	f	class:dsp::ExprAST
+ExprAST	include/toy/AST.h	/^class ExprAST {$/;"	c	namespace:dsp
+ExprASTKind	include/toy/AST.h	/^  enum ExprASTKind {$/;"	g	class:dsp::ExprAST
+Expr_BinOp	include/toy/AST.h	/^    Expr_BinOp,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_Call	include/toy/AST.h	/^    Expr_Call,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_Literal	include/toy/AST.h	/^    Expr_Literal,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_Num	include/toy/AST.h	/^    Expr_Num,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_Print	include/toy/AST.h	/^    Expr_Print,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_Return	include/toy/AST.h	/^    Expr_Return,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_Var	include/toy/AST.h	/^    Expr_Var,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_VarDecl	include/toy/AST.h	/^    Expr_VarDecl,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+FFT1DImgConjSymmOpLowering	mlir/LowerToAffineLoops.cpp	/^  FFT1DImgConjSymmOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FFT1DImgConjSymmOpLowering
+FFT1DImgConjSymmOpLowering	mlir/LowerToAffineLoops.cpp	/^struct FFT1DImgConjSymmOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFT1DImgOpLowering	mlir/LowerToAffineLoops.cpp	/^  FFT1DImgOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FFT1DImgOpLowering
+FFT1DImgOpLowering	mlir/LowerToAffineLoops.cpp	/^struct FFT1DImgOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFT1DOpLowering	mlir/LowerToAffineLoops.cpp	/^  FFT1DOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FFT1DOpLowering
+FFT1DOpLowering	mlir/LowerToAffineLoops.cpp	/^struct FFT1DOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFT1DRealOpLowering	mlir/LowerToAffineLoops.cpp	/^  FFT1DRealOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FFT1DRealOpLowering
+FFT1DRealOpLowering	mlir/LowerToAffineLoops.cpp	/^struct FFT1DRealOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFT1DRealSymmOpLowering	mlir/LowerToAffineLoops.cpp	/^  FFT1DRealSymmOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FFT1DRealSymmOpLowering
+FFT1DRealSymmOpLowering	mlir/LowerToAffineLoops.cpp	/^struct FFT1DRealSymmOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFTImagOpLowering	mlir/LowerToAffineLoops.cpp	/^  FFTImagOpLowering(MLIRContext *ctx) $/;"	f	struct:__anon7::FFTImagOpLowering
+FFTImagOpLowering	mlir/LowerToAffineLoops.cpp	/^struct FFTImagOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FFTRealOpLowering	mlir/LowerToAffineLoops.cpp	/^  FFTRealOpLowering(MLIRContext *ctx) $/;"	f	struct:__anon7::FFTRealOpLowering
+FFTRealOpLowering	mlir/LowerToAffineLoops.cpp	/^struct FFTRealOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FIRFilterHammingOptimizedOpLowering	mlir/LowerToAffineLoops.cpp	/^  FIRFilterHammingOptimizedOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FIRFilterHammingOptimizedOpLowering
+FIRFilterHammingOptimizedOpLowering	mlir/LowerToAffineLoops.cpp	/^struct FIRFilterHammingOptimizedOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FIRFilterOpLowering	Output/TryMoreBlocksDsp/SlidingWindowAvgHelper.cpp	/^      FIRFilterOpLowering(MLIRContext *ctx)$/;"	f	struct:FIRFilterOpLowering
+FIRFilterOpLowering	Output/TryMoreBlocksDsp/SlidingWindowAvgHelper.cpp	/^struct FIRFilterOpLowering: public ConversionPattern {$/;"	s	file:
+FIRFilterResSymmOptimizedOpLowering	mlir/LowerToAffineLoops.cpp	/^  FIRFilterResSymmOptimizedOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FIRFilterResSymmOptimizedOpLowering
+FIRFilterResSymmOptimizedOpLowering	mlir/LowerToAffineLoops.cpp	/^struct FIRFilterResSymmOptimizedOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FIRFilterResponse	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFull1.c	/^void FIRFilterResponse(double* output, double* input, double* filter, int input_length, int filter_length) {$/;"	f
+FIRFilterResponse	Output/TryDSPApps/PythonCodeForTest/CCode/periodogram2Conv.c	/^void FIRFilterResponse(double* output, double* input, double* filter, int length) {$/;"	f
+FIRFilterResponseOpLowering	mlir/LowerToAffineLoops.cpp	/^  FIRFilterResponseOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FIRFilterResponseOpLowering
+FIRFilterResponseOpLowering	mlir/LowerToAffineLoops.cpp	/^struct FIRFilterResponseOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FIRFilterYSymmOptimizedOpLowering	mlir/LowerToAffineLoops.cpp	/^  FIRFilterYSymmOptimizedOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::FIRFilterYSymmOptimizedOpLowering
+FIRFilterYSymmOptimizedOpLowering	mlir/LowerToAffineLoops.cpp	/^struct FIRFilterYSymmOptimizedOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+FuncOpLowering	mlir/LowerToAffineLoops.cpp	/^struct FuncOpLowering : public OpConversionPattern<dsp::FuncOp> {$/;"	s	namespace:__anon7	file:
+FunctionAST	include/toy/AST.h	/^  FunctionAST(std::unique_ptr<PrototypeAST> proto,$/;"	f	class:dsp::FunctionAST
+FunctionAST	include/toy/AST.h	/^class FunctionAST {$/;"	c	namespace:dsp
+GEN_PASS_DEF_TOSATOLINALG	mlir/TosaToLinalgPass.cpp	50;"	d	file:
+GET_OP_CLASSES	include/toy/Dialect.h	33;"	d
+GET_OP_CLASSES	mlir/Dialect.cpp	2568;"	d	file:
+GET_OP_LIST	mlir/Dialect.cpp	109;"	d	file:
+GainOpLowering	mlir/LowerToAffineLoops.cpp	/^  GainOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::GainOpLowering
+GainOpLowering	mlir/LowerToAffineLoops.cpp	/^struct GainOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+GetElemAtIndxOpLowering	mlir/LowerToAffineLoops.cpp	/^  GetElemAtIndxOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::GetElemAtIndxOpLowering
+GetElemAtIndxOpLowering	mlir/LowerToAffineLoops.cpp	/^struct GetElemAtIndxOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+GetRangeOfVectorOpLowering	mlir/LowerToAffineLoops.cpp	/^  GetRangeOfVectorOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::GetRangeOfVectorOpLowering
+GetRangeOfVectorOpLowering	mlir/LowerToAffineLoops.cpp	/^struct GetRangeOfVectorOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+HammingWindowOpLowering	mlir/LowerToAffineLoops.cpp	/^  HammingWindowOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::HammingWindowOpLowering
+HammingWindowOpLowering	mlir/LowerToAffineLoops.cpp	/^struct HammingWindowOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+HighPassFIRFilterOpLowering	mlir/LowerToAffineLoops.cpp	/^  HighPassFIRFilterOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::HighPassFIRFilterOpLowering
+HighPassFIRFilterOpLowering	mlir/LowerToAffineLoops.cpp	/^struct HighPassFIRFilterOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+HighPassFIRHammingOptimizedOpLowering	mlir/LowerToAffineLoops.cpp	/^  HighPassFIRHammingOptimizedOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::HighPassFIRHammingOptimizedOpLowering
+HighPassFIRHammingOptimizedOpLowering	mlir/LowerToAffineLoops.cpp	/^struct HighPassFIRHammingOptimizedOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+HighPassFilterOpLowering	mlir/LowerToAffineLoops.cpp	/^  HighPassFilterOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::HighPassFilterOpLowering
+HighPassFilterOpLowering	mlir/LowerToAffineLoops.cpp	/^struct HighPassFilterOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+IFFT1DOpLowering	mlir/LowerToAffineLoops.cpp	/^  IFFT1DOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::IFFT1DOpLowering
+IFFT1DOpLowering	mlir/LowerToAffineLoops.cpp	/^struct IFFT1DOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+INDENT	parser/AST.cpp	76;"	d	file:
+Indent	parser/AST.cpp	/^  Indent(int &level) : level(level) { ++level; }$/;"	f	struct:__anon11::Indent
+Indent	parser/AST.cpp	/^struct Indent {$/;"	s	namespace:__anon11	file:
+InputType	toyc.cpp	/^enum InputType { Toy, MLIR };$/;"	g	namespace:__anon9	file:
+LMSFilterOpLowering	mlir/LowerToAffineLoops.cpp	/^  LMSFilterOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::LMSFilterOpLowering
+LMSFilterOpLowering	mlir/LowerToAffineLoops.cpp	/^struct LMSFilterOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+LMSFilterResponseOpLowering	mlir/LowerToAffineLoops.cpp	/^  LMSFilterResponseOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::LMSFilterResponseOpLowering
+LMSFilterResponseOpLowering	mlir/LowerToAffineLoops.cpp	/^struct LMSFilterResponseOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+LengthOpLowering	mlir/LowerToAffineLoops.cpp	/^  LengthOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::LengthOpLowering
+LengthOpLowering	mlir/LowerToAffineLoops.cpp	/^struct LengthOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+Lexer	include/toy/Lexer.h	/^  Lexer(std::string filename)$/;"	f	class:dsp::Lexer
+Lexer	include/toy/Lexer.h	/^class Lexer {$/;"	c	namespace:dsp
+LexerBuffer	include/toy/Lexer.h	/^  LexerBuffer(const char *begin, const char *end, std::string filename)$/;"	f	class:dsp::final
+LiteralExprAST	include/toy/AST.h	/^  LiteralExprAST(Location loc, std::vector<std::unique_ptr<ExprAST>> values,$/;"	f	class:dsp::LiteralExprAST
+LiteralExprAST	include/toy/AST.h	/^class LiteralExprAST : public ExprAST {$/;"	c	namespace:dsp
+Location	include/toy/Lexer.h	/^struct Location {$/;"	s	namespace:dsp
+LowPassFIRFilterOpLowering	mlir/LowerToAffineLoops.cpp	/^  LowPassFIRFilterOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::LowPassFIRFilterOpLowering
+LowPassFIRFilterOpLowering	mlir/LowerToAffineLoops.cpp	/^struct LowPassFIRFilterOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+LowPassFilter1stOrderOpLowering	mlir/LowerToAffineLoops.cpp	/^  LowPassFilter1stOrderOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::LowPassFilter1stOrderOpLowering
+LowPassFilter1stOrderOpLowering	mlir/LowerToAffineLoops.cpp	/^struct LowPassFilter1stOrderOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+M	Output/TryDSPApps/PythonCodeForTest/lmsNoiseCancelling.py	/^M = 32        # Number of filter coefficients$/;"	v
+MLIR	toyc.cpp	/^enum InputType { Toy, MLIR };$/;"	e	enum:__anon9::InputType	file:
+MLIRGenImpl	mlir/MLIRGen.cpp	/^  MLIRGenImpl(mlir::MLIRContext &context) : builder(&context) {}$/;"	f	class:__anon2::MLIRGenImpl
+MLIRGenImpl	mlir/MLIRGen.cpp	/^class MLIRGenImpl {$/;"	c	namespace:__anon2	file:
+MLIR_TUTORIAL_TOY_DIALECT_H_	include/toy/Dialect.h	15;"	d
+MLIR_TUTORIAL_TOY_SHAPEINFERENCEINTERFACE_H_	include/toy/ShapeInferenceInterface.h	15;"	d
+MU	Output/TryDSPApps/PythonCodeForTest/lmsNoiseCancelling.py	/^MU = 0.01       # Step size (learning rate)$/;"	v
+ModuleAST	include/toy/AST.h	/^  ModuleAST(std::vector<FunctionAST> functions)$/;"	f	class:dsp::ModuleAST
+ModuleAST	include/toy/AST.h	/^class ModuleAST {$/;"	c	namespace:dsp
+N	Output/TryDSPApps/PythonCodeForTest/HammingWindow.py	/^N = 5  # Number of points in the window$/;"	v
+N	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^N = 51  # Filter length (must be odd for symmetry)$/;"	v
+N	Output/TryDSPApps/PythonCodeForTest/filterDesign.py	/^N = 51  # Length of the filter (choose an odd number for symmetry)$/;"	v
+N	Output/TryDSPApps/PythonCodeForTest/highPassfilter.py	/^N = 51  # Length of the filter (choose an odd number for symmetry)$/;"	v
+N	Output/TryDSPApps/PythonCodeForTest/lmsNoiseCancelling.py	/^N = 100        # Length of signal$/;"	v
+N	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^N = 51  # Filter length (must be odd for symmetry)$/;"	v
+NoOfIterations	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^NoOfIterations = 3$/;"	v
+NoOfIterations	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^NoOfIterations = 1$/;"	v
+None	toyc.cpp	/^  None,$/;"	e	enum:__anon10::Action	file:
+NumberExprAST	include/toy/AST.h	/^  NumberExprAST(Location loc, double val)$/;"	f	class:dsp::NumberExprAST
+NumberExprAST	include/toy/AST.h	/^class NumberExprAST : public ExprAST {$/;"	c	namespace:dsp
+OutputFile	Output/TryDSPApps/PythonCodeForTest/ExtractOpName.py	/^OutputFile = 'Output\/OpsNameDump.txt'$/;"	v
+OutputPath	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^OutputPath = os.path.join(BasePathForLLVM, OutputScriptPath, "Output")$/;"	v
+OutputPath	Output/TryDSPApps/Results/TryResultScript/ScriptForMlirAffine.py	/^OutputPath = os.path.join(BasePathForLLVM, OutputScriptPath, "Output")$/;"	v
+OutputPath	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^OutputPath = os.path.join(BasePathForLLVM, OutputScriptPath, "Output")$/;"	v
+OutputScriptPath	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^OutputScriptPath = "mlir\/examples\/dsp\/SimpleBlocks\/Output\/TryDSPApps\/Results\/TryResultScript\/"$/;"	v
+OutputScriptPath	Output/TryDSPApps/Results/TryResultScript/ScriptForMlirAffine.py	/^OutputScriptPath = "mlir\/examples\/dsp\/SimpleBlocks\/Output\/TryDSPApps\/Results\/TryResultScript\/"$/;"	v
+OutputScriptPath	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^OutputScriptPath = "mlir\/examples\/dsp\/SimpleBlocks\/Output\/TryDSPApps\/Results\/TryResultScript\/"$/;"	v
+PI	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFull1.c	4;"	d	file:
+PaddingOpLowering	mlir/LowerToAffineLoops.cpp	/^  PaddingOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::PaddingOpLowering
+PaddingOpLowering	mlir/LowerToAffineLoops.cpp	/^struct PaddingOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+Parser	include/toy/Parser.h	/^  Parser(Lexer &lexer) : lexer(lexer) {}$/;"	f	class:dsp::Parser
+Parser	include/toy/Parser.h	/^class Parser {$/;"	c	namespace:dsp
+PrintExprAST	include/toy/AST.h	/^  PrintExprAST(Location loc, std::unique_ptr<ExprAST> arg)$/;"	f	class:dsp::PrintExprAST
+PrintExprAST	include/toy/AST.h	/^class PrintExprAST : public ExprAST {$/;"	c	namespace:dsp
+PrintOpLowering	mlir/LowerToAffineLoops.cpp	/^struct PrintOpLowering : public OpConversionPattern<dsp::PrintOp> {$/;"	s	namespace:__anon7	file:
+PrintOpLowering	mlir/LowerToLLVM.cpp	/^  explicit PrintOpLowering(MLIRContext *context)$/;"	f	class:__anon5::PrintOpLowering
+PrintOpLowering	mlir/LowerToLLVM.cpp	/^class PrintOpLowering : public ConversionPattern {$/;"	c	namespace:__anon5	file:
+PrototypeAST	include/toy/AST.h	/^  PrototypeAST(Location location, const std::string &name,$/;"	f	class:dsp::PrototypeAST
+PrototypeAST	include/toy/AST.h	/^class PrototypeAST {$/;"	c	namespace:dsp
+QuantizationOpLowering	mlir/LowerToAffineLoops.cpp	/^  QuantizationOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::QuantizationOpLowering
+QuantizationOpLowering	mlir/LowerToAffineLoops.cpp	/^struct QuantizationOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+ReturnExprAST	include/toy/AST.h	/^  ReturnExprAST(Location loc, std::optional<std::unique_ptr<ExprAST>> expr)$/;"	f	class:dsp::ReturnExprAST
+ReturnExprAST	include/toy/AST.h	/^class ReturnExprAST : public ExprAST {$/;"	c	namespace:dsp
+ReturnOpLowering	mlir/LowerToAffineLoops.cpp	/^struct ReturnOpLowering : public OpRewritePattern<dsp::ReturnOp> {$/;"	s	namespace:__anon7	file:
+ReverseInputOpLowering	mlir/LowerToAffineLoops.cpp	/^  ReverseInputOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::ReverseInputOpLowering
+ReverseInputOpLowering	mlir/LowerToAffineLoops.cpp	/^struct ReverseInputOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+RunJIT	toyc.cpp	/^  RunJIT$/;"	e	enum:__anon10::Action	file:
+RunLenEncodingOpLowering	mlir/LowerToAffineLoops.cpp	/^  RunLenEncodingOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::RunLenEncodingOpLowering
+RunLenEncodingOpLowering	mlir/LowerToAffineLoops.cpp	/^struct RunLenEncodingOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+SetElemAtIndxOpLowering	mlir/LowerToAffineLoops.cpp	/^  SetElemAtIndxOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::SetElemAtIndxOpLowering
+SetElemAtIndxOpLowering	mlir/LowerToAffineLoops.cpp	/^struct SetElemAtIndxOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+ShapeInferencePass	mlir/ShapeInferencePass.cpp	/^struct ShapeInferencePass$/;"	s	namespace:__anon4	file:
+SimplifyBack2BackDelay	mlir/ToyCombine.cpp	/^  SimplifyBack2BackDelay(mlir::MLIRContext *context) $/;"	f	struct:SimplifyBack2BackDelay
+SimplifyBack2BackDelay	mlir/ToyCombine.cpp	/^struct SimplifyBack2BackDelay: public mlir::OpRewritePattern<DelayOp>{$/;"	s	file:
+SimplifyBack2BackGain	mlir/ToyCombine.cpp	/^  SimplifyBack2BackGain(mlir::MLIRContext *context) $/;"	f	struct:SimplifyBack2BackGain
+SimplifyBack2BackGain	mlir/ToyCombine.cpp	/^struct SimplifyBack2BackGain: public mlir::OpRewritePattern<GainOp>{$/;"	s	file:
+SimplifyFFTImgAtInputRealSymm	mlir/ToyCombine.cpp	/^  SimplifyFFTImgAtInputRealSymm(MLIRContext *context)$/;"	f	struct:SimplifyFFTImgAtInputRealSymm
+SimplifyFFTImgAtInputRealSymm	mlir/ToyCombine.cpp	/^struct SimplifyFFTImgAtInputRealSymm : public OpRewritePattern<FFT1DImgOp> {$/;"	s	file:
+SimplifyFFTRealAndImg	mlir/ToyCombine.cpp	/^  SimplifyFFTRealAndImg(MLIRContext *context)$/;"	f	struct:SimplifyFFTRealAndImg
+SimplifyFFTRealAndImg	mlir/ToyCombine.cpp	/^struct SimplifyFFTRealAndImg : public OpRewritePattern<FFT1DRealOp> {$/;"	s	file:
+SimplifyFFTRealAtInputRealSymm	mlir/ToyCombine.cpp	/^  SimplifyFFTRealAtInputRealSymm(MLIRContext *context)$/;"	f	struct:SimplifyFFTRealAtInputRealSymm
+SimplifyFFTRealAtInputRealSymm	mlir/ToyCombine.cpp	/^struct SimplifyFFTRealAtInputRealSymm : public OpRewritePattern<FFT1DRealOp> {$/;"	s	file:
+SimplifyFFTSquare	mlir/ToyCombine.cpp	/^  SimplifyFFTSquare(mlir::MLIRContext *context)$/;"	f	struct:SimplifyFFTSquare
+SimplifyFFTSquare	mlir/ToyCombine.cpp	/^struct SimplifyFFTSquare : public mlir::OpRewritePattern<SquareOp> {$/;"	s	file:
+SimplifyFIRFilterRespnseWithSymmFilter	mlir/ToyCombine.cpp	/^  SimplifyFIRFilterRespnseWithSymmFilter(mlir::MLIRContext *context)$/;"	f	struct:SimplifyFIRFilterRespnseWithSymmFilter
+SimplifyFIRFilterRespnseWithSymmFilter	mlir/ToyCombine.cpp	/^struct SimplifyFIRFilterRespnseWithSymmFilter : public mlir::OpRewritePattern<FIRFilterResponseOp> {$/;"	s	file:
+SimplifyFilterMulHamming	mlir/ToyCombine.cpp	/^  SimplifyFilterMulHamming(mlir::MLIRContext *context)$/;"	f	struct:SimplifyFilterMulHamming
+SimplifyFilterMulHamming	mlir/ToyCombine.cpp	/^struct SimplifyFilterMulHamming : public mlir::OpRewritePattern<MulOp> {$/;"	s	file:
+SimplifyFilterRespX_ReverseXYSymmFilter	mlir/ToyCombine.cpp	/^  SimplifyFilterRespX_ReverseXYSymmFilter(mlir::MLIRContext *context)$/;"	f	struct:SimplifyFilterRespX_ReverseXYSymmFilter
+SimplifyFilterRespX_ReverseXYSymmFilter	mlir/ToyCombine.cpp	/^struct SimplifyFilterRespX_ReverseXYSymmFilter : public mlir::OpRewritePattern<FIRFilterResponseOp> {$/;"	s	file:
+SimplifyGainwZero	mlir/ToyCombine.cpp	/^  SimplifyGainwZero(mlir::MLIRContext *context) $/;"	f	struct:SimplifyGainwZero
+SimplifyGainwZero	mlir/ToyCombine.cpp	/^struct SimplifyGainwZero: public mlir::OpRewritePattern<GainOp>{$/;"	s	file:
+SimplifyHighPassFIRHamming	mlir/ToyCombine.cpp	/^  SimplifyHighPassFIRHamming(mlir::MLIRContext *context)$/;"	f	struct:SimplifyHighPassFIRHamming
+SimplifyHighPassFIRHamming	mlir/ToyCombine.cpp	/^struct SimplifyHighPassFIRHamming : public mlir::OpRewritePattern<MulOp> {$/;"	s	file:
+SimplifyLMSFilterResponsewithGain	mlir/ToyCombine.cpp	/^  SimplifyLMSFilterResponsewithGain(mlir::MLIRContext *context) $/;"	f	struct:SimplifyLMSFilterResponsewithGain
+SimplifyLMSFilterResponsewithGain	mlir/ToyCombine.cpp	/^struct SimplifyLMSFilterResponsewithGain: public mlir::OpRewritePattern<GainOp>{$/;"	s	file:
+SimplifyRedundantTranspose	mlir/ToyCombine.cpp	/^  SimplifyRedundantTranspose(mlir::MLIRContext *context)$/;"	f	struct:SimplifyRedundantTranspose
+SimplifyRedundantTranspose	mlir/ToyCombine.cpp	/^struct SimplifyRedundantTranspose : public mlir::OpRewritePattern<TransposeOp> {$/;"	s	file:
+SimplifyUpsamplingDownsampling	mlir/ToyCombine.cpp	/^  SimplifyUpsamplingDownsampling(mlir::MLIRContext *context)$/;"	f	struct:SimplifyUpsamplingDownsampling
+SimplifyUpsamplingDownsampling	mlir/ToyCombine.cpp	/^struct SimplifyUpsamplingDownsampling : public mlir::OpRewritePattern<DownsamplingOp> {$/;"	s	file:
+SincOpLowering	mlir/LowerToAffineLoops.cpp	/^  SincOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::SincOpLowering
+SincOpLowering	mlir/LowerToAffineLoops.cpp	/^struct SincOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+SlidingWindowAvgOpLowering	Output/TryMoreBlocksDsp/SlidingWindowAvgHelper.cpp	/^  SlidingWindowAvgOpLowering(MLIRContext *ctx)$/;"	f	struct:SlidingWindowAvgOpLowering
+SlidingWindowAvgOpLowering	Output/TryMoreBlocksDsp/SlidingWindowAvgHelper.cpp	/^struct SlidingWindowAvgOpLowering : public ConversionPattern {$/;"	s	file:
+SlidingWindowAvgOpLowering	mlir/LowerToAffineLoops.cpp	/^  SlidingWindowAvgOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::SlidingWindowAvgOpLowering
+SlidingWindowAvgOpLowering	mlir/LowerToAffineLoops.cpp	/^struct SlidingWindowAvgOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+SquareOpLowering	mlir/LowerToAffineLoops.cpp	/^  SquareOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::SquareOpLowering
+SquareOpLowering	mlir/LowerToAffineLoops.cpp	/^struct SquareOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+SumOpLowering	mlir/LowerToAffineLoops.cpp	/^  SumOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::SumOpLowering
+SumOpLowering	mlir/LowerToAffineLoops.cpp	/^struct SumOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+TOY_AST_H	include/toy/AST.h	16;"	d
+TOY_LEXER_H	include/toy/Lexer.h	14;"	d
+TOY_MLIRGEN_H	include/toy/MLIRGen.h	15;"	d
+TOY_PARSER_H	include/toy/Parser.h	15;"	d
+TOY_PASSES_H	include/toy/Passes.h	14;"	d
+TestNumpyFuncs	Output/TryDSPApps/PythonCodeForTest/PythonCodeRough.py	/^def TestNumpyFuncs():$/;"	f
+ThresholdOpLowering	mlir/LowerToAffineLoops.cpp	/^  ThresholdOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::ThresholdOpLowering
+ThresholdOpLowering	mlir/LowerToAffineLoops.cpp	/^struct ThresholdOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+Toy	toyc.cpp	/^enum InputType { Toy, MLIR };$/;"	e	enum:__anon9::InputType	file:
+ToyInlinerInterface	mlir/Dialect.cpp	/^struct ToyInlinerInterface : public DialectInlinerInterface {$/;"	s	file:
+ToyToAffineLoweringPass	mlir/LowerToAffineLoops.cpp	/^struct ToyToAffineLoweringPass$/;"	s	namespace:__anon8	file:
+ToyToLLVMLoweringPass	mlir/LowerToLLVM.cpp	/^struct ToyToLLVMLoweringPass$/;"	s	namespace:__anon6	file:
+ToyToLinalg	mlir/TosaToLinalgPass.cpp	/^struct ToyToLinalg : public impl::TosaToLinalgBase<ToyToLinalg> {$/;"	s	namespace:__anon1	file:
+TransposeOpLowering	mlir/LowerToAffineLoops.cpp	/^  TransposeOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::TransposeOpLowering
+TransposeOpLowering	mlir/LowerToAffineLoops.cpp	/^struct TransposeOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+TryAffineForAndAffineIf	mlir/LowerToAffineLoops.cpp	165;"	d	file:
+TryAffineIf2	mlir/LowerToAffineLoops.cpp	166;"	d	file:
+TryAffineMap	mlir/LowerToAffineLoops.cpp	167;"	d	file:
+TryFIRFilter	Output/TryMoreBlocksDsp/FirFilterLoweringHelper.cpp	2;"	d	file:
+TryFIRFilter	mlir/LowerToAffineLoops.cpp	170;"	d	file:
+TryJustAffineLoop	mlir/LowerToAffineLoops.cpp	164;"	d	file:
+TryLoadStoreForWhile	mlir/LowerToAffineLoops.cpp	2363;"	d	file:
+TryMultiDimForAndIf	mlir/LowerToAffineLoops.cpp	171;"	d	file:
+TryMultiDimLoop	mlir/LowerToAffineLoops.cpp	169;"	d	file:
+TryMultiDimLoopAndAffineMap	mlir/LowerToAffineLoops.cpp	172;"	d	file:
+TryMultiDimLoopAndAffineSet	mlir/LowerToAffineLoops.cpp	173;"	d	file:
+TryPassIterIndex	mlir/LowerToAffineLoops.cpp	2364;"	d	file:
+TryRLE	mlir/LowerToAffineLoops.cpp	2366;"	d	file:
+TryScf	mlir/LowerToAffineLoops.cpp	2365;"	d	file:
+TrySumOfVector	mlir/LowerToAffineLoops.cpp	168;"	d	file:
+TryWhileLoop	mlir/LowerToAffineLoops.cpp	2362;"	d	file:
+UnaryOpLowering	mlir/LowerToAffineLoops.cpp	/^  UnaryOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::UnaryOpLowering
+UnaryOpLowering	mlir/LowerToAffineLoops.cpp	/^struct UnaryOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+UpSamplingOpLowering	mlir/LowerToAffineLoops.cpp	/^  UpSamplingOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::UpSamplingOpLowering
+UpSamplingOpLowering	mlir/LowerToAffineLoops.cpp	/^struct UpSamplingOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+VarDeclExprAST	include/toy/AST.h	/^  VarDeclExprAST(Location loc, llvm::StringRef name, VarType type,$/;"	f	class:dsp::VarDeclExprAST
+VarDeclExprAST	include/toy/AST.h	/^class VarDeclExprAST : public ExprAST {$/;"	c	namespace:dsp
+VarType	include/toy/AST.h	/^struct VarType {$/;"	s	namespace:dsp
+VariableExprAST	include/toy/AST.h	/^  VariableExprAST(Location loc, llvm::StringRef name)$/;"	f	class:dsp::VariableExprAST
+VariableExprAST	include/toy/AST.h	/^class VariableExprAST : public ExprAST {$/;"	c	namespace:dsp
+X_neg_w	Output/TryDSPApps/PythonCodeForTest/periodogramHelp2.py	/^X_neg_w = dft(x_neg)$/;"	v
+X_quant	Output/TryDSPApps/PythonCodeForTest/Quantization.py	/^X_quant = quantize(X_thresh, num_bits)$/;"	v
+X_thresh	Output/TryDSPApps/PythonCodeForTest/Quantization.py	/^X_thresh = np.array([3.2, -1.5, 0.8, -2.9, 4.5])$/;"	v
+X_w	Output/TryDSPApps/PythonCodeForTest/periodogramHelp2.py	/^X_w = dft(x)$/;"	v
+add	Output/TryDSPApps/PythonCodeForTest/CCode/noisecancelling.c	/^void add(double* output, double* input1, double* input2, int length) {$/;"	f
+addMap	Output/ExpectedOut/TryIntermediateCode.cpp	/^      AffineMap addMap = AffineMap::get(1, 0, indx + constantExpr);$/;"	v
+allOperandsInferred	mlir/ShapeInferencePass.cpp	/^  static bool allOperandsInferred(Operation *op) {$/;"	f	struct:__anon4::ShapeInferencePass
+amplification	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^def amplification(input_audio, gain):$/;"	f
+amplified_audio	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^amplified_audio = amplification(input_audio, gain)$/;"	v
+amplified_signal	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^amplified_signal = gain(cleaned_signal, gain_factor)$/;"	v
+apply_fir_filter	Output/TryDSPApps/PythonCodeForTest/audioEqualizer.py	/^def apply_fir_filter(signal, cutoff, filter_type, sample_rate=44100, numtaps=101):$/;"	f
+apply_gain	Output/TryDSPApps/PythonCodeForTest/audioEqualizer.py	/^def apply_gain(signal, gain):$/;"	f
+areCastCompatible	mlir/Dialect.cpp	/^bool CastOp::areCastCompatible(TypeRange inputs, TypeRange outputs) {$/;"	f	class:CastOp
+arg	include/toy/AST.h	/^  std::unique_ptr<ExprAST> arg;$/;"	m	class:dsp::PrintExprAST
+args	include/toy/AST.h	/^  std::vector<std::unique_ptr<ExprAST>> args;$/;"	m	class:dsp::CallExprAST
+args	include/toy/AST.h	/^  std::vector<std::unique_ptr<VariableExprAST>> args;$/;"	m	class:dsp::PrototypeAST
+avg_exe_time	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^        avg_exe_time = sum_exe_time \/ NoOfIterations$/;"	v
+avg_exe_time	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^        avg_exe_time = sum_exe_time \/ NoOfIterations$/;"	v
+begin	include/toy/AST.h	/^  auto begin() { return functions.begin(); }$/;"	f	class:dsp::ModuleAST
+body	include/toy/AST.h	/^  std::unique_ptr<ExprASTList> body;$/;"	m	class:dsp::FunctionAST
+build	mlir/Dialect.cpp	/^void AddOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:AddOp
+build	mlir/Dialect.cpp	/^void BitwiseAndOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:BitwiseAndOp
+build	mlir/Dialect.cpp	/^void ConstantOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:ConstantOp
+build	mlir/Dialect.cpp	/^void CosOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:CosOp
+build	mlir/Dialect.cpp	/^void DCTOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:DCTOp
+build	mlir/Dialect.cpp	/^void DelayOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:DelayOp
+build	mlir/Dialect.cpp	/^void DivOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:DivOp
+build	mlir/Dialect.cpp	/^void DownsamplingOp::build(mlir::OpBuilder &builder,$/;"	f	class:DownsamplingOp
+build	mlir/Dialect.cpp	/^void FFT1DImgConjSymmOp::build(mlir::OpBuilder &builder,$/;"	f	class:FFT1DImgConjSymmOp
+build	mlir/Dialect.cpp	/^void FFT1DImgOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:FFT1DImgOp
+build	mlir/Dialect.cpp	/^void FFT1DOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:FFT1DOp
+build	mlir/Dialect.cpp	/^void FFT1DRealOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:FFT1DRealOp
+build	mlir/Dialect.cpp	/^void FFT1DRealSymmOp::build(mlir::OpBuilder &builder,$/;"	f	class:FFT1DRealSymmOp
+build	mlir/Dialect.cpp	/^void FFTImagOp::build(mlir::OpBuilder &builder, mlir::OperationState &state, $/;"	f	class:FFTImagOp
+build	mlir/Dialect.cpp	/^void FFTRealOp::build(mlir::OpBuilder &builder, mlir::OperationState &state, $/;"	f	class:FFTRealOp
+build	mlir/Dialect.cpp	/^void FIRFilterHammingOptimizedOp::build(mlir::OpBuilder &builder,$/;"	f	class:FIRFilterHammingOptimizedOp
+build	mlir/Dialect.cpp	/^void FIRFilterResSymmOptimizedOp::build(mlir::OpBuilder &builder,$/;"	f	class:FIRFilterResSymmOptimizedOp
+build	mlir/Dialect.cpp	/^void FIRFilterResponseOp::build(mlir::OpBuilder &builder,$/;"	f	class:FIRFilterResponseOp
+build	mlir/Dialect.cpp	/^void FIRFilterYSymmOptimizedOp::build(mlir::OpBuilder &builder,$/;"	f	class:FIRFilterYSymmOptimizedOp
+build	mlir/Dialect.cpp	/^void FuncOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:FuncOp
+build	mlir/Dialect.cpp	/^void GainOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:GainOp
+build	mlir/Dialect.cpp	/^void GenericCallOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:GenericCallOp
+build	mlir/Dialect.cpp	/^void GetElemAtIndxOp::build(mlir::OpBuilder &builder,$/;"	f	class:GetElemAtIndxOp
+build	mlir/Dialect.cpp	/^void GetRangeOfVectorOp::build(mlir::OpBuilder &builder,$/;"	f	class:GetRangeOfVectorOp
+build	mlir/Dialect.cpp	/^void HammingWindowOp::build(mlir::OpBuilder &builder,$/;"	f	class:HammingWindowOp
+build	mlir/Dialect.cpp	/^void HighPassFIRFilterOp::build(mlir::OpBuilder &builder,$/;"	f	class:HighPassFIRFilterOp
+build	mlir/Dialect.cpp	/^void HighPassFIRHammingOptimizedOp::build(mlir::OpBuilder &builder,$/;"	f	class:HighPassFIRHammingOptimizedOp
+build	mlir/Dialect.cpp	/^void HighPassFilterOp::build(mlir::OpBuilder &builder,$/;"	f	class:HighPassFilterOp
+build	mlir/Dialect.cpp	/^void IFFT1DOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:IFFT1DOp
+build	mlir/Dialect.cpp	/^void LMSFilterOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:LMSFilterOp
+build	mlir/Dialect.cpp	/^void LMSFilterResponseOp::build(mlir::OpBuilder &builder,$/;"	f	class:LMSFilterResponseOp
+build	mlir/Dialect.cpp	/^void LengthOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:LengthOp
+build	mlir/Dialect.cpp	/^void LowPassFIRFilterOp::build(mlir::OpBuilder &builder,$/;"	f	class:LowPassFIRFilterOp
+build	mlir/Dialect.cpp	/^void LowPassFilter1stOrderOp::build(mlir::OpBuilder &builder,$/;"	f	class:LowPassFilter1stOrderOp
+build	mlir/Dialect.cpp	/^void ModuloOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:ModuloOp
+build	mlir/Dialect.cpp	/^void MulOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:MulOp
+build	mlir/Dialect.cpp	/^void PaddingOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:PaddingOp
+build	mlir/Dialect.cpp	/^void QamModulateOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:QamModulateOp
+build	mlir/Dialect.cpp	/^void QuantizationOp::build(mlir::OpBuilder &builder,$/;"	f	class:QuantizationOp
+build	mlir/Dialect.cpp	/^void ReverseInputOp::build(mlir::OpBuilder &builder,$/;"	f	class:ReverseInputOp
+build	mlir/Dialect.cpp	/^void RunLenEncodingOp::build(mlir::OpBuilder &builder,$/;"	f	class:RunLenEncodingOp
+build	mlir/Dialect.cpp	/^void SetElemAtIndxOp::build(mlir::OpBuilder &builder,$/;"	f	class:SetElemAtIndxOp
+build	mlir/Dialect.cpp	/^void SinOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:SinOp
+build	mlir/Dialect.cpp	/^void SincOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:SincOp
+build	mlir/Dialect.cpp	/^void SlidingWindowAvgOp::build(mlir::OpBuilder &builder,$/;"	f	class:SlidingWindowAvgOp
+build	mlir/Dialect.cpp	/^void SquareOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:SquareOp
+build	mlir/Dialect.cpp	/^void SubOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:SubOp
+build	mlir/Dialect.cpp	/^void SumOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:SumOp
+build	mlir/Dialect.cpp	/^void ThresholdOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:ThresholdOp
+build	mlir/Dialect.cpp	/^void TransposeOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:TransposeOp
+build	mlir/Dialect.cpp	/^void UpsamplingOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:UpsamplingOp
+build	mlir/Dialect.cpp	/^void filterOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:filterOp
+build	mlir/Dialect.cpp	/^void zeroCrossCountOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,$/;"	f	class:zeroCrossCountOp
+builder	mlir/MLIRGen.cpp	/^  mlir::OpBuilder builder;$/;"	m	class:__anon2::MLIRGenImpl	file:
+callee	include/toy/AST.h	/^  std::string callee;$/;"	m	class:dsp::CallExprAST
+cases	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^cases = [  $/;"	v
+cases	Output/TryDSPApps/Results/TryResultScript/ScriptForMlirAffine.py	/^cases = [$/;"	v
+cases	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^cases = [  $/;"	v
+classof	include/toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_BinOp; }$/;"	f	class:dsp::BinaryExprAST
+classof	include/toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_Call; }$/;"	f	class:dsp::CallExprAST
+classof	include/toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_Literal; }$/;"	f	class:dsp::LiteralExprAST
+classof	include/toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_Num; }$/;"	f	class:dsp::NumberExprAST
+classof	include/toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_Print; }$/;"	f	class:dsp::PrintExprAST
+classof	include/toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_Return; }$/;"	f	class:dsp::ReturnExprAST
+classof	include/toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_Var; }$/;"	f	class:dsp::VariableExprAST
+classof	include/toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_VarDecl; }$/;"	f	class:dsp::VarDeclExprAST
+clean_audio	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^clean_audio = input_audio  # Clean audio is the original sine wave$/;"	v
+clean_signal	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^clean_signal = 0.5 * np.sin(2 * np.pi * 50 * t)  # Clean 50 Hz sine wave$/;"	v
+clean_signal	Output/TryDSPApps/PythonCodeForTest/TryHearingAid copy.py	/^clean_signal = 0.5 * np.sin(2 * np.pi * 5 * t)  # Clean signal (5 Hz sine wave)$/;"	v
+clean_signal	Output/TryDSPApps/PythonCodeForTest/TryHearingAid.py	/^clean_signal = 0.5 * np.sin(2 * np.pi * 5 * t)  # Clean signal (5 Hz sine wave)$/;"	v
+clean_signal	Output/TryDSPApps/PythonCodeForTest/lmsNoiseCancelling.py	/^clean_signal = np.sin(2 * np.pi * f_signal * t)$/;"	v
+clean_signal	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^clean_signal = np.sin(2 * np.pi * f_signal * t)$/;"	v
+cleaned_signal	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^cleaned_signal = lms_filter(downsampled_signal, reference_noise)$/;"	v
+cleaned_signal	Output/TryDSPApps/PythonCodeForTest/TryHearingAid copy.py	/^cleaned_signal = spectral_subtraction(noisy_signal, noise_estimation)$/;"	v
+cleaned_signal	Output/TryDSPApps/PythonCodeForTest/TryHearingAid.py	/^cleaned_signal = spectral_subtraction(noisy_signal, noise_estimation)$/;"	v
+col	include/toy/Lexer.h	/^  int col;                           \/\/\/< column number.$/;"	m	struct:dsp::Location
+collectData	mlir/MLIRGen.cpp	/^  void collectData(ExprAST &expr, std::vector<double> &data) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+command2	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^            command2 = f"taskset -c 0 .\/Output\/{case['exe']}"$/;"	v
+command2	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^            command2 = f"taskset -c 0 .\/Output\/{case['exe']}"$/;"	v
+command_llvm	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^        command_llvm = commands_base[0]$/;"	v
+command_llvm	Output/TryDSPApps/Results/TryResultScript/ScriptForMlirAffine.py	/^        command_llvm = commands_base[1]$/;"	v
+command_llvm	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^        command_llvm = commands_base[0]$/;"	v
+command_mlir	Output/TryDSPApps/Results/TryResultScript/ScriptForMlirAffine.py	/^        command_mlir = commands_base[0]$/;"	v
+commands	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^        commands = [$/;"	v
+commands	Output/TryDSPApps/Results/TryResultScript/ScriptForMlirAffine.py	/^        commands = [$/;"	v
+commands	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^        commands = [$/;"	v
+commands	Output/TryDSPApps/Results/working_slidingwind.py	/^    commands = [$/;"	v
+commands_base	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^commands_base = [$/;"	v
+commands_base	Output/TryDSPApps/Results/TryResultScript/ScriptForMlirAffine.py	/^commands_base = [$/;"	v
+commands_base	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^commands_base = [$/;"	v
+constantExpr	Output/ExpectedOut/TryIntermediateCode.cpp	/^      AffineExpr constantExpr = rewriter.getAffineConstantExpr(SecondValueInt );$/;"	v
+consume	include/toy/Lexer.h	/^  void consume(Token tok) {$/;"	f	class:dsp::Lexer
+conv_fft	Output/TryDSPApps/PythonCodeForTest/periodogramHelp.py	/^conv_fft = dft(conv_result)$/;"	v
+conv_fft	Output/TryDSPApps/PythonCodeForTest/periodogramHelp2.py	/^conv_fft = dft(conv_result)$/;"	v
+conv_result	Output/TryDSPApps/PythonCodeForTest/periodogramHelp.py	/^conv_result = convolve(x, x_neg)$/;"	v
+conv_result	Output/TryDSPApps/PythonCodeForTest/periodogramHelp2.py	/^conv_result = convolve(x, x_neg)$/;"	v
+convertTensorToMemRef	mlir/LowerToAffineLoops.cpp	/^static MemRefType convertTensorToMemRef(RankedTensorType type) {$/;"	f	file:
+convolve	Output/TryDSPApps/PythonCodeForTest/periodogramHelp.py	/^def convolve(x, h):$/;"	f
+convolve	Output/TryDSPApps/PythonCodeForTest/periodogramHelp2.py	/^def convolve(x, h):$/;"	f
+count	Output/TryDSPApps/Results/working_slidingwind.py	/^count = 0$/;"	v
+count_non_empty_linesInC	Output/TryDSPApps/PythonCodeForTest/CountLinesFile.py	/^def count_non_empty_linesInC(file_path):$/;"	f
+count_valid_code_linesInPyFile	Output/TryDSPApps/PythonCodeForTest/CountLinesFile.py	/^def count_valid_code_linesInPyFile(file_path):$/;"	f
+createLowerToAffinePass	mlir/LowerToAffineLoops.cpp	/^std::unique_ptr<Pass> mlir::dsp::createLowerToAffinePass() {$/;"	f	class:mlir::dsp
+createLowerToLLVMPass	mlir/LowerToLLVM.cpp	/^std::unique_ptr<mlir::Pass> mlir::dsp::createLowerToLLVMPass() {$/;"	f	class:mlir::dsp
+createLowerTosaToLinalgPass	mlir/TosaToLinalgPass.cpp	/^std::unique_ptr<Pass> mlir::dsp::createLowerTosaToLinalgPass() {$/;"	f	class:mlir::dsp
+createShapeInferencePass	mlir/ShapeInferencePass.cpp	/^std::unique_ptr<mlir::Pass> mlir::dsp::createShapeInferencePass() {$/;"	f	class:mlir::dsp
+curCol	include/toy/Lexer.h	/^  int curCol = 0;$/;"	m	class:dsp::Lexer
+curIndent	parser/AST.cpp	/^  int curIndent = 0;$/;"	m	class:__anon11::ASTDumper	file:
+curLineBuffer	include/toy/Lexer.h	/^  llvm::StringRef curLineBuffer = "\\n";$/;"	m	class:dsp::Lexer
+curLineNum	include/toy/Lexer.h	/^  int curLineNum = 0;$/;"	m	class:dsp::Lexer
+curTok	include/toy/Lexer.h	/^  Token curTok = tok_eof;$/;"	m	class:dsp::Lexer
+current	include/toy/Lexer.h	/^  const char *current, *end;$/;"	m	class:dsp::final
+current_dir	Output/TryDSPApps/PythonCodeForTest/CountLinesFile.py	/^current_dir = os.path.dirname(os.path.abspath(__file__))$/;"	v
+cutoff_freq	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^cutoff_freq = 1000  # Cutoff frequency (Hz)$/;"	v
+cutoff_freq_high	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^cutoff_freq_high = 5  # High-pass filter cutoff frequency$/;"	v
+cutoff_freq_low	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^cutoff_freq_low = 100  # Low-pass filter cutoff frequency$/;"	v
+debugPrintWithArgs	include/toy/DebugConfig.h	/^void debugPrintWithArgs(const Args&... args) {$/;"	f
+declare	mlir/MLIRGen.cpp	/^  mlir::LogicalResult declare(llvm::StringRef var, mlir::Value value) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+dft	Output/TryDSPApps/PythonCodeForTest/periodogramHelp.py	/^def dft(x):$/;"	f
+dft	Output/TryDSPApps/PythonCodeForTest/periodogramHelp2.py	/^def dft(x):$/;"	f
+dftImag	Output/TryDSPApps/PythonCodeForTest/CCode/audioCompression.c	/^void dftImag(double* imag, double* input, int length) {$/;"	f
+dftImag	Output/TryDSPApps/PythonCodeForTest/CCode/energyOfSignal.c	/^void dftImag(double* imag, double* input, int length) {$/;"	f
+dftImag	Output/TryDSPApps/PythonCodeForTest/CCode/periodogram2Conv.c	/^void dftImag(double* imag, double* input, int length) {$/;"	f
+dftReal	Output/TryDSPApps/PythonCodeForTest/CCode/audioCompression.c	/^void dftReal(double* real, double* input, int length) {$/;"	f
+dftReal	Output/TryDSPApps/PythonCodeForTest/CCode/energyOfSignal.c	/^void dftReal(double* real, double* input, int length) {$/;"	f
+dftReal	Output/TryDSPApps/PythonCodeForTest/CCode/periodogram2Conv.c	/^void dftReal(double* real, double* input, int length) {$/;"	f
+dims	include/toy/AST.h	/^  std::vector<int64_t> dims;$/;"	m	class:dsp::LiteralExprAST
+downsample	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^def downsample(signal, factor):$/;"	f
+downsample_factor	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^downsample_factor = 2$/;"	v
+downsampled_signal	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^downsampled_signal = downsample(filtered_signal, downsample_factor)$/;"	v
+dsp	include/toy/AST.h	/^namespace dsp {$/;"	n
+dsp	include/toy/Lexer.h	/^namespace dsp {$/;"	n
+dsp	include/toy/MLIRGen.h	/^namespace dsp {$/;"	n
+dsp	include/toy/Parser.h	/^namespace dsp {$/;"	n
+dsp	include/toy/Passes.h	/^namespace dsp {$/;"	n	namespace:mlir
+dsp	include/toy/ShapeInferenceInterface.h	/^namespace dsp {$/;"	n	namespace:mlir
+dsp	mlir/MLIRGen.cpp	/^namespace dsp {$/;"	n	file:
+dsp	parser/AST.cpp	/^namespace dsp {$/;"	n	file:
+dump	parser/AST.cpp	/^void ASTDumper::dump(BinaryExprAST *node) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(CallExprAST *node) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(ExprAST *expr) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(ExprASTList *exprList) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(FunctionAST *node) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(LiteralExprAST *node) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(ModuleAST *node) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(NumberExprAST *num) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(PrintExprAST *node) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(PrototypeAST *node) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(ReturnExprAST *node) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(VarDeclExprAST *varDecl) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(VariableExprAST *node) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void ASTDumper::dump(const VarType &type) {$/;"	f	class:ASTDumper
+dump	parser/AST.cpp	/^void dump(ModuleAST &module) { ASTDumper().dump(&module); }$/;"	f	namespace:dsp
+dumpAST	toyc.cpp	/^int dumpAST() {$/;"	f
+dumpLLVMIR	toyc.cpp	/^int dumpLLVMIR(mlir::ModuleOp module) {$/;"	f
+elementWiseAdd	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFull1.c	/^void elementWiseAdd(double* output, double* input1, double* input2, int length) {$/;"	f
+elementWiseMultiplication	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFIRFilterDesign.c	/^void elementWiseMultiplication(double* output, double* array1, double* array2, int N) {$/;"	f
+elementWiseMultiply	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFull1.c	/^void elementWiseMultiply(double* output, double* input1, double* input2, int length) {$/;"	f
+emit	Output/TryDSPApps/Results/ScriptSteps.py	/^				emit=llvm$/;"	v
+end	include/toy/AST.h	/^  auto end() { return functions.end(); }$/;"	f	class:dsp::ModuleAST
+end	include/toy/Lexer.h	/^  const char *current, *end;$/;"	m	class:dsp::final
+end_time	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^            end_time = time.time()$/;"	v
+end_time	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^            end_time = time.time()$/;"	v
+enhanced_audio	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^enhanced_audio = feedback_suppression(noise_reduced_audio, clean_audio, mu, filter_size)$/;"	v
+execution_time	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^            execution_time = end_time - start_time$/;"	v
+execution_time	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^            execution_time = end_time - start_time$/;"	v
+expr	include/toy/AST.h	/^  std::optional<std::unique_ptr<ExprAST>> expr;$/;"	m	class:dsp::ReturnExprAST
+f1	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^f1 = 500  # Frequency component 1 (Hz)$/;"	v
+f2	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^f2 = 1500  # Frequency component 2 (Hz)$/;"	v
+f3	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^f3 = 2500  # Frequency component 3 (Hz)$/;"	v
+f_noise	Output/TryDSPApps/PythonCodeForTest/lmsNoiseCancelling.py	/^f_noise = 3000  # Noise frequency (Hz)$/;"	v
+f_noise	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^f_noise = 3000  # Noise frequency (Hz)$/;"	v
+f_signal	Output/TryDSPApps/PythonCodeForTest/lmsNoiseCancelling.py	/^f_signal = 500  # Signal frequency (Hz)$/;"	v
+f_signal	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^f_signal = 500  # Signal frequency (Hz)$/;"	v
+feedback_suppression	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^def feedback_suppression(input_audio, clean_audio, mu, filter_size):$/;"	f
+file	include/toy/Lexer.h	/^  std::shared_ptr<std::string> file; \/\/\/< filename.$/;"	m	struct:dsp::Location
+fileName	Output/TryDSPApps/PythonCodeForTest/ExtractOpName.py	/^fileName = BasePathForLLVM + fileNamePath$/;"	v
+fileNamePath	Output/TryDSPApps/PythonCodeForTest/ExtractOpName.py	/^fileNamePath = "mlir\/examples\/dsp\/SimpleBlocks\/include\/toy\/Ops.td"$/;"	v
+file_name	Output/TryDSPApps/Results/working_slidingwind.py	/^file_name = "\/home\/local\/ASURITE\/apkhedka\/MLIR\/build\/bin\/matlab_result.py"$/;"	v
+filterOpLowering	mlir/LowerToAffineLoops.cpp	/^  filterOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::filterOpLowering
+filterOpLowering	mlir/LowerToAffineLoops.cpp	/^struct filterOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+filter_size	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^filter_size = 5$/;"	v
+filtered_signal	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^filtered_signal = low_pass_filter(input_signal, cutoff_freq_low, fs)$/;"	v
+filtered_signal	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^filtered_signal = lfilter(h_bp, 1.0, signal)$/;"	v
+filtered_signal	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^filtered_signal = lfilter(h_lp_w, 1.0, noisy_signal)$/;"	v
+final	include/toy/Lexer.h	/^class LexerBuffer final : public Lexer {$/;"	c	namespace:dsp
+final	mlir/LowerToAffineLoops.cpp	/^  void runOnOperation() final;$/;"	m	struct:__anon8::ToyToAffineLoweringPass	file:
+final	mlir/LowerToLLVM.cpp	/^  void runOnOperation() final;$/;"	m	struct:__anon6::ToyToLLVMLoweringPass	file:
+final_signal	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^final_signal = high_pass_filter(upsampled_signal, cutoff_freq_high, fs)$/;"	v
+folderC	Output/TryDSPApps/PythonCodeForTest/CountLinesFile.py	/^folderC = os.path.join(current_dir, 'CCode')$/;"	v
+folderPy	Output/TryDSPApps/PythonCodeForTest/CountLinesFile.py	/^folderPy = os.path.join(current_dir, 'PyDSL')$/;"	v
+freq	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^freq = 5  # Frequency of the input signal$/;"	v
+fs	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^fs = 1000  # Sampling frequency$/;"	v
+fs	Output/TryDSPApps/PythonCodeForTest/TryHearingAid copy.py	/^fs = 500  # Sampling frequency$/;"	v
+fs	Output/TryDSPApps/PythonCodeForTest/TryHearingAid.py	/^fs = 500  # Sampling frequency$/;"	v
+fs	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^fs = 8000  # Sampling rate (Hz)$/;"	v
+fs	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^fs = 1000  # Sampling frequency$/;"	v
+fs	Output/TryDSPApps/PythonCodeForTest/lmsNoiseCancelling.py	/^fs = 8000  # Sampling rate (Hz)$/;"	v
+fs	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^fs = 8000  # Sampling rate (Hz)$/;"	v
+functionAnalysis	Output/ExpectedOut/TryIntermediateCode.cpp	/^    AffineFunctionAnalysis &functionAnalysis;$/;"	v
+function_list	Output/TryDSPApps/Results/working_slidingwind.py	/^function_list = ["dct"]$/;"	v
+functions	include/toy/AST.h	/^  std::vector<FunctionAST> functions;$/;"	m	class:dsp::ModuleAST
+gain	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFull1.c	/^void gain(double* output, double* input, double multiplier, int length) {$/;"	f
+gain	Output/TryDSPApps/PythonCodeForTest/CCode/noisecancelling.c	/^void gain(double* output, double* input, double multiplier, int length) {$/;"	f
+gain	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^def gain(signal, gain_factor):$/;"	f
+gain	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^gain = 2$/;"	v
+gain_factor	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^gain_factor = 2$/;"	v
+generate_input_signal	Output/TryDSPApps/PythonCodeForTest/audioEqualizer.py	/^def generate_input_signal(duration=1.0, sample_rate=44100):$/;"	f
+generate_tensor_string	Output/TryDSPApps/Results/generate_dense_inputs.py	/^def generate_tensor_string(q):$/;"	f
+genericBounds	Output/ExpectedOut/TryIntermediateCode.cpp	/^  genericBounds(fir::DoLoopOp op, mlir::PatternRewriter &rewriter) const {$/;"	f
+getArg	include/toy/AST.h	/^  ExprAST *getArg() { return arg.get(); }$/;"	f	class:dsp::PrintExprAST
+getArgOperands	mlir/Dialect.cpp	/^Operation::operand_range GenericCallOp::getArgOperands() { return getInputs(); }$/;"	f	class:GenericCallOp
+getArgOperandsMutable	mlir/Dialect.cpp	/^MutableOperandRange GenericCallOp::getArgOperandsMutable() {$/;"	f	class:GenericCallOp
+getArgs	include/toy/AST.h	/^  llvm::ArrayRef<std::unique_ptr<ExprAST>> getArgs() { return args; }$/;"	f	class:dsp::CallExprAST
+getArgs	include/toy/AST.h	/^  llvm::ArrayRef<std::unique_ptr<VariableExprAST>> getArgs() { return args; }$/;"	f	class:dsp::PrototypeAST
+getBody	include/toy/AST.h	/^  ExprASTList *getBody() { return body.get(); }$/;"	f	class:dsp::FunctionAST
+getCallableForCallee	mlir/Dialect.cpp	/^CallInterfaceCallable GenericCallOp::getCallableForCallee() {$/;"	f	class:GenericCallOp
+getCallee	include/toy/AST.h	/^  llvm::StringRef getCallee() { return callee; }$/;"	f	class:dsp::CallExprAST
+getCanonicalizationPatterns	mlir/ToyCombine.cpp	/^void DelayOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:DelayOp
+getCanonicalizationPatterns	mlir/ToyCombine.cpp	/^void DownsamplingOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:DownsamplingOp
+getCanonicalizationPatterns	mlir/ToyCombine.cpp	/^void FFT1DImgOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:FFT1DImgOp
+getCanonicalizationPatterns	mlir/ToyCombine.cpp	/^void FFT1DRealOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:FFT1DRealOp
+getCanonicalizationPatterns	mlir/ToyCombine.cpp	/^void FIRFilterResponseOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:FIRFilterResponseOp
+getCanonicalizationPatterns	mlir/ToyCombine.cpp	/^void GainOp::getCanonicalizationPatterns(RewritePatternSet &results, $/;"	f	class:GainOp
+getCanonicalizationPatterns	mlir/ToyCombine.cpp	/^void MulOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:MulOp
+getCanonicalizationPatterns	mlir/ToyCombine.cpp	/^void ReshapeOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:ReshapeOp
+getCanonicalizationPatterns	mlir/ToyCombine.cpp	/^void SquareOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:SquareOp
+getCanonicalizationPatterns	mlir/ToyCombine.cpp	/^void TransposeOp::getCanonicalizationPatterns(RewritePatternSet &results,$/;"	f	class:TransposeOp
+getCol	include/toy/Lexer.h	/^  int getCol() { return curCol; }$/;"	f	class:dsp::Lexer
+getCurToken	include/toy/Lexer.h	/^  Token getCurToken() { return curTok; }$/;"	f	class:dsp::Lexer
+getDims	include/toy/AST.h	/^  llvm::ArrayRef<int64_t> getDims() { return dims; }$/;"	f	class:dsp::LiteralExprAST
+getElemAtIndx	Output/TryDSPApps/PythonCodeForTest/CCode/audioCompression.c	/^double getElemAtIndx(int* rle, int indx) {$/;"	f
+getElemAtIndx	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFIRFilterDesign.c	/^double getElemAtIndx(double* array, int index) {$/;"	f
+getEnableCanonicalOpt	toyc.cpp	/^bool getEnableCanonicalOpt() {$/;"	f
+getExpr	include/toy/AST.h	/^  std::optional<ExprAST *> getExpr() {$/;"	f	class:dsp::ReturnExprAST
+getId	include/toy/Lexer.h	/^  llvm::StringRef getId() {$/;"	f	class:dsp::Lexer
+getInitVal	include/toy/AST.h	/^  ExprAST *getInitVal() { return initVal.get(); }$/;"	f	class:dsp::VarDeclExprAST
+getKind	include/toy/AST.h	/^  ExprASTKind getKind() const { return kind; }$/;"	f	class:dsp::ExprAST
+getLHS	include/toy/AST.h	/^  ExprAST *getLHS() { return lhs.get(); }$/;"	f	class:dsp::BinaryExprAST
+getLastLocation	include/toy/Lexer.h	/^  Location getLastLocation() { return lastLocation; }$/;"	f	class:dsp::Lexer
+getLine	include/toy/Lexer.h	/^  int getLine() { return curLineNum; }$/;"	f	class:dsp::Lexer
+getName	include/toy/AST.h	/^  llvm::StringRef getName() const { return name; }$/;"	f	class:dsp::PrototypeAST
+getName	include/toy/AST.h	/^  llvm::StringRef getName() { return name; }$/;"	f	class:dsp::VarDeclExprAST
+getName	include/toy/AST.h	/^  llvm::StringRef getName() { return name; }$/;"	f	class:dsp::VariableExprAST
+getNextChar	include/toy/Lexer.h	/^  int getNextChar() {$/;"	f	class:dsp::Lexer
+getNextToken	include/toy/Lexer.h	/^  Token getNextToken() { return curTok = getTok(); }$/;"	f	class:dsp::Lexer
+getOp	include/toy/AST.h	/^  char getOp() { return op; }$/;"	f	class:dsp::BinaryExprAST
+getOrCreateGlobalString	mlir/LowerToLLVM.cpp	/^  static Value getOrCreateGlobalString(Location loc, OpBuilder &builder,$/;"	f	class:__anon5::PrintOpLowering	file:
+getOrInsertPrintf	mlir/LowerToLLVM.cpp	/^  static FlatSymbolRefAttr getOrInsertPrintf(PatternRewriter &rewriter,$/;"	f	class:__anon5::PrintOpLowering	file:
+getPrintfType	mlir/LowerToLLVM.cpp	/^  static LLVM::LLVMFunctionType getPrintfType(MLIRContext *context) {$/;"	f	class:__anon5::PrintOpLowering	file:
+getProto	include/toy/AST.h	/^  PrototypeAST *getProto() { return proto.get(); }$/;"	f	class:dsp::FunctionAST
+getRHS	include/toy/AST.h	/^  ExprAST *getRHS() { return rhs.get(); }$/;"	f	class:dsp::BinaryExprAST
+getRangeOfVector	Output/TryDSPApps/PythonCodeForTest/CCode/audioCompression.c	/^void getRangeOfVector(double* input, int start, int NoOfElements, double Increment) {$/;"	f
+getRangeOfVector	Output/TryDSPApps/PythonCodeForTest/CCode/energyOfSignal.c	/^void getRangeOfVector(double* input, int start, int NoOfElements, double Increment) {$/;"	f
+getRangeOfVector	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFull1.c	/^void getRangeOfVector(double* input, int start, int NoOfElements, double Increment) {$/;"	f
+getRangeOfVector	Output/TryDSPApps/PythonCodeForTest/CCode/noisecancelling.c	/^void getRangeOfVector(double* vector, double start, int length, double increment) {$/;"	f
+getRangeOfVector	Output/TryDSPApps/PythonCodeForTest/CCode/periodogram2Conv.c	/^void getRangeOfVector(double* input, int start, int NoOfElements, double Increment) {$/;"	f
+getTok	include/toy/Lexer.h	/^  Token getTok() {$/;"	f	class:dsp::Lexer
+getTokPrecedence	include/toy/Parser.h	/^  int getTokPrecedence() {$/;"	f	class:dsp::Parser
+getType	include/toy/AST.h	/^  const VarType &getType() { return type; }$/;"	f	class:dsp::VarDeclExprAST
+getType	mlir/MLIRGen.cpp	/^  mlir::Type getType(ArrayRef<int64_t> shape) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+getType	mlir/MLIRGen.cpp	/^  mlir::Type getType(const VarType &type) { return getType(type.shape); }$/;"	f	class:__anon2::MLIRGenImpl	file:
+getValue	include/toy/AST.h	/^  double getValue() { return val; }$/;"	f	class:dsp::NumberExprAST
+getValue	include/toy/Lexer.h	/^  double getValue() {$/;"	f	class:dsp::Lexer
+getValues	include/toy/AST.h	/^  llvm::ArrayRef<std::unique_ptr<ExprAST>> getValues() { return values; }$/;"	f	class:dsp::LiteralExprAST
+h_bp	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^h_bp = h_lp2_w - h_lp1_w$/;"	v
+h_hp	Output/TryDSPApps/PythonCodeForTest/filterDesign.py	/^h_hp = np.zeros(N)$/;"	v
+h_hp	Output/TryDSPApps/PythonCodeForTest/highPassfilter.py	/^h_hp = np.zeros(N)$/;"	v
+h_lp	Output/TryDSPApps/PythonCodeForTest/filterDesign.py	/^h_lp = np.array([ideal_lp(n - (N-1)\/\/2, wc) for n in range(N)])$/;"	v
+h_lp	Output/TryDSPApps/PythonCodeForTest/highPassfilter.py	/^h_lp = np.array([ideal_lp(n - (N-1)\/\/2, wc) for n in range(N)])$/;"	v
+h_lp	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^h_lp = np.array([ideal_lp(n - (N-1)\/\/2, wc) for n in range(N)])$/;"	v
+h_lp1	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^h_lp1 = np.array([ideal_lp(n - (N-1)\/\/2, wc1) for n in range(N)])$/;"	v
+h_lp1_w	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^h_lp1_w = h_lp1 * hamming_window$/;"	v
+h_lp2	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^h_lp2 = np.array([ideal_lp(n - (N-1)\/\/2, wc2) for n in range(N)])$/;"	v
+h_lp2_w	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^h_lp2_w = h_lp2 * hamming_window$/;"	v
+h_lp_w	Output/TryDSPApps/PythonCodeForTest/filterDesign.py	/^h_lp_w = h_lp * hamming_window$/;"	v
+h_lp_w	Output/TryDSPApps/PythonCodeForTest/highPassfilter.py	/^h_lp_w = h_lp * hamming_window$/;"	v
+h_lp_w	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^h_lp_w = h_lp * hamming_window$/;"	v
+hamming	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFIRFilterDesign.c	/^void hamming(double* window, int N) {$/;"	f
+hammingWindow	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFull1.c	/^void hammingWindow(double* hamming, int N) {$/;"	f
+hamming_window	Output/TryDSPApps/PythonCodeForTest/HammingWindow.py	/^def hamming_window(N):$/;"	f
+hamming_window	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^hamming_window = np.hamming(N)$/;"	v
+hamming_window	Output/TryDSPApps/PythonCodeForTest/filterDesign.py	/^hamming_window = np.hamming(N)$/;"	v
+hamming_window	Output/TryDSPApps/PythonCodeForTest/highPassfilter.py	/^hamming_window = np.hamming(N)$/;"	v
+hamming_window	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^hamming_window = np.hamming(N)$/;"	v
+high_cutoff	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^high_cutoff = 2000  # Upper cutoff frequency (Hz)$/;"	v
+high_pass_filter	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^def high_pass_filter(signal, cutoff_freq, fs):$/;"	f
+ideal_lp	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^def ideal_lp(n, wc):$/;"	f
+ideal_lp	Output/TryDSPApps/PythonCodeForTest/filterDesign.py	/^def ideal_lp(n, wc):$/;"	f
+ideal_lp	Output/TryDSPApps/PythonCodeForTest/highPassfilter.py	/^def ideal_lp(n, wc):$/;"	f
+ideal_lp	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^def ideal_lp(n, wc):$/;"	f
+identifierStr	include/toy/Lexer.h	/^  std::string identifierStr;$/;"	m	class:dsp::Lexer
+idft	Output/TryDSPApps/PythonCodeForTest/periodogramHelp2.py	/^def idft(X):$/;"	f
+indent	parser/AST.cpp	/^  void indent() {$/;"	f	class:__anon11::ASTDumper	file:
+indx	Output/ExpectedOut/TryIntermediateCode.cpp	/^      AffineExpr indx = nestedBuilder.getAffineDimExpr(0);$/;"	v
+inferShapes	mlir/Dialect.cpp	/^void AddOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:AddOp
+inferShapes	mlir/Dialect.cpp	/^void BitwiseAndOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:BitwiseAndOp
+inferShapes	mlir/Dialect.cpp	/^void CastOp::inferShapes() { getResult().setType(getInput().getType()); }$/;"	f	class:CastOp
+inferShapes	mlir/Dialect.cpp	/^void CosOp::inferShapes() {$/;"	f	class:CosOp
+inferShapes	mlir/Dialect.cpp	/^void DCTOp::inferShapes() {$/;"	f	class:DCTOp
+inferShapes	mlir/Dialect.cpp	/^void DelayOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:DelayOp
+inferShapes	mlir/Dialect.cpp	/^void DivOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:DivOp
+inferShapes	mlir/Dialect.cpp	/^void DownsamplingOp::inferShapes() {$/;"	f	class:DownsamplingOp
+inferShapes	mlir/Dialect.cpp	/^void FFT1DImgConjSymmOp::inferShapes() {$/;"	f	class:FFT1DImgConjSymmOp
+inferShapes	mlir/Dialect.cpp	/^void FFT1DImgOp::inferShapes() {$/;"	f	class:FFT1DImgOp
+inferShapes	mlir/Dialect.cpp	/^void FFT1DOp::inferShapes() {$/;"	f	class:FFT1DOp
+inferShapes	mlir/Dialect.cpp	/^void FFT1DRealOp::inferShapes() {$/;"	f	class:FFT1DRealOp
+inferShapes	mlir/Dialect.cpp	/^void FFT1DRealSymmOp::inferShapes() {$/;"	f	class:FFT1DRealSymmOp
+inferShapes	mlir/Dialect.cpp	/^void FFTImagOp::inferShapes(){ getResult().setType(getLhs().getType()); }$/;"	f	class:FFTImagOp
+inferShapes	mlir/Dialect.cpp	/^void FFTRealOp::inferShapes(){ getResult().setType(getLhs().getType()); }$/;"	f	class:FFTRealOp
+inferShapes	mlir/Dialect.cpp	/^void FIRFilterHammingOptimizedOp::inferShapes() {$/;"	f	class:FIRFilterHammingOptimizedOp
+inferShapes	mlir/Dialect.cpp	/^void FIRFilterResSymmOptimizedOp::inferShapes() {$/;"	f	class:FIRFilterResSymmOptimizedOp
+inferShapes	mlir/Dialect.cpp	/^void FIRFilterResponseOp::inferShapes() {$/;"	f	class:FIRFilterResponseOp
+inferShapes	mlir/Dialect.cpp	/^void FIRFilterYSymmOptimizedOp::inferShapes() {$/;"	f	class:FIRFilterYSymmOptimizedOp
+inferShapes	mlir/Dialect.cpp	/^void GainOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:GainOp
+inferShapes	mlir/Dialect.cpp	/^void GetElemAtIndxOp::inferShapes() {$/;"	f	class:GetElemAtIndxOp
+inferShapes	mlir/Dialect.cpp	/^void GetRangeOfVectorOp::inferShapes() {$/;"	f	class:GetRangeOfVectorOp
+inferShapes	mlir/Dialect.cpp	/^void HammingWindowOp::inferShapes() {$/;"	f	class:HammingWindowOp
+inferShapes	mlir/Dialect.cpp	/^void HighPassFIRFilterOp::inferShapes() {$/;"	f	class:HighPassFIRFilterOp
+inferShapes	mlir/Dialect.cpp	/^void HighPassFIRHammingOptimizedOp::inferShapes() {$/;"	f	class:HighPassFIRHammingOptimizedOp
+inferShapes	mlir/Dialect.cpp	/^void HighPassFilterOp::inferShapes() {$/;"	f	class:HighPassFilterOp
+inferShapes	mlir/Dialect.cpp	/^void IFFT1DOp::inferShapes() {$/;"	f	class:IFFT1DOp
+inferShapes	mlir/Dialect.cpp	/^void LMSFilterOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:LMSFilterOp
+inferShapes	mlir/Dialect.cpp	/^void LMSFilterResponseOp::inferShapes() {$/;"	f	class:LMSFilterResponseOp
+inferShapes	mlir/Dialect.cpp	/^void LengthOp::inferShapes() {$/;"	f	class:LengthOp
+inferShapes	mlir/Dialect.cpp	/^void LowPassFIRFilterOp::inferShapes() {$/;"	f	class:LowPassFIRFilterOp
+inferShapes	mlir/Dialect.cpp	/^void LowPassFilter1stOrderOp::inferShapes() {$/;"	f	class:LowPassFilter1stOrderOp
+inferShapes	mlir/Dialect.cpp	/^void ModuloOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:ModuloOp
+inferShapes	mlir/Dialect.cpp	/^void MulOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:MulOp
+inferShapes	mlir/Dialect.cpp	/^void PaddingOp::inferShapes() {$/;"	f	class:PaddingOp
+inferShapes	mlir/Dialect.cpp	/^void QamModulateOp::inferShapes() {$/;"	f	class:QamModulateOp
+inferShapes	mlir/Dialect.cpp	/^void QuantizationOp::inferShapes() {$/;"	f	class:QuantizationOp
+inferShapes	mlir/Dialect.cpp	/^void ReverseInputOp::inferShapes() {$/;"	f	class:ReverseInputOp
+inferShapes	mlir/Dialect.cpp	/^void RunLenEncodingOp::inferShapes() {$/;"	f	class:RunLenEncodingOp
+inferShapes	mlir/Dialect.cpp	/^void SetElemAtIndxOp::inferShapes() {$/;"	f	class:SetElemAtIndxOp
+inferShapes	mlir/Dialect.cpp	/^void SinOp::inferShapes() {$/;"	f	class:SinOp
+inferShapes	mlir/Dialect.cpp	/^void SincOp::inferShapes() {$/;"	f	class:SincOp
+inferShapes	mlir/Dialect.cpp	/^void SlidingWindowAvgOp::inferShapes() {$/;"	f	class:SlidingWindowAvgOp
+inferShapes	mlir/Dialect.cpp	/^void SquareOp::inferShapes() {$/;"	f	class:SquareOp
+inferShapes	mlir/Dialect.cpp	/^void SubOp::inferShapes() { getResult().setType(getLhs().getType()); }$/;"	f	class:SubOp
+inferShapes	mlir/Dialect.cpp	/^void SumOp::inferShapes() {$/;"	f	class:SumOp
+inferShapes	mlir/Dialect.cpp	/^void ThresholdOp::inferShapes() {$/;"	f	class:ThresholdOp
+inferShapes	mlir/Dialect.cpp	/^void TransposeOp::inferShapes() {$/;"	f	class:TransposeOp
+inferShapes	mlir/Dialect.cpp	/^void UpsamplingOp::inferShapes() {$/;"	f	class:UpsamplingOp
+inferShapes	mlir/Dialect.cpp	/^void filterOp::inferShapes() {$/;"	f	class:filterOp
+inferShapes	mlir/Dialect.cpp	/^void zeroCrossCountOp::inferShapes() {$/;"	f	class:zeroCrossCountOp
+initVal	include/toy/AST.h	/^  std::unique_ptr<ExprAST> initVal;$/;"	m	class:dsp::VarDeclExprAST
+initialize	mlir/Dialect.cpp	/^void DspDialect::initialize() {$/;"	f	class:DspDialect
+input	Output/TryDSPApps/Results/ScriptSteps.py	/^			input = IPSize$/;"	v
+inputValues	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^inputValues = {$/;"	v
+inputValues	Output/TryDSPApps/Results/TryResultScript/ScriptForMlirAffine.py	/^inputValues = {$/;"	v
+inputValues	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^inputValues = {$/;"	v
+input_audio	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^input_audio = np.sin(2 * np.pi * freq * t)$/;"	v
+input_file_path	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^input_file_path =  "noisecancelling.py" $/;"	v
+input_file_path	Output/TryDSPApps/Results/TryResultScript/ScriptForMlirAffine.py	/^input_file_path = "noisecancelling.py"  $/;"	v
+input_file_path	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^input_file_path =  "EnergyOfSignal.py"$/;"	v
+input_signal	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^input_signal = clean_signal + noise$/;"	v
+input_sizes	Output/TryDSPApps/Results/working_slidingwind.py	/^input_sizes = ["a10", "a100", "a10K", "a100K"]$/;"	v
+insertAllocAndDealloc	mlir/LowerToAffineLoops.cpp	/^static Value insertAllocAndDealloc(MemRefType type, Location loc,$/;"	f	file:
+kind	include/toy/AST.h	/^  const ExprASTKind kind;$/;"	m	class:dsp::ExprAST
+lastChar	include/toy/Lexer.h	/^  Token lastChar = Token(' ');$/;"	m	class:dsp::Lexer
+lastLocation	include/toy/Lexer.h	/^  Location lastLocation;$/;"	m	class:dsp::Lexer
+len	Output/TryDSPApps/PythonCodeForTest/CCode/energyOfSignal.c	/^int len(double* input) {$/;"	f
+level	parser/AST.cpp	/^  int &level;$/;"	m	struct:__anon11::Indent	file:
+lexer	include/toy/Parser.h	/^  Lexer &lexer;$/;"	m	class:dsp::Parser
+lhs	include/toy/AST.h	/^  std::unique_ptr<ExprAST> lhs, rhs;$/;"	m	class:dsp::BinaryExprAST
+line	include/toy/Lexer.h	/^  int line;                          \/\/\/< line number.$/;"	m	struct:dsp::Location
+lines	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^    lines = file.readlines()$/;"	v
+lines	Output/TryDSPApps/Results/TryResultScript/ScriptForMlirAffine.py	/^    lines = file.readlines()$/;"	v
+lines	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^    lines = file.readlines()$/;"	v
+list_files_and_write_line_counts	Output/TryDSPApps/PythonCodeForTest/CountLinesFile.py	/^def list_files_and_write_line_counts(folder, output_path):$/;"	f
+list_files_and_write_line_countsPy	Output/TryDSPApps/PythonCodeForTest/CountLinesFile.py	/^def list_files_and_write_line_countsPy(folder, output_path):$/;"	f
+lmsFilterResponse	Output/TryDSPApps/PythonCodeForTest/CCode/noisecancelling.c	/^void lmsFilterResponse(double* output, double* noisy_sig, double* clean_sig, double mu, int filterSize, int length) {$/;"	f
+lmsFilterResponse	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^def lmsFilterResponse(noisy_sig, clean_sig, mu, filterSize):$/;"	f
+lms_filter	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^def lms_filter(signal, reference_noise, mu=0.01, order=4):$/;"	f
+lms_filter	Output/TryDSPApps/PythonCodeForTest/lmsNoiseCancelling.py	/^def lms_filter(x, d):$/;"	f
+loadAndProcessMLIR	toyc.cpp	/^int loadAndProcessMLIR(mlir::MLIRContext &context,$/;"	f
+loadMLIR	toyc.cpp	/^int loadMLIR(mlir::MLIRContext &context,$/;"	f
+loc	include/toy/AST.h	/^  const Location &loc() { return location; }$/;"	f	class:dsp::ExprAST
+loc	include/toy/AST.h	/^  const Location &loc() { return location; }$/;"	f	class:dsp::PrototypeAST
+loc	mlir/MLIRGen.cpp	/^  mlir::Location loc(const Location &loc) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+loc	parser/AST.cpp	/^static std::string loc(T *node) {$/;"	f	file:
+location	include/toy/AST.h	/^  Location location;$/;"	m	class:dsp::ExprAST
+location	include/toy/AST.h	/^  Location location;$/;"	m	class:dsp::PrototypeAST
+lowPassFIRFilter	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFIRFilterDesign.c	/^void lowPassFIRFilter(double* filter, double wc, int N) {$/;"	f
+lowPassFIRFilter	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFull1.c	/^void lowPassFIRFilter(double* lpf, double wc, int N) {$/;"	f
+low_cutoff	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^low_cutoff = 1000  # Lower cutoff frequency (Hz)$/;"	v
+low_pass_filter	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^def low_pass_filter(signal, cutoff_freq, fs):$/;"	f
+lowerOpToLoops	mlir/LowerToAffineLoops.cpp	/^static void lowerOpToLoops(Operation *op, ValueRange operands,$/;"	f	file:
+lowerOpToLoopsFIR	Output/ExpectedOut/TryIntermediateCode.cpp	/^static void lowerOpToLoopsFIR(Operation *op, ValueRange operands,$/;"	f	file:
+lowerOpToLoopsFIR	Output/TryMoreBlocksDsp/FirFilterLoweringHelper.cpp	/^static void lowerOpToLoopsFIR(Operation *op, ValueRange operands,$/;"	f	file:
+lowerOpToLoopsFIR	mlir/LowerToAffineLoops.cpp	/^static void lowerOpToLoopsFIR(Operation *op, ValueRange operands,$/;"	f	file:
+main	Output/TryDSPApps/FIRFilterHammingOpt.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/CCode/audioCompression.c	/^int main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/CCode/energyOfSignal.c	/^int main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFIRFilterDesign.c	/^int main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/CCode/lowPassFull1.c	/^int main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/CCode/noisecancelling.c	/^int main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/CCode/periodogram2Conv.c	/^int main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/PyDSL/audioCompression.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/PyDSL/energyOfSignal.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/PyDSL/lowPassFIRFilterDesign1.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/PyDSL/lowPassFull1.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/PyDSL/noisecancelling.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/PyDSL/periodogram2Conv.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/PythonCodeForTest/audioEqualizer.py	/^def main():$/;"	f
+main	Output/TryDSPApps/Results/TryResultScript/EnergyOfSignal.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/Results/TryResultScript/FIRFilterHammingOpt.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/Results/TryResultScript/audioCompression.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/Results/TryResultScript/audioEqualizer.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/Results/TryResultScript/back2backDelay.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/Results/TryResultScript/firFilter10.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/Results/TryResultScript/hearing_aid.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/Results/TryResultScript/lowPassFIRFilterDesign.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/Results/TryResultScript/lowPassFull.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/Results/TryResultScript/noisecancelling.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/Results/TryResultScript/periodogram2Conv.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/Results/TryResultScript/periodogram2Conv1.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/Results/generate_dense_inputs.py	/^def main():$/;"	f
+main	Output/TryDSPApps/Results/matlab_result.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/audio_gain.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/bandPass.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/delay2delay.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/echocancelling.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/firdesign1.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/lowPassFull.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/lowPass_highPass.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/noisecancelling.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/noisecancelling_gain.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/periodogram1.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/qam.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/signalSmooth1.py	/^def main() {$/;"	f
+main	Output/TryDSPApps/vibrationAnalysis.py	/^def main() {$/;"	f
+main	Output/TryLinalg/linalg1.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/Downsampling.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/GetRangeOfVector.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/Hamming.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/HighPassFilter.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/LowPassFilter.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/MixedBlocks.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/MoreSimpleBlocks.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/SlidingWindowAvg.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/Upsampling.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/dct.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/filter.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/gain_opt.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/getSetVectorElemAtIndx.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/lmsfilter.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/lmsfilterresponse.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/runLenEncoding.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/sincos_test.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/sum_sq_fft1dreal.py	/^def main() {$/;"	f
+main	Output/TryMoreBlocksDsp/threshold.py	/^def main() {$/;"	f
+main	toyc.cpp	/^int main(int argc, char **argv) {$/;"	f
+matches	Output/TryDSPApps/PythonCodeForTest/ExtractOpName.py	/^matches = re.findall(pattern, text)$/;"	v
+mlir	include/toy/MLIRGen.h	/^namespace mlir {$/;"	n
+mlir	include/toy/Passes.h	/^namespace mlir {$/;"	n
+mlir	include/toy/ShapeInferenceInterface.h	/^namespace mlir {$/;"	n
+mlir	mlir/TosaToLinalgPass.cpp	/^namespace mlir {$/;"	n	file:
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::LogicalResult mlirGen(ExprASTList &blockAST) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::LogicalResult mlirGen(PrintExprAST &call) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::LogicalResult mlirGen(ReturnExprAST &ret) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::ModuleOp mlirGen(ModuleAST &moduleAST) {$/;"	f	class:__anon2::MLIRGenImpl
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::Value mlirGen(BinaryExprAST &binop) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::Value mlirGen(CallExprAST &call) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::Value mlirGen(ExprAST &expr) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::Value mlirGen(LiteralExprAST &lit) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::Value mlirGen(NumberExprAST &num) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::Value mlirGen(VarDeclExprAST &vardecl) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::Value mlirGen(VariableExprAST &expr) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::dsp::FuncOp mlirGen(FunctionAST &funcAST) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	mlir/MLIRGen.cpp	/^  mlir::dsp::FuncOp mlirGen(PrototypeAST &proto) {$/;"	f	class:__anon2::MLIRGenImpl	file:
+mlirGen	mlir/MLIRGen.cpp	/^mlir::OwningOpRef<mlir::ModuleOp> mlirGen(mlir::MLIRContext &context,$/;"	f	namespace:dsp
+mu	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^mu = 0.01$/;"	v
+name	include/toy/AST.h	/^  std::string name;$/;"	m	class:dsp::PrototypeAST
+name	include/toy/AST.h	/^  std::string name;$/;"	m	class:dsp::VarDeclExprAST
+name	include/toy/AST.h	/^  std::string name;$/;"	m	class:dsp::VariableExprAST
+noise	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^noise = np.random.normal(0, 0.1, clean_signal.shape)$/;"	v
+noise	Output/TryDSPApps/PythonCodeForTest/TryHearingAid copy.py	/^noise = 0.2 * np.random.normal(size=fs)  # White noise$/;"	v
+noise	Output/TryDSPApps/PythonCodeForTest/TryHearingAid.py	/^noise = 0.2 * np.random.normal(size=fs)  # White noise$/;"	v
+noise	Output/TryDSPApps/PythonCodeForTest/lmsNoiseCancelling.py	/^noise = 0.5 * np.sin(2 * np.pi * f_noise * t)$/;"	v
+noise	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^noise = 0.5 * np.sin(2 * np.pi * f_noise * t)$/;"	v
+noise_estimate	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^noise_estimate = 0.5 * np.random.randn(len(input_audio))  # Random noise estimate$/;"	v
+noise_estimation	Output/TryDSPApps/PythonCodeForTest/TryHearingAid copy.py	/^noise_estimation = noisy_signal[:100]$/;"	v
+noise_estimation	Output/TryDSPApps/PythonCodeForTest/TryHearingAid copy.py	/^noise_estimation = np.tile(noise_estimation, int(np.ceil(len(noisy_signal) \/ len(noise_estimation))))[:len(noisy_signal)]$/;"	v
+noise_estimation	Output/TryDSPApps/PythonCodeForTest/TryHearingAid.py	/^noise_estimation = noisy_signal[:100]$/;"	v
+noise_estimation	Output/TryDSPApps/PythonCodeForTest/TryHearingAid.py	/^noise_estimation = np.tile(noise_estimation, int(np.ceil(len(noisy_signal) \/ len(noise_estimation))))[:len(noisy_signal)]$/;"	v
+noise_reduced_audio	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^noise_reduced_audio = spectral_subtraction(noisy_sig, noise_estimate)$/;"	v
+noisy_sig	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^noisy_sig = amplified_audio + noise_estimate  # Simulating a noisy signal$/;"	v
+noisy_signal	Output/TryDSPApps/PythonCodeForTest/TryHearingAid copy.py	/^noisy_signal = clean_signal + noise  # Noisy signal$/;"	v
+noisy_signal	Output/TryDSPApps/PythonCodeForTest/TryHearingAid.py	/^noisy_signal = clean_signal + noise  # Noisy signal$/;"	v
+noisy_signal	Output/TryDSPApps/PythonCodeForTest/lmsNoiseCancelling.py	/^noisy_signal = clean_signal + noise$/;"	v
+noisy_signal	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^noisy_signal = clean_signal + noise$/;"	v
+numVal	include/toy/Lexer.h	/^  double numVal = 0;$/;"	m	class:dsp::Lexer
+num_bits	Output/TryDSPApps/PythonCodeForTest/Quantization.py	/^num_bits = 4$/;"	v
+num_tokens	Output/TryDSPApps/PythonCodeForTest/tokenCount.py	/^num_tokens = len(tokens)$/;"	v
+op	include/toy/AST.h	/^  char op;$/;"	m	class:dsp::BinaryExprAST
+outputIndex	Output/ExpectedOut/TryIntermediateCode.cpp	/^      auto outputIndex = nestedBuilder.create<affine::AffineApplyOp>(loc, addMap , ivs);$/;"	v
+output_fileC	Output/TryDSPApps/PythonCodeForTest/CountLinesFile.py	/^output_fileC = os.path.join(current_dir, 'Output', 'NoOfLinesInC.txt')$/;"	v
+output_filePy	Output/TryDSPApps/PythonCodeForTest/CountLinesFile.py	/^output_filePy = os.path.join(current_dir, 'Output', 'NoOfLinesInPy.txt')$/;"	v
+parse	mlir/Dialect.cpp	/^mlir::ParseResult AddOp::parse(mlir::OpAsmParser &parser,$/;"	f	class:AddOp
+parse	mlir/Dialect.cpp	/^mlir::ParseResult BitwiseAndOp::parse(mlir::OpAsmParser &parser,$/;"	f	class:BitwiseAndOp
+parse	mlir/Dialect.cpp	/^mlir::ParseResult ConstantOp::parse(mlir::OpAsmParser &parser,$/;"	f	class:ConstantOp
+parse	mlir/Dialect.cpp	/^mlir::ParseResult DivOp::parse(mlir::OpAsmParser &parser,$/;"	f	class:DivOp
+parse	mlir/Dialect.cpp	/^mlir::ParseResult FuncOp::parse(mlir::OpAsmParser &parser,$/;"	f	class:FuncOp
+parse	mlir/Dialect.cpp	/^mlir::ParseResult MulOp::parse(mlir::OpAsmParser &parser,$/;"	f	class:MulOp
+parseBinOpRHS	include/toy/Parser.h	/^  std::unique_ptr<ExprAST> parseBinOpRHS(int exprPrec,$/;"	f	class:dsp::Parser
+parseBinaryOp	mlir/Dialect.cpp	/^static mlir::ParseResult parseBinaryOp(mlir::OpAsmParser &parser,$/;"	f	file:
+parseBlock	include/toy/Parser.h	/^  std::unique_ptr<ExprASTList> parseBlock() {$/;"	f	class:dsp::Parser
+parseDeclaration	include/toy/Parser.h	/^  std::unique_ptr<VarDeclExprAST> parseDeclaration() {$/;"	f	class:dsp::Parser
+parseDefinition	include/toy/Parser.h	/^  std::unique_ptr<FunctionAST> parseDefinition() {$/;"	f	class:dsp::Parser
+parseError	include/toy/Parser.h	/^  std::unique_ptr<R> parseError(T &&expected, U &&context = "") {$/;"	f	class:dsp::Parser
+parseExpression	include/toy/Parser.h	/^  std::unique_ptr<ExprAST> parseExpression() {$/;"	f	class:dsp::Parser
+parseIdentifierExpr	include/toy/Parser.h	/^  std::unique_ptr<ExprAST> parseIdentifierExpr() {$/;"	f	class:dsp::Parser
+parseInputFile	toyc.cpp	/^std::unique_ptr<dsp::ModuleAST> parseInputFile(llvm::StringRef filename) {$/;"	f
+parseModule	include/toy/Parser.h	/^  std::unique_ptr<ModuleAST> parseModule() {$/;"	f	class:dsp::Parser
+parseNumberExpr	include/toy/Parser.h	/^  std::unique_ptr<ExprAST> parseNumberExpr() {$/;"	f	class:dsp::Parser
+parseParenExpr	include/toy/Parser.h	/^  std::unique_ptr<ExprAST> parseParenExpr() {$/;"	f	class:dsp::Parser
+parsePrimary	include/toy/Parser.h	/^  std::unique_ptr<ExprAST> parsePrimary() {$/;"	f	class:dsp::Parser
+parsePrototype	include/toy/Parser.h	/^  std::unique_ptr<PrototypeAST> parsePrototype() {$/;"	f	class:dsp::Parser
+parseReturn	include/toy/Parser.h	/^  std::unique_ptr<ReturnExprAST> parseReturn() {$/;"	f	class:dsp::Parser
+parseTensorLiteralExpr	include/toy/Parser.h	/^  std::unique_ptr<ExprAST> parseTensorLiteralExpr() {$/;"	f	class:dsp::Parser
+parseType	include/toy/Parser.h	/^  std::unique_ptr<VarType> parseType() {$/;"	f	class:dsp::Parser
+pattern	Output/TryDSPApps/PythonCodeForTest/ExtractOpName.py	/^pattern = r'def (\\w+) : Dsp_Op<"(\\w+)"'$/;"	v
+plot_frequency_response	Output/TryDSPApps/PythonCodeForTest/audioEqualizer.py	/^def plot_frequency_response(taps, sample_rate=44100):$/;"	f
+positiveConstantStep	Output/ExpectedOut/TryIntermediateCode.cpp	/^  positiveConstantStep(fir::DoLoopOp op, int64_t step,$/;"	f
+print	mlir/Dialect.cpp	/^void AddOp::print(mlir::OpAsmPrinter &p) { printBinaryOp(p, *this); }$/;"	f	class:AddOp
+print	mlir/Dialect.cpp	/^void BitwiseAndOp::print(mlir::OpAsmPrinter &p) { printBinaryOp(p, *this); }$/;"	f	class:BitwiseAndOp
+print	mlir/Dialect.cpp	/^void ConstantOp::print(mlir::OpAsmPrinter &printer) {$/;"	f	class:ConstantOp
+print	mlir/Dialect.cpp	/^void DivOp::print(mlir::OpAsmPrinter &p) { printBinaryOp(p, *this); }$/;"	f	class:DivOp
+print	mlir/Dialect.cpp	/^void FuncOp::print(mlir::OpAsmPrinter &p) {$/;"	f	class:FuncOp
+print	mlir/Dialect.cpp	/^void MulOp::print(mlir::OpAsmPrinter &p) { printBinaryOp(p, *this); }$/;"	f	class:MulOp
+printBinaryOp	mlir/Dialect.cpp	/^static void printBinaryOp(mlir::OpAsmPrinter &printer, mlir::Operation *op) {$/;"	f	file:
+printLitHelper	parser/AST.cpp	/^void printLitHelper(ExprAST *litOrNum) {$/;"	f
+process	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^                process = subprocess.run("sudo sh -c 'sync; echo 3 > \/proc\/sys\/vm\/drop_caches'", shell=True, check=True)$/;"	v
+process	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^                process = subprocess.run("sudo sh -c 'sync; echo 3 > \/proc\/sys\/vm\/drop_caches'", shell=True, check=True)$/;"	v
+process	Output/TryDSPApps/Results/working_slidingwind.py	/^        process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)$/;"	v
+product_fft	Output/TryDSPApps/PythonCodeForTest/periodogramHelp2.py	/^product_fft = X_w * X_neg_w$/;"	v
+proto	include/toy/AST.h	/^  std::unique_ptr<PrototypeAST> proto;$/;"	m	class:dsp::FunctionAST
+quantization	Output/TryDSPApps/PythonCodeForTest/CCode/audioCompression.c	/^void quantization(double* output, double* input, int nlevels, double max, double min, int length) {$/;"	f
+quantize	Output/TryDSPApps/PythonCodeForTest/Quantization.py	/^def quantize(coefficients, num_bits):$/;"	f
+reference_noise	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^reference_noise = np.random.normal(0, 0.1, downsampled_signal.shape)  # Simulated reference noise$/;"	v
+result	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^            result = subprocess.run(command, shell=True, capture_output=True, text=True)  $/;"	v
+result	Output/TryDSPApps/Results/TryResultScript/ScriptForMlirAffine.py	/^            result = subprocess.run(command, shell=True, capture_output=True, text=True)$/;"	v
+result	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^            result = subprocess.run(command, shell=True, capture_output=True, text=True)  $/;"	v
+returnsDynamicShape	mlir/ShapeInferencePass.cpp	/^  static bool returnsDynamicShape(Operation *op) {$/;"	f	struct:__anon4::ShapeInferencePass
+reverseInput	Output/TryDSPApps/PythonCodeForTest/CCode/periodogram2Conv.c	/^void reverseInput(double* output, double* input, int length) {$/;"	f
+rhs	include/toy/AST.h	/^  std::unique_ptr<ExprAST> lhs, rhs;$/;"	m	class:dsp::BinaryExprAST
+runJit	toyc.cpp	/^int runJit(mlir::ModuleOp module) {$/;"	f
+runLenEncoding	Output/TryDSPApps/PythonCodeForTest/CCode/audioCompression.c	/^int* runLenEncoding(double* input, int length, int* rleLength) {$/;"	f
+runOnOperation	mlir/LowerToAffineLoops.cpp	/^void ToyToAffineLoweringPass::runOnOperation() {$/;"	f	class:ToyToAffineLoweringPass
+runOnOperation	mlir/LowerToLLVM.cpp	/^void ToyToLLVMLoweringPass::runOnOperation() {$/;"	f	class:ToyToLLVMLoweringPass
+setCalleeFromCallable	mlir/Dialect.cpp	/^void GenericCallOp::setCalleeFromCallable(CallInterfaceCallable callee) {$/;"	f	class:GenericCallOp
+shape	include/toy/AST.h	/^  std::vector<int64_t> shape;$/;"	m	struct:dsp::VarType
+signal	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^signal = np.sin(2 * np.pi * f1 * t) + np.sin(2 * np.pi * f2 * t) + np.sin(2 * np.pi * f3 * t)$/;"	v
+sine	Output/TryDSPApps/PythonCodeForTest/CCode/noisecancelling.c	/^void sine(double* output, double* input, int length) {$/;"	f
+spectral_subtraction	Output/TryDSPApps/PythonCodeForTest/TryHearingAid copy.py	/^def spectral_subtraction(input_signal, noise_estimation, alpha=1.0, beta=0.002):$/;"	f
+spectral_subtraction	Output/TryDSPApps/PythonCodeForTest/TryHearingAid.py	/^def spectral_subtraction(input_signal, noise_estimation):$/;"	f
+spectral_subtraction	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^def spectral_subtraction(noisy_sig, noise_estimate):$/;"	f
+square	Output/TryDSPApps/PythonCodeForTest/CCode/energyOfSignal.c	/^void square(double* output, double* input, int length) {$/;"	f
+squareMagnitude	Output/TryDSPApps/PythonCodeForTest/CCode/periodogram2Conv.c	/^void squareMagnitude(double* output, double* real, double* imag, int length) {$/;"	f
+start_time	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^            start_time = time.time()$/;"	v
+start_time	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^            start_time = time.time()$/;"	v
+sum	Output/TryDSPApps/PythonCodeForTest/CCode/energyOfSignal.c	/^double sum(double* input, int length) {$/;"	f
+sum_exe_time	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^            sum_exe_time = sum_exe_time + execution_time$/;"	v
+sum_exe_time	Output/TryDSPApps/Results/TryResultScript/ScriptForCases.py	/^        sum_exe_time = 0$/;"	v
+sum_exe_time	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^            sum_exe_time = sum_exe_time + execution_time$/;"	v
+sum_exe_time	Output/TryDSPApps/Results/TryResultScript/ScriptForSingleRun.py	/^        sum_exe_time = 0$/;"	v
+symbolTable	mlir/MLIRGen.cpp	/^  llvm::ScopedHashTable<StringRef, mlir::Value> symbolTable;$/;"	m	class:__anon2::MLIRGenImpl	file:
+t	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^t = np.arange(0, 1, 1\/fs)  # Time vector$/;"	v
+t	Output/TryDSPApps/PythonCodeForTest/TryHearingAid copy.py	/^t = np.linspace(0, 1, fs)  # Time vector$/;"	v
+t	Output/TryDSPApps/PythonCodeForTest/TryHearingAid.py	/^t = np.linspace(0, 1, fs)  # Time vector$/;"	v
+t	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^t = np.arange(0, 0.05, 1.0\/fs)  # Time vector (1 second)$/;"	v
+t	Output/TryDSPApps/PythonCodeForTest/hearingAid.py	/^t = np.linspace(0, 1, fs, endpoint=False)  # Time vector$/;"	v
+t	Output/TryDSPApps/PythonCodeForTest/lmsNoiseCancelling.py	/^t = np.arange(0, 0.025, 1.0\/fs)$/;"	v
+t	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^t = np.arange(0, 0.006375, 1.0\/fs)$/;"	v
+text	Output/TryDSPApps/PythonCodeForTest/ExtractOpName.py	/^    text = file.read()$/;"	v
+theModule	mlir/MLIRGen.cpp	/^  mlir::ModuleOp theModule;$/;"	m	class:__anon2::MLIRGenImpl	file:
+threshold	Output/TryDSPApps/PythonCodeForTest/CCode/audioCompression.c	/^void threshold(double* output, double* input, double thresh, int length) {$/;"	f
+tokenizer	Output/TryDSPApps/PythonCodeForTest/tokenCount.py	/^tokenizer = tiktoken.get_encoding("gpt-3.5-turbo")$/;"	v
+tokens	Output/TryDSPApps/PythonCodeForTest/tokenCount.py	/^tokens = tokenizer.encode(answer)$/;"	v
+type	include/toy/AST.h	/^  VarType type;$/;"	m	class:dsp::VarDeclExprAST
+upsample	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^def upsample(signal, factor):$/;"	f
+upsample_factor	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^upsample_factor = downsample_factor$/;"	v
+upsampled_signal	Output/TryDSPApps/PythonCodeForTest/LMSNoiseFilter.py	/^upsampled_signal = upsample(amplified_signal, upsample_factor)$/;"	v
+val	include/toy/AST.h	/^  double val;$/;"	m	class:dsp::NumberExprAST
+values	include/toy/AST.h	/^  std::vector<std::unique_ptr<ExprAST>> values;$/;"	m	class:dsp::LiteralExprAST
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult ConstantOp::verify() {$/;"	f	class:ConstantOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult CosOp::verify() {$/;"	f	class:CosOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult DCTOp::verify() {$/;"	f	class:DCTOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult DelayOp::verify() {$/;"	f	class:DelayOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult DownsamplingOp::verify() {$/;"	f	class:DownsamplingOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult FFT1DImgConjSymmOp::verify() {$/;"	f	class:FFT1DImgConjSymmOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult FFT1DImgOp::verify() {$/;"	f	class:FFT1DImgOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult FFT1DOp::verify() {$/;"	f	class:FFT1DOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult FFT1DRealOp::verify() {$/;"	f	class:FFT1DRealOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult FFT1DRealSymmOp::verify() {$/;"	f	class:FFT1DRealSymmOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult FIRFilterHammingOptimizedOp::verify() {$/;"	f	class:FIRFilterHammingOptimizedOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult FIRFilterResSymmOptimizedOp::verify() {$/;"	f	class:FIRFilterResSymmOptimizedOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult FIRFilterResponseOp::verify() {$/;"	f	class:FIRFilterResponseOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult FIRFilterYSymmOptimizedOp::verify() {$/;"	f	class:FIRFilterYSymmOptimizedOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult GetElemAtIndxOp::verify() {$/;"	f	class:GetElemAtIndxOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult GetRangeOfVectorOp::verify() {$/;"	f	class:GetRangeOfVectorOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult HammingWindowOp::verify() {$/;"	f	class:HammingWindowOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult HighPassFIRFilterOp::verify() {$/;"	f	class:HighPassFIRFilterOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult HighPassFIRHammingOptimizedOp::verify() {$/;"	f	class:HighPassFIRHammingOptimizedOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult HighPassFilterOp::verify() {$/;"	f	class:HighPassFilterOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult IFFT1DOp::verify() {$/;"	f	class:IFFT1DOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult LMSFilterOp::verify() {$/;"	f	class:LMSFilterOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult LMSFilterResponseOp::verify() {$/;"	f	class:LMSFilterResponseOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult LengthOp::verify() {$/;"	f	class:LengthOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult LowPassFIRFilterOp::verify() {$/;"	f	class:LowPassFIRFilterOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult LowPassFilter1stOrderOp::verify() {$/;"	f	class:LowPassFilter1stOrderOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult PaddingOp::verify() {$/;"	f	class:PaddingOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult QamModulateOp::verify() {$/;"	f	class:QamModulateOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult QuantizationOp::verify() {$/;"	f	class:QuantizationOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult ReturnOp::verify() {$/;"	f	class:ReturnOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult ReverseInputOp::verify() {$/;"	f	class:ReverseInputOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult RunLenEncodingOp::verify() {$/;"	f	class:RunLenEncodingOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult SetElemAtIndxOp::verify() { return mlir::success(); }$/;"	f	class:SetElemAtIndxOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult SinOp::verify() {$/;"	f	class:SinOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult SincOp::verify() {$/;"	f	class:SincOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult SlidingWindowAvgOp::verify() {$/;"	f	class:SlidingWindowAvgOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult SquareOp::verify() {$/;"	f	class:SquareOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult SumOp::verify() {$/;"	f	class:SumOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult ThresholdOp::verify() {$/;"	f	class:ThresholdOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult TransposeOp::verify() {$/;"	f	class:TransposeOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult UpsamplingOp::verify() {$/;"	f	class:UpsamplingOp
+verify	mlir/Dialect.cpp	/^mlir::LogicalResult filterOp::verify() {$/;"	f	class:filterOp
+wc	Output/TryDSPApps/PythonCodeForTest/filterDesign.py	/^wc = np.pi \/ 4  # Cutoff frequency (normalized, 0 to pi)$/;"	v
+wc	Output/TryDSPApps/PythonCodeForTest/highPassfilter.py	/^wc = np.pi \/ 4  # Cutoff frequency (normalized, 0 to pi)$/;"	v
+wc	Output/TryDSPApps/PythonCodeForTest/lowPassFilterApp.py	/^wc = 2 * np.pi * cutoff_freq \/ fs  # Normalized cutoff frequency$/;"	v
+wc1	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^wc1 = 2 * np.pi * low_cutoff \/ fs$/;"	v
+wc2	Output/TryDSPApps/PythonCodeForTest/bandPassfilter.py	/^wc2 = 2 * np.pi * high_cutoff \/ fs$/;"	v
+window	Output/TryDSPApps/PythonCodeForTest/HammingWindow.py	/^window = hamming_window(N)$/;"	v
+x	Output/TryDSPApps/PythonCodeForTest/periodogramHelp.py	/^x = np.array([1, 2])$/;"	v
+x	Output/TryDSPApps/PythonCodeForTest/periodogramHelp2.py	/^x = np.array([1, 2])$/;"	v
+x1	Output/TryDSPApps/PythonCodeForTest/periodogramHelp.py	/^x1 = np.array([1, 2,3,2, 1])$/;"	v
+x_neg	Output/TryDSPApps/PythonCodeForTest/periodogramHelp.py	/^x_neg = x[::-1]$/;"	v
+x_neg	Output/TryDSPApps/PythonCodeForTest/periodogramHelp2.py	/^x_neg = np.array([x[-i] for i in range(len(x))])$/;"	v
+zeroCrossCountOpLowering	mlir/LowerToAffineLoops.cpp	/^  zeroCrossCountOpLowering(MLIRContext *ctx)$/;"	f	struct:__anon7::zeroCrossCountOpLowering
+zeroCrossCountOpLowering	mlir/LowerToAffineLoops.cpp	/^struct zeroCrossCountOpLowering : public ConversionPattern {$/;"	s	namespace:__anon7	file:
+~Indent	parser/AST.cpp	/^  ~Indent() { --level; }$/;"	f	struct:__anon11::Indent

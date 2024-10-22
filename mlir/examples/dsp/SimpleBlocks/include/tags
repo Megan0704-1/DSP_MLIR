@@ -1,0 +1,164 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BinaryExprAST	toy/AST.h	/^  BinaryExprAST(Location loc, char op, std::unique_ptr<ExprAST> lhs,$/;"	f	class:dsp::BinaryExprAST
+BinaryExprAST	toy/AST.h	/^class BinaryExprAST : public ExprAST {$/;"	c	namespace:dsp
+CallExprAST	toy/AST.h	/^  CallExprAST(Location loc, const std::string &callee,$/;"	f	class:dsp::CallExprAST
+CallExprAST	toy/AST.h	/^class CallExprAST : public ExprAST {$/;"	c	namespace:dsp
+DEBUG_OUTPUT	toy/DebugConfig.h	9;"	d
+DEBUG_PRINT_NO_ARGS	toy/DebugConfig.h	35;"	d
+DEBUG_PRINT_NO_ARGS	toy/DebugConfig.h	40;"	d
+DEBUG_PRINT_WITH_ARGS	toy/DebugConfig.h	32;"	d
+DEBUG_PRINT_WITH_ARGS	toy/DebugConfig.h	39;"	d
+ExprAST	toy/AST.h	/^  ExprAST(ExprASTKind kind, Location location)$/;"	f	class:dsp::ExprAST
+ExprAST	toy/AST.h	/^class ExprAST {$/;"	c	namespace:dsp
+ExprASTKind	toy/AST.h	/^  enum ExprASTKind {$/;"	g	class:dsp::ExprAST
+Expr_BinOp	toy/AST.h	/^    Expr_BinOp,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_Call	toy/AST.h	/^    Expr_Call,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_Literal	toy/AST.h	/^    Expr_Literal,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_Num	toy/AST.h	/^    Expr_Num,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_Print	toy/AST.h	/^    Expr_Print,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_Return	toy/AST.h	/^    Expr_Return,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_Var	toy/AST.h	/^    Expr_Var,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+Expr_VarDecl	toy/AST.h	/^    Expr_VarDecl,$/;"	e	enum:dsp::ExprAST::ExprASTKind
+FunctionAST	toy/AST.h	/^  FunctionAST(std::unique_ptr<PrototypeAST> proto,$/;"	f	class:dsp::FunctionAST
+FunctionAST	toy/AST.h	/^class FunctionAST {$/;"	c	namespace:dsp
+GET_OP_CLASSES	toy/Dialect.h	33;"	d
+Lexer	toy/Lexer.h	/^  Lexer(std::string filename)$/;"	f	class:dsp::Lexer
+Lexer	toy/Lexer.h	/^class Lexer {$/;"	c	namespace:dsp
+LexerBuffer	toy/Lexer.h	/^  LexerBuffer(const char *begin, const char *end, std::string filename)$/;"	f	class:dsp::final
+LiteralExprAST	toy/AST.h	/^  LiteralExprAST(Location loc, std::vector<std::unique_ptr<ExprAST>> values,$/;"	f	class:dsp::LiteralExprAST
+LiteralExprAST	toy/AST.h	/^class LiteralExprAST : public ExprAST {$/;"	c	namespace:dsp
+Location	toy/Lexer.h	/^struct Location {$/;"	s	namespace:dsp
+MLIR_TUTORIAL_TOY_DIALECT_H_	toy/Dialect.h	15;"	d
+MLIR_TUTORIAL_TOY_SHAPEINFERENCEINTERFACE_H_	toy/ShapeInferenceInterface.h	15;"	d
+ModuleAST	toy/AST.h	/^  ModuleAST(std::vector<FunctionAST> functions)$/;"	f	class:dsp::ModuleAST
+ModuleAST	toy/AST.h	/^class ModuleAST {$/;"	c	namespace:dsp
+NumberExprAST	toy/AST.h	/^  NumberExprAST(Location loc, double val)$/;"	f	class:dsp::NumberExprAST
+NumberExprAST	toy/AST.h	/^class NumberExprAST : public ExprAST {$/;"	c	namespace:dsp
+Parser	toy/Parser.h	/^  Parser(Lexer &lexer) : lexer(lexer) {}$/;"	f	class:dsp::Parser
+Parser	toy/Parser.h	/^class Parser {$/;"	c	namespace:dsp
+PrintExprAST	toy/AST.h	/^  PrintExprAST(Location loc, std::unique_ptr<ExprAST> arg)$/;"	f	class:dsp::PrintExprAST
+PrintExprAST	toy/AST.h	/^class PrintExprAST : public ExprAST {$/;"	c	namespace:dsp
+PrototypeAST	toy/AST.h	/^  PrototypeAST(Location location, const std::string &name,$/;"	f	class:dsp::PrototypeAST
+PrototypeAST	toy/AST.h	/^class PrototypeAST {$/;"	c	namespace:dsp
+ReturnExprAST	toy/AST.h	/^  ReturnExprAST(Location loc, std::optional<std::unique_ptr<ExprAST>> expr)$/;"	f	class:dsp::ReturnExprAST
+ReturnExprAST	toy/AST.h	/^class ReturnExprAST : public ExprAST {$/;"	c	namespace:dsp
+TOY_AST_H	toy/AST.h	16;"	d
+TOY_LEXER_H	toy/Lexer.h	14;"	d
+TOY_MLIRGEN_H	toy/MLIRGen.h	15;"	d
+TOY_PARSER_H	toy/Parser.h	15;"	d
+TOY_PASSES_H	toy/Passes.h	14;"	d
+VarDeclExprAST	toy/AST.h	/^  VarDeclExprAST(Location loc, llvm::StringRef name, VarType type,$/;"	f	class:dsp::VarDeclExprAST
+VarDeclExprAST	toy/AST.h	/^class VarDeclExprAST : public ExprAST {$/;"	c	namespace:dsp
+VarType	toy/AST.h	/^struct VarType {$/;"	s	namespace:dsp
+VariableExprAST	toy/AST.h	/^  VariableExprAST(Location loc, llvm::StringRef name)$/;"	f	class:dsp::VariableExprAST
+VariableExprAST	toy/AST.h	/^class VariableExprAST : public ExprAST {$/;"	c	namespace:dsp
+arg	toy/AST.h	/^  std::unique_ptr<ExprAST> arg;$/;"	m	class:dsp::PrintExprAST
+args	toy/AST.h	/^  std::vector<std::unique_ptr<ExprAST>> args;$/;"	m	class:dsp::CallExprAST
+args	toy/AST.h	/^  std::vector<std::unique_ptr<VariableExprAST>> args;$/;"	m	class:dsp::PrototypeAST
+begin	toy/AST.h	/^  auto begin() { return functions.begin(); }$/;"	f	class:dsp::ModuleAST
+body	toy/AST.h	/^  std::unique_ptr<ExprASTList> body;$/;"	m	class:dsp::FunctionAST
+callee	toy/AST.h	/^  std::string callee;$/;"	m	class:dsp::CallExprAST
+classof	toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_BinOp; }$/;"	f	class:dsp::BinaryExprAST
+classof	toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_Call; }$/;"	f	class:dsp::CallExprAST
+classof	toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_Literal; }$/;"	f	class:dsp::LiteralExprAST
+classof	toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_Num; }$/;"	f	class:dsp::NumberExprAST
+classof	toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_Print; }$/;"	f	class:dsp::PrintExprAST
+classof	toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_Return; }$/;"	f	class:dsp::ReturnExprAST
+classof	toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_Var; }$/;"	f	class:dsp::VariableExprAST
+classof	toy/AST.h	/^  static bool classof(const ExprAST *c) { return c->getKind() == Expr_VarDecl; }$/;"	f	class:dsp::VarDeclExprAST
+col	toy/Lexer.h	/^  int col;                           \/\/\/< column number.$/;"	m	struct:dsp::Location
+consume	toy/Lexer.h	/^  void consume(Token tok) {$/;"	f	class:dsp::Lexer
+curCol	toy/Lexer.h	/^  int curCol = 0;$/;"	m	class:dsp::Lexer
+curLineBuffer	toy/Lexer.h	/^  llvm::StringRef curLineBuffer = "\\n";$/;"	m	class:dsp::Lexer
+curLineNum	toy/Lexer.h	/^  int curLineNum = 0;$/;"	m	class:dsp::Lexer
+curTok	toy/Lexer.h	/^  Token curTok = tok_eof;$/;"	m	class:dsp::Lexer
+current	toy/Lexer.h	/^  const char *current, *end;$/;"	m	class:dsp::final
+debugPrintWithArgs	toy/DebugConfig.h	/^void debugPrintWithArgs(const Args&... args) {$/;"	f
+dims	toy/AST.h	/^  std::vector<int64_t> dims;$/;"	m	class:dsp::LiteralExprAST
+dsp	toy/AST.h	/^namespace dsp {$/;"	n
+dsp	toy/Lexer.h	/^namespace dsp {$/;"	n
+dsp	toy/MLIRGen.h	/^namespace dsp {$/;"	n
+dsp	toy/Parser.h	/^namespace dsp {$/;"	n
+dsp	toy/Passes.h	/^namespace dsp {$/;"	n	namespace:mlir
+dsp	toy/ShapeInferenceInterface.h	/^namespace dsp {$/;"	n	namespace:mlir
+end	toy/AST.h	/^  auto end() { return functions.end(); }$/;"	f	class:dsp::ModuleAST
+end	toy/Lexer.h	/^  const char *current, *end;$/;"	m	class:dsp::final
+expr	toy/AST.h	/^  std::optional<std::unique_ptr<ExprAST>> expr;$/;"	m	class:dsp::ReturnExprAST
+file	toy/Lexer.h	/^  std::shared_ptr<std::string> file; \/\/\/< filename.$/;"	m	struct:dsp::Location
+final	toy/Lexer.h	/^class LexerBuffer final : public Lexer {$/;"	c	namespace:dsp
+functions	toy/AST.h	/^  std::vector<FunctionAST> functions;$/;"	m	class:dsp::ModuleAST
+getArg	toy/AST.h	/^  ExprAST *getArg() { return arg.get(); }$/;"	f	class:dsp::PrintExprAST
+getArgs	toy/AST.h	/^  llvm::ArrayRef<std::unique_ptr<ExprAST>> getArgs() { return args; }$/;"	f	class:dsp::CallExprAST
+getArgs	toy/AST.h	/^  llvm::ArrayRef<std::unique_ptr<VariableExprAST>> getArgs() { return args; }$/;"	f	class:dsp::PrototypeAST
+getBody	toy/AST.h	/^  ExprASTList *getBody() { return body.get(); }$/;"	f	class:dsp::FunctionAST
+getCallee	toy/AST.h	/^  llvm::StringRef getCallee() { return callee; }$/;"	f	class:dsp::CallExprAST
+getCol	toy/Lexer.h	/^  int getCol() { return curCol; }$/;"	f	class:dsp::Lexer
+getCurToken	toy/Lexer.h	/^  Token getCurToken() { return curTok; }$/;"	f	class:dsp::Lexer
+getDims	toy/AST.h	/^  llvm::ArrayRef<int64_t> getDims() { return dims; }$/;"	f	class:dsp::LiteralExprAST
+getExpr	toy/AST.h	/^  std::optional<ExprAST *> getExpr() {$/;"	f	class:dsp::ReturnExprAST
+getId	toy/Lexer.h	/^  llvm::StringRef getId() {$/;"	f	class:dsp::Lexer
+getInitVal	toy/AST.h	/^  ExprAST *getInitVal() { return initVal.get(); }$/;"	f	class:dsp::VarDeclExprAST
+getKind	toy/AST.h	/^  ExprASTKind getKind() const { return kind; }$/;"	f	class:dsp::ExprAST
+getLHS	toy/AST.h	/^  ExprAST *getLHS() { return lhs.get(); }$/;"	f	class:dsp::BinaryExprAST
+getLastLocation	toy/Lexer.h	/^  Location getLastLocation() { return lastLocation; }$/;"	f	class:dsp::Lexer
+getLine	toy/Lexer.h	/^  int getLine() { return curLineNum; }$/;"	f	class:dsp::Lexer
+getName	toy/AST.h	/^  llvm::StringRef getName() const { return name; }$/;"	f	class:dsp::PrototypeAST
+getName	toy/AST.h	/^  llvm::StringRef getName() { return name; }$/;"	f	class:dsp::VarDeclExprAST
+getName	toy/AST.h	/^  llvm::StringRef getName() { return name; }$/;"	f	class:dsp::VariableExprAST
+getNextChar	toy/Lexer.h	/^  int getNextChar() {$/;"	f	class:dsp::Lexer
+getNextToken	toy/Lexer.h	/^  Token getNextToken() { return curTok = getTok(); }$/;"	f	class:dsp::Lexer
+getOp	toy/AST.h	/^  char getOp() { return op; }$/;"	f	class:dsp::BinaryExprAST
+getProto	toy/AST.h	/^  PrototypeAST *getProto() { return proto.get(); }$/;"	f	class:dsp::FunctionAST
+getRHS	toy/AST.h	/^  ExprAST *getRHS() { return rhs.get(); }$/;"	f	class:dsp::BinaryExprAST
+getTok	toy/Lexer.h	/^  Token getTok() {$/;"	f	class:dsp::Lexer
+getTokPrecedence	toy/Parser.h	/^  int getTokPrecedence() {$/;"	f	class:dsp::Parser
+getType	toy/AST.h	/^  const VarType &getType() { return type; }$/;"	f	class:dsp::VarDeclExprAST
+getValue	toy/AST.h	/^  double getValue() { return val; }$/;"	f	class:dsp::NumberExprAST
+getValue	toy/Lexer.h	/^  double getValue() {$/;"	f	class:dsp::Lexer
+getValues	toy/AST.h	/^  llvm::ArrayRef<std::unique_ptr<ExprAST>> getValues() { return values; }$/;"	f	class:dsp::LiteralExprAST
+identifierStr	toy/Lexer.h	/^  std::string identifierStr;$/;"	m	class:dsp::Lexer
+initVal	toy/AST.h	/^  std::unique_ptr<ExprAST> initVal;$/;"	m	class:dsp::VarDeclExprAST
+kind	toy/AST.h	/^  const ExprASTKind kind;$/;"	m	class:dsp::ExprAST
+lastChar	toy/Lexer.h	/^  Token lastChar = Token(' ');$/;"	m	class:dsp::Lexer
+lastLocation	toy/Lexer.h	/^  Location lastLocation;$/;"	m	class:dsp::Lexer
+lexer	toy/Parser.h	/^  Lexer &lexer;$/;"	m	class:dsp::Parser
+lhs	toy/AST.h	/^  std::unique_ptr<ExprAST> lhs, rhs;$/;"	m	class:dsp::BinaryExprAST
+line	toy/Lexer.h	/^  int line;                          \/\/\/< line number.$/;"	m	struct:dsp::Location
+loc	toy/AST.h	/^  const Location &loc() { return location; }$/;"	f	class:dsp::ExprAST
+loc	toy/AST.h	/^  const Location &loc() { return location; }$/;"	f	class:dsp::PrototypeAST
+location	toy/AST.h	/^  Location location;$/;"	m	class:dsp::ExprAST
+location	toy/AST.h	/^  Location location;$/;"	m	class:dsp::PrototypeAST
+mlir	toy/MLIRGen.h	/^namespace mlir {$/;"	n
+mlir	toy/Passes.h	/^namespace mlir {$/;"	n
+mlir	toy/ShapeInferenceInterface.h	/^namespace mlir {$/;"	n
+name	toy/AST.h	/^  std::string name;$/;"	m	class:dsp::PrototypeAST
+name	toy/AST.h	/^  std::string name;$/;"	m	class:dsp::VarDeclExprAST
+name	toy/AST.h	/^  std::string name;$/;"	m	class:dsp::VariableExprAST
+numVal	toy/Lexer.h	/^  double numVal = 0;$/;"	m	class:dsp::Lexer
+op	toy/AST.h	/^  char op;$/;"	m	class:dsp::BinaryExprAST
+parseBinOpRHS	toy/Parser.h	/^  std::unique_ptr<ExprAST> parseBinOpRHS(int exprPrec,$/;"	f	class:dsp::Parser
+parseBlock	toy/Parser.h	/^  std::unique_ptr<ExprASTList> parseBlock() {$/;"	f	class:dsp::Parser
+parseDeclaration	toy/Parser.h	/^  std::unique_ptr<VarDeclExprAST> parseDeclaration() {$/;"	f	class:dsp::Parser
+parseDefinition	toy/Parser.h	/^  std::unique_ptr<FunctionAST> parseDefinition() {$/;"	f	class:dsp::Parser
+parseError	toy/Parser.h	/^  std::unique_ptr<R> parseError(T &&expected, U &&context = "") {$/;"	f	class:dsp::Parser
+parseExpression	toy/Parser.h	/^  std::unique_ptr<ExprAST> parseExpression() {$/;"	f	class:dsp::Parser
+parseIdentifierExpr	toy/Parser.h	/^  std::unique_ptr<ExprAST> parseIdentifierExpr() {$/;"	f	class:dsp::Parser
+parseModule	toy/Parser.h	/^  std::unique_ptr<ModuleAST> parseModule() {$/;"	f	class:dsp::Parser
+parseNumberExpr	toy/Parser.h	/^  std::unique_ptr<ExprAST> parseNumberExpr() {$/;"	f	class:dsp::Parser
+parseParenExpr	toy/Parser.h	/^  std::unique_ptr<ExprAST> parseParenExpr() {$/;"	f	class:dsp::Parser
+parsePrimary	toy/Parser.h	/^  std::unique_ptr<ExprAST> parsePrimary() {$/;"	f	class:dsp::Parser
+parsePrototype	toy/Parser.h	/^  std::unique_ptr<PrototypeAST> parsePrototype() {$/;"	f	class:dsp::Parser
+parseReturn	toy/Parser.h	/^  std::unique_ptr<ReturnExprAST> parseReturn() {$/;"	f	class:dsp::Parser
+parseTensorLiteralExpr	toy/Parser.h	/^  std::unique_ptr<ExprAST> parseTensorLiteralExpr() {$/;"	f	class:dsp::Parser
+parseType	toy/Parser.h	/^  std::unique_ptr<VarType> parseType() {$/;"	f	class:dsp::Parser
+proto	toy/AST.h	/^  std::unique_ptr<PrototypeAST> proto;$/;"	m	class:dsp::FunctionAST
+rhs	toy/AST.h	/^  std::unique_ptr<ExprAST> lhs, rhs;$/;"	m	class:dsp::BinaryExprAST
+shape	toy/AST.h	/^  std::vector<int64_t> shape;$/;"	m	struct:dsp::VarType
+type	toy/AST.h	/^  VarType type;$/;"	m	class:dsp::VarDeclExprAST
+val	toy/AST.h	/^  double val;$/;"	m	class:dsp::NumberExprAST
+values	toy/AST.h	/^  std::vector<std::unique_ptr<ExprAST>> values;$/;"	m	class:dsp::LiteralExprAST
