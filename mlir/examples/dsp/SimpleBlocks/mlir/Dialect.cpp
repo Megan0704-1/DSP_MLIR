@@ -2678,8 +2678,6 @@ mlir::LogicalResult Conv2DOp::verify() {
   return mlir::success();
 }
 
-<<<<<<< Updated upstream
-=======
 //===----------------------------------------------------------------------===//
 // QamModulateOp
 //===----------------------------------------------------------------------===//
@@ -2691,8 +2689,12 @@ void QamModulateOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,
     auto shape = llvm::dyn_cast<RankedTensorType>(input.getType()).getShape();
     auto eleType = builder.getF64Type();
     auto complexEleType = mlir::ComplexType::get(eleType);
+    SmallVector<long int, 4> newShape(shape.begin(), shape.end());
 
-    auto outputType = RankedTensorType::get(shape, complexEleType);
+    for(auto &s : newShape) s/=2;
+
+    llvm::ArrayRef<long int> qamShape(newShape);
+    auto outputType = RankedTensorType::get(qamShape, complexEleType);
     state.addTypes(outputType);
 }
 
@@ -2700,7 +2702,12 @@ void QamModulateOp::inferShapes() {
     
     auto shape = getInput().getType().getShape();
     auto complexEleType = mlir::ComplexType::get(getInput().getType().getElementType());
-    auto outputType = RankedTensorType::get(shape, complexEleType);
+    SmallVector<long int, 4> newShape(shape.begin(), shape.end());
+
+    for(auto &s : newShape) s/=2;
+
+    llvm::ArrayRef<long int> qamShape(newShape);
+    auto outputType = RankedTensorType::get(qamShape, complexEleType);
 
     getResult().setType(outputType);
 }
@@ -2721,7 +2728,6 @@ mlir::LogicalResult QamModulateOp::verify() {
   return mlir::success();
 }
 
->>>>>>> Stashed changes
 //===----------------------------------------------------------------------===//
 // TableGen'd op method definitions
 //===----------------------------------------------------------------------===//

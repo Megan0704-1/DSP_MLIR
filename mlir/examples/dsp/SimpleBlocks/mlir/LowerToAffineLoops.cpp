@@ -35,6 +35,7 @@
 #include "mlir/Dialect/Func/IR/FuncOps.h"
 #include "mlir/Dialect/Math/IR/Math.h"
 #include "mlir/Dialect/MemRef/IR/MemRef.h"
+#include "mlir/Dialect/Complex/IR/Complex.h"
 #include "mlir/Pass/Pass.h"
 #include "mlir/Transforms/DialectConversion.h"
 #include "llvm/ADT/ArrayRef.h"
@@ -685,7 +686,6 @@ static void lowerOpToLoopsFIR(Operation *op, ValueRange operands,
   //     }
   //   affine.store %4, alloc[%arg0]
   // }
-<<<<<<< Updated upstream
 
   // rewriter.create<AffineYieldOp>(loc, ValueRange{constant25});
   // rewriter.setInsertionPointAfter(ifOp);
@@ -6363,7 +6363,6 @@ struct FIRFilterResponseOpLowering : public ConversionPattern {
   matchAndRewrite(Operation *op, ArrayRef<Value> operands,
                   ConversionPatternRewriter &rewriter) const final {
     // dsp.FIRFilterResponseOp has 2 operands -- both of type tensor f64
-<<<<<<< Updated upstream
 
     // Get the location of FIRFilterResponseOp
     auto loc = op->getLoc();
@@ -7279,13 +7278,12 @@ struct QamModulateOpLowering : public OpRewritePattern<dsp::QamModulateOp> {
 
   LogicalResult matchAndRewrite(dsp::QamModulateOp op,
                                 PatternRewriter &rewriter) const final {
-      auto constantValue = op.getInput();
+      auto output = llvm::dyn_cast<RankedTensorType>((*op->result_type_begin()));
       Location loc = op.getLoc();
 
       // When lowering the constant operation, we allocate and assign the constant
       // values to a corresponding memref allocation.
-      auto tensorType = llvm::cast<RankedTensorType>(op.getType());
-      auto memRefType = convertTensorToMemRef(tensorType);
+      auto memRefType = convertTensorToMemRef(output);
       auto alloc = insertAllocAndDealloc(memRefType, loc, rewriter);
 
       // We will be generating constant indices up-to the largest dimension.
@@ -7296,34 +7294,71 @@ struct QamModulateOpLowering : public OpRewritePattern<dsp::QamModulateOp> {
 
       if (!valueShape.empty()) {
           for (auto i : llvm::seq<int64_t>(
-                      0, *std::max_element(valueShape.begin(), valueShape.end())))
+                      0, *std::max_element(valueShape.begin(), valueShape.end()))) {
               constantIndices.push_back(
                       rewriter.create<arith::ConstantIndexOp>(loc, i));
+          }
       } else {
           // This is the case of a tensor of rank 0.
           constantIndices.push_back(
                   rewriter.create<arith::ConstantIndexOp>(loc, 0));
       }
 
-      // The constant operation represents a multi-dimensional constant, so we
-      // will need to generate a store for each of the elements. The following
-      // functor recursively walks the dimensions of the constant shape,
-      // generating a store when the recursion hits the base case.
+      auto complexType = mlir::ComplexType::get(rewriter.getF64Type());
       SmallVector<Value, 2> indices;
-      auto valueIt = constantValue.value_begin<FloatAttr>();
+      auto valueIt = op.getInput().use_begin();
+      int counter=0;
       std::function<void(uint64_t)> storeElements = [&](uint64_t dimension) {
           // The last dimension is the base case of the recursion, at this point
           // we store the element at the given index.
           if (dimension == valueShape.size()) {
-              rewriter.create<affine::AffineStoreOp>(
-                      loc, rewriter.create<arith::ConstantOp>(loc, *valueIt++), alloc,
-                      llvm::ArrayRef(indices));
+              auto constArr = (*valueIt++).get().getDefiningOp<dsp::ConstantOp>();
+              DenseElementsAttr constVal = constArr.getValue();
+              auto attrArr = constVal.getValues<FloatAttr>();
+
+              SmallVector<mlir::complex::ConstantOp, 8> complexOps;
+              bool realFlag = true;
+
+              for(mlir::Attribute ele : attrArr) {
+                  auto value = ele.dyn_cast<mlir::FloatAttr>();
+                  mlir::Attribute realAttr, imgAttr;
+                  if(realFlag) {
+                    realAttr = rewriter.getF64FloatAttr(value.getValue().convertToDouble());
+                  } else {
+                    imgAttr = rewriter.getF64FloatAttr(value.getValue().convertToDouble());
+
+                      llvm::SmallVector<mlir::Attribute, 2> attrs = {realAttr, imgAttr};
+                      auto complexAttr = rewriter.getArrayAttr(attrs);
+
+                      mlir::complex::ConstantOp complexOp = rewriter.create<mlir::complex::ConstantOp>(loc, complexType, complexAttr);
+
+                      rewriter.create<affine::AffineStoreOp>(
+                              loc, complexOp, alloc, llvm::ArrayRef(indices)
+                              );
+                      // complexOps.push_back(complexOp);
+                  }
+                  realFlag = !realFlag;
+              }
+              // auto realVal = (*valueIt).get();
+              // auto imgVal = (*valueIt).get();
+              // auto realF64 = realVal.getDefiningOp<dsp::ConstantOp>();
+              // auto imgF64 = imgVal.getDefiningOp<dsp::ConstantOp>();
+              // auto realAttr = realF64.getValue();
+              // auto imgAttr = imgF64.getValue();
+              // llvm::errs() << realAttr << ", " << imgAttr << "\n";
+              // valueIt++;
+              // llvm::SmallVector<mlir::Attribute, 2> attrs = {realAttr, imgAttr};
+              // auto complexAttr = rewriter.getArrayAttr(attrs);
+
+              // rewriter.create<affine::AffineStoreOp>(
+                      // loc, complexOps, alloc,
+                      // llvm::ArrayRef(indices));
               return;
           }
 
           // Otherwise, iterate over the current dimension and add the indices to
           // the list.
-          for (uint64_t i = 0, e = valueShape[dimension]; i != e; ++i) {
+          for (uint64_t i = 0, e = 1; i != e; ++i) {
               indices.push_back(constantIndices[i]);
               storeElements(dimension + 1);
               indices.pop_back();
@@ -7332,9 +7367,9 @@ struct QamModulateOpLowering : public OpRewritePattern<dsp::QamModulateOp> {
 
       // Start the element storing recursion from the first dimension.
       storeElements(/*dimension=*/0);
-
-      // Replace this operation with the generated alloc.
+    // Replace this operation with the generated alloc.
       rewriter.replaceOp(op, alloc);
+      llvm::errs() << "modulate create success" << "\n";
       return success();
   }
 };
@@ -7461,7 +7496,7 @@ namespace {
   void getDependentDialects(DialectRegistry &registry) const override {
     registry
         .insert<affine::AffineDialect, func::FuncDialect, memref::MemRefDialect,
-                math::MathDialect, scf::SCFDialect>();
+                math::MathDialect, scf::SCFDialect, mlir::complex::ComplexDialect>();
   }
   void runOnOperation() final;
 };
@@ -7478,7 +7513,7 @@ void ToyToAffineLoweringPass::runOnOperation() {
     target.addLegalDialect<affine::AffineDialect, BuiltinDialect,
         arith::ArithDialect, func::FuncDialect,
         memref::MemRefDialect, math::MathDialect,
-        scf::SCFDialect>();
+        scf::SCFDialect, mlir::complex::ComplexDialect>();
 
     // We also define the Toy dialect as Illegal so that the conversion will fail
     // if any of these operations are *not* converted. Given that we actually want
@@ -7513,7 +7548,7 @@ void ToyToAffineLoweringPass::runOnOperation() {
       RunLenEncodingOpLowering, FIRFilterResSymmOptimizedOpLowering,
       LengthOpLowering, ReverseInputOpLowering, PaddingOpLowering,
       FIRFilterYSymmOptimizedOpLowering, FFT1DRealSymmOpLowering,
-      FFT1DImgConjSymmOpLowering, FFTRealOpLowering, FFTImagOpLowering, Conv2DOpLowering, ShiftRightOpLowering, MatmulOpLowering>(&getContext());
+      FFT1DImgConjSymmOpLowering, FFTRealOpLowering, FFTImagOpLowering, Conv2DOpLowering, ShiftRightOpLowering, MatmulOpLowering, QamModulateOpLowering>(&getContext());
 
     // With the target and rewrite patterns defined, we can now attempt the
     // conversion. The conversion will signal failure if any of our `illegal`
