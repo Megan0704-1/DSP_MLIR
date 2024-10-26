@@ -2757,15 +2757,18 @@ auto finalShape = freq * duration;
   getResult().setType(outputType);
 }
 
-// QamModulateOp
+//===----------------------------------------------------------------------===//
+// QamModulateRealOp
 //===----------------------------------------------------------------------===//
 
-void QamModulateOp::build(mlir::OpBuilder &builder, mlir::OperationState &state, 
+void QamModulateRealOp::build(mlir::OpBuilder &builder, mlir::OperationState &state, 
         mlir::Value signal) {
-    state.addTypes({UnrankedTensorType::get(builder.getF64Type())});
+    auto tensorType = UnrankedTensorType::get(builder.getF64Type());
+    state.addTypes({tensorType});
+    
     state.addOperands({signal});
 }
-void QamModulateOp::inferShapes() {
+void QamModulateRealOp::inferShapes() {
     auto signalType = llvm::dyn_cast<RankedTensorType>(getSignal().getType());
     auto signalShape = signalType.getShape();
 
@@ -2774,11 +2777,10 @@ void QamModulateOp::inferShapes() {
         outputShape[i] = signalShape[i] / 2;
     }
 
-    getResult(0).setType(RankedTensorType::get(outputShape, signalType.getElementType()));
-    getResult(1).setType(RankedTensorType::get(outputShape, signalType.getElementType()));
+    getResult().setType(RankedTensorType::get(outputShape, signalType.getElementType()));
 }
 
-mlir::LogicalResult QamModulateOp::verify() {
+mlir::LogicalResult QamModulateRealOp::verify() {
 
     auto signalType = llvm::dyn_cast<RankedTensorType>(getSignal().getType());
 
@@ -2789,7 +2791,49 @@ mlir::LogicalResult QamModulateOp::verify() {
 
     auto signalRank = signalType.getRank();
 
-    if(signalRank != 2 ) {
+    if(signalRank != 1 ) {
+        llvm::errs() << "expect 1 dimensional signal, get " << signalRank;
+        return mlir::failure();
+    }
+    
+  return mlir::success();
+}
+
+//===----------------------------------------------------------------------===//
+// QamModulateImgOp
+//===----------------------------------------------------------------------===//
+
+void QamModulateImgOp::build(mlir::OpBuilder &builder, mlir::OperationState &state, 
+        mlir::Value signal) {
+    auto tensorType = UnrankedTensorType::get(builder.getF64Type());
+    state.addTypes({tensorType});
+    
+    state.addOperands({signal});
+}
+void QamModulateImgOp::inferShapes() {
+    auto signalType = llvm::dyn_cast<RankedTensorType>(getSignal().getType());
+    auto signalShape = signalType.getShape();
+
+    SmallVector<long int, 8> outputShape(signalShape);
+    for(size_t i=0; i<signalShape.size(); ++i) {
+        outputShape[i] = signalShape[i] / 2;
+    }
+
+    getResult().setType(RankedTensorType::get(outputShape, signalType.getElementType()));
+}
+
+mlir::LogicalResult QamModulateImgOp::verify() {
+
+    auto signalType = llvm::dyn_cast<RankedTensorType>(getSignal().getType());
+
+    if(!signalType) {
+        llvm::errs() << "expect a ranked tensor for signal input, get " << getSignal();
+        return mlir::failure();
+    }
+
+    auto signalRank = signalType.getRank();
+
+    if(signalRank != 1 ) {
         llvm::errs() << "expect 1 dimensional signal, get " << signalRank;
         return mlir::failure();
     }

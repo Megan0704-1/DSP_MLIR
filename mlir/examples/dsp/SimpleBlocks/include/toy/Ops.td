@@ -2119,20 +2119,47 @@ def GenerateDTMFOp : Dsp_Op<"generateDtmf",
     let builders = [
         OpBuilder<(ins "Value":$input, "Value":$duration, "Value":$freq)>
     ];
+    let hasVerifier = 1;
+}
+
 //===----------------------------------------------------------------------===//
-// QamModulateOp
+// QamModulateRealOp real
 //===----------------------------------------------------------------------===//
 
-def QamModulateOp : Dsp_Op<"qam_modulate", 
+def QamModulateRealOp : Dsp_Op<"qam_modulate_real", 
     [Pure, DeclareOpInterfaceMethods<ShapeInferenceOpInterface>]> {
-    let summary = "Dsp dialect qam modulation operation";
+    let summary = "Dsp dialect qam modulation real operation";
     let description = [{
         Performs a digital modulation on input tensor.
     }];
 
     let arguments = (ins F64Tensor:$signal);
 
-    let results = (outs F64Tensor:$real, F64Tensor:$imagine);
+    let results = (outs F64Tensor:$real);
+
+
+    let builders = [
+        OpBuilder<(ins "Value":$signal)>
+    ];
+
+    let hasVerifier = 1;
+}
+
+//===----------------------------------------------------------------------===//
+// QamModulateImgOp imagine
+//===----------------------------------------------------------------------===//
+
+def QamModulateImgOp : Dsp_Op<"qam_modulate_imagine", 
+    [Pure, DeclareOpInterfaceMethods<ShapeInferenceOpInterface>]> {
+    let summary = "Dsp dialect qam modulation imagine operation";
+    let description = [{
+        Performs a digital modulation on input tensor.
+    }];
+
+    let arguments = (ins F64Tensor:$signal);
+
+    let results = (outs F64Tensor:$imagine);
+
 
     let builders = [
         OpBuilder<(ins "Value":$signal)>

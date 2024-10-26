@@ -312,6 +312,7 @@ private:
   /// and identifier and an optional type (shape specification) before the
   /// initializer.
   /// decl ::= var identifier [ type ] = expr
+  /// [MK modified] decl ::= var identifier_list [type] = expr
   std::unique_ptr<VarDeclExprAST> parseDeclaration() {
     if (lexer.getCurToken() != tok_var)
       return parseError<VarDeclExprAST>("var", "to begin declaration");
@@ -321,8 +322,23 @@ private:
     if (lexer.getCurToken() != tok_identifier)
       return parseError<VarDeclExprAST>("identified",
                                         "after 'var' declaration");
-    std::string id(lexer.getId());
-    lexer.getNextToken(); // eat id
+    /* origin impl */
+    // std::string id(lexer.getId());
+
+    /* mk test */
+    std::vector<std::string> id_list;
+    do {
+        if(lexer.getCurToken() == tok_comma) lexer.getNextToken();
+        if (lexer.getCurToken() != tok_identifier)
+            return parseError<VarDeclExprAST>("identified",
+                    "after 'var' declaration");
+        std::string id(lexer.getId());
+        id_list.push_back(id);
+        lexer.getNextToken();
+    } while(lexer.getCurToken() == tok_comma);
+
+    /* origin impl */
+    // lexer.getNextToken(); // eat id
 
     std::unique_ptr<VarType> type; // Type is optional, it can be inferred
     if (lexer.getCurToken() == '<') {
@@ -335,8 +351,10 @@ private:
       type = std::make_unique<VarType>();
     lexer.consume(Token('='));
     auto expr = parseExpression();
-    return std::make_unique<VarDeclExprAST>(std::move(loc), std::move(id),
-                                            std::move(*type), std::move(expr));
+    /* origin impl */
+    // return std::make_unique<VarDeclExprAST>(std::move(loc), std::move(id),
+                                            // std::move(*type), std::move(expr));
+    return std::make_unique<VarDeclExprAST>(std::move(loc), std::move(id_list), std::move(*type), std::move(expr));
   }
 
   /// Parse a block: a list of expression separated by semicolons and wrapped in

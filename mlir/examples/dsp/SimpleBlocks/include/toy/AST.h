@@ -107,19 +107,41 @@ public:
   static bool classof(const ExprAST *c) { return c->getKind() == Expr_Var; }
 };
 
+/* origin impl */
 /// Expression class for defining a variable.
+// class VarDeclExprAST : public ExprAST {
+  // std::string name;
+  // VarType type;
+  // std::unique_ptr<ExprAST> initVal;
+// 
+// public:
+  // VarDeclExprAST(Location loc, llvm::StringRef name, VarType type,
+                 // std::unique_ptr<ExprAST> initVal)
+      // : ExprAST(Expr_VarDecl, std::move(loc)), name(name),
+        // type(std::move(type)), initVal(std::move(initVal)) {}
+// 
+  // llvm::StringRef getName() { return name; }
+  // ExprAST *getInitVal() { return initVal.get(); }
+  // const VarType &getType() { return type; }
+// 
+  // /// LLVM style RTTI
+  // static bool classof(const ExprAST *c) { return c->getKind() == Expr_VarDecl; }
+// };
+
+/* mk test */
 class VarDeclExprAST : public ExprAST {
-  std::string name;
-  VarType type;
-  std::unique_ptr<ExprAST> initVal;
+    std::vector<std::string> name_list;
+    VarType type;
+    std::unique_ptr<ExprAST> initVal;
 
 public:
-  VarDeclExprAST(Location loc, llvm::StringRef name, VarType type,
+  VarDeclExprAST(Location loc, std::vector<std::string> name_list, VarType type,
                  std::unique_ptr<ExprAST> initVal)
-      : ExprAST(Expr_VarDecl, std::move(loc)), name(name),
+      : ExprAST(Expr_VarDecl, std::move(loc)), name_list(name_list),
         type(std::move(type)), initVal(std::move(initVal)) {}
 
-  llvm::StringRef getName() { return name; }
+  std::vector<std::string> getNameList() { return name_list; }
+  llvm::StringRef getName(int i=0) { return name_list[i]; }
   ExprAST *getInitVal() { return initVal.get(); }
   const VarType &getType() { return type; }
 

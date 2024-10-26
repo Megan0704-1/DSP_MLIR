@@ -1,7 +1,8 @@
 def main() {
     var input_data = [1,1,1,0,1,1,1,0];
-    print(input_data);
-    var real, imagine = qam_modulate(input_data);
+    # print(input_data);
+    var real = qam_modulate_real(input_data);
+    var imagine = qam_modulate_imagine(input_data);
     print(real);
     print(imagine);
     # var real_part = [1, 1, 1, 1];

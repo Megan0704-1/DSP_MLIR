@@ -94,7 +94,12 @@ void ASTDumper::dump(ExprAST *expr) {
 /// recurse in the initializer value.
 void ASTDumper::dump(VarDeclExprAST *varDecl) {
   INDENT();
-  llvm::errs() << "VarDecl " << varDecl->getName();
+  if(varDecl->getNameList().size() == 1) llvm::errs() << "VarDecl " << varDecl->getName();
+  else {
+      llvm::errs() << "VarDecl ";
+      for(size_t i=0; i<varDecl->getNameList().size(); ++i) llvm::errs() << varDecl->getName(i) << ", ";
+  }
+
   dump(varDecl->getType());
   llvm::errs() << " " << loc(varDecl) << "\n";
   dump(varDecl->getInitVal());
