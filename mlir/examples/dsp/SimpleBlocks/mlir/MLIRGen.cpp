@@ -947,22 +947,19 @@ private:
 
     mlir::Value value;
     // Register the value in the symbol table.
-    /* mk test */
-    for(size_t i=0; i<vardecl.getNameList().size(); ++i) {
-        value = mlirGen(*init);
-        if (!value)
-            return nullptr;
+    value = mlirGen(*init);
+    if (!value)
+        return nullptr;
 
         // We have the initializer value, but in case the variable was declared
         // with specific shape, we emit a "reshape" operation. It will get
         // optimized out later as needed.
-        if (!vardecl.getType().shape.empty()) {
-            value = builder.create<ReshapeOp>(loc(vardecl.loc()),
-                    getType(vardecl.getType()), value);
-        }
-        if (failed(declare(vardecl.getName(i), value)))
-            return nullptr;
+    if (!vardecl.getType().shape.empty()) {
+        value = builder.create<ReshapeOp>(loc(vardecl.loc()),
+                getType(vardecl.getType()), value);
     }
+    if (failed(declare(vardecl.getName(), value)))
+        return nullptr;
     return value;
   }
 
