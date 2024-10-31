@@ -182,7 +182,7 @@ private:
     // String val: "..."
     if(lastChar == '"') {
         stringVal = "";
-        while (isalnum((lastChar = Token(getNextChar()))) || lastChar == '_') {
+        while (isalnum((lastChar = Token(getNextChar()))) || lastChar == '_' || lastChar== ' ') {
             if(lastChar == '"') break;
             stringVal += (char)lastChar;
         }
