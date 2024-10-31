@@ -4,6 +4,6 @@ def main() {
         var c = sub(a, b);
         print(c);
 
-        var d = "12345";
+        var d = "HELLO FROM SPACE";
         print(d);
 }
