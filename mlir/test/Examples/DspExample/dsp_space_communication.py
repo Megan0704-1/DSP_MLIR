@@ -5,5 +5,6 @@ def main() {
         var noise = sin(a);
         var noisy_signal = a+noise;
         var b = space_demodulate(noisy_signal);
-        print(b);
+        var e = space_err_correction(d);
+        print(e);
 }

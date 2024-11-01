@@ -2325,6 +2325,28 @@ def SpaceDemodulateOp : Dsp_Op<"space_demodulate",
     let hasVerifier = 1;
 }
 
+//===----------------------------------------------------------------------===//
+// SpaceErrCorrectionOp
+//===----------------------------------------------------------------------===//
+
+def SpaceErrCorrectionOp : Dsp_Op<"space_err_correction", 
+    [Pure, DeclareOpInterfaceMethods<ShapeInferenceOpInterface>]> {
+    let summary = "Dsp dialect space error correction operation";
+    let description = [{
+        Remove noise operation for signal transmission in space.
+    }];
+
+    let arguments = (ins F64Tensor:$signal);
+
+    let results = (outs F64Tensor:$output);
+
+    let builders = [
+        OpBuilder<(ins "Value":$signal)>
+    ];
+
+    let hasVerifier = 1;
+}
+
 #endif // TOY_OPS
 
 

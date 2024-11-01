@@ -3007,6 +3007,21 @@ mlir::LogicalResult SpaceDemodulateOp::verify() {
 }
 
 //===----------------------------------------------------------------------===//
+// SpaceDemodulateOp
+//===----------------------------------------------------------------------===//
+
+void SpaceErrCorrectionOp::build(mlir::OpBuilder &builder, mlir::OperationState &state, mlir::Value signal) {
+    state.addTypes({UnrankedTensorType::get(builder.getF64Type())});
+    state.addOperands({signal});
+}
+
+void SpaceErrCorrectionOp::inferShapes() { getResult().setType(getSignal().getType()); }
+
+mlir::LogicalResult SpaceErrCorrectionOp::verify() {
+    return mlir::success();
+}
+
+//===----------------------------------------------------------------------===//
 // TableGen'd op method definitions
 //===----------------------------------------------------------------------===//
 
