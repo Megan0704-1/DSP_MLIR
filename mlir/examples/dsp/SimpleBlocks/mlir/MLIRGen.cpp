@@ -925,6 +925,24 @@ private:
        }
        return builder.create<QamDemodulateOp>(location, operands[0], operands[1]);
    }
+   // space_demodulate
+   if(callee == "space_demodulate") {
+       if(call.getArgs().size() != 1) {
+           emitError(location, "MLIR codegen encountered an error: dsp.SpaceDemodulateOp"
+                   "accepts 1 arguments");
+           return nullptr;
+       }
+       return builder.create<SpaceDemodulateOp>(location, operands[0]);
+   }
+   // space_modulate
+   if(callee == "space_modulate") {
+       if(call.getArgs().size() != 1) {
+           emitError(location, "MLIR codegen encountered an error: dsp.SpaceModulateOp"
+                   "accepts 1 arguments");
+           return nullptr;
+       }
+       return builder.create<SpaceModulateOp>(location, operands[0]);
+   }
     // Builtin calls have their custom operation, meaning this is a
     // straightforward emission.
     // if(callee == "delay"){

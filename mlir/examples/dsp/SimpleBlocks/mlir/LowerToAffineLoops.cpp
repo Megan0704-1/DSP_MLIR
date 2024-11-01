@@ -8022,10 +8022,10 @@ struct QamModulateRealOpLowering : public ConversionPattern {
     Value out =
         rewriter.create<arith::SelectOp>(loc, zeroReal, negOneVal, oneVal);
 
-    rewriter.create<AffineStoreOp>(loc, out, alloc, outputRealMap,
-                                   ValueRange{ivI});
-    rewriter.setInsertionPointAfter(forOpI);
-    rewriter.replaceOp(op, alloc);
+        rewriter.create<AffineStoreOp>(loc, out, alloc, outputRealMap, ValueRange{ivI});
+
+        rewriter.setInsertionPointAfter(forOpI);
+        rewriter.replaceOp(op, alloc);
 
     return success();
   }
@@ -8175,12 +8175,14 @@ struct QamDemodulateOpLowering : public ConversionPattern {
     rewriter.create<AffineStoreOp>(loc, out2, alloc, outputMapImagine,
                                    ValueRange{ivI});
 
-    rewriter.replaceOp(op, alloc);
+            rewriter.setInsertionPointAfter(forOpI);
+            rewriter.replaceOp(op, alloc);
 
     return success();
   }
 }; // qam_demodulate op
 
+//===----------------------------------------------------------------------===//
 //===----------------------------------------------------------------------===//
 // ToyToAffine RewritePatterns: BeamForm operations
 //===----------------------------------------------------------------------===//
@@ -8283,8 +8285,8 @@ struct BeamFormOpLowering : public ConversionPattern {
     rewriter.create<AffineStoreOp>(loc, result, allocSignal,
                                    ValueRange{ivI, ivJ});
 
-    rewriter.setInsertionPointAfter(forOpJ);
-    rewriter.setInsertionPointAfter(forOpI);
+            rewriter.setInsertionPointAfter(forOpJ);
+            rewriter.setInsertionPointAfter(forOpI);
 
     ub = antennas;
     affine::AffineForOp forOpIOut =
@@ -8317,13 +8319,103 @@ struct BeamFormOpLowering : public ConversionPattern {
     rewriter.setInsertionPointAfter(forOpJOut);
     rewriter.setInsertionPointAfter(forOpIOut);
 
-    rewriter.replaceOp(op, alloc);
+            rewriter.replaceOp(op, alloc);
+            
+            llvm::errs() << "success loop\n";
+            return mlir::success();
 
-    return mlir::success();
-  }
+        }
 };
 
-} // namespace
+struct SpaceModulateOpLowering : public ConversionPattern {
+    SpaceModulateOpLowering(MLIRContext *ctx)
+        : ConversionPattern(dsp::SpaceModulateOp::getOperationName(), 1, ctx) {}
+
+    mlir::LogicalResult
+        matchAndRewrite(Operation *op, ArrayRef<Value> operands,
+                ConversionPatternRewriter &rewriter) const final {
+            auto loc = op->getLoc();
+
+            // output
+            auto output = llvm::dyn_cast<RankedTensorType>((*op->result_type_begin()));
+            auto outputMem = convertTensorToMemRef(output);
+            auto alloc = insertAllocAndDealloc(outputMem, loc, rewriter);
+
+            SpaceModulateOpAdaptor spaceModAdaptor(operands);
+            Value signal = spaceModAdaptor.getSignal();
+            auto signalType = llvm::dyn_cast<RankedTensorType>(op->getOperand(0).getType());
+            llvm::ArrayRef<int64_t> signalShape = signalType.getShape();
+
+            Value negOneVal = rewriter.create<arith::ConstantOp>(loc, rewriter.getF64Type(), rewriter.getF64FloatAttr(-1));
+            Value zeroVal = rewriter.create<arith::ConstantOp>(loc, rewriter.getF64Type(), rewriter.getF64FloatAttr(0));
+            Value oneVal = rewriter.create<arith::ConstantOp>(loc, rewriter.getF64Type(), rewriter.getF64FloatAttr(1));
+            
+            // one dim loop
+            int64_t lb=0, ub=signalShape[0], step=1;
+            AffineForOp forOp = rewriter.create<AffineForOp>(loc, lb, ub, step);
+            rewriter.setInsertionPointToStart(forOp.getBody());
+            auto iv = forOp.getInductionVar();
+
+            Value bit = rewriter.create<AffineLoadOp>(loc, signal, ValueRange{iv});
+
+            Value isOne = rewriter.create<arith::CmpFOp>(loc, arith::CmpFPredicate::OEQ, bit, oneVal);
+
+            auto out = rewriter.create<arith::SelectOp>(loc, isOne, oneVal, negOneVal);
+
+            rewriter.create<AffineStoreOp>(loc, out, alloc, ValueRange{iv});
+            rewriter.setInsertionPointAfter(forOp);
+
+            rewriter.replaceOp(op, alloc);
+            return mlir::success();
+        }
+}; // space modulate
+
+struct SpaceDemodulateOpLowering : public ConversionPattern {
+    SpaceDemodulateOpLowering(MLIRContext *ctx)
+        : ConversionPattern(dsp::SpaceDemodulateOp::getOperationName(), 1, ctx) {}
+
+    mlir::LogicalResult
+        matchAndRewrite(Operation *op, ArrayRef<Value> operands,
+                ConversionPatternRewriter &rewriter) const final {
+            auto loc = op->getLoc();
+
+            // output
+            auto output = llvm::dyn_cast<RankedTensorType>((*op->result_type_begin()));
+            auto outputMem = convertTensorToMemRef(output);
+            auto alloc = insertAllocAndDealloc(outputMem, loc, rewriter);
+
+            SpaceDemodulateOpAdaptor spaceDemodAdaptor(operands);
+            Value binary = spaceDemodAdaptor.getBinary();
+            auto binaryType = llvm::dyn_cast<RankedTensorType>(op->getOperand(0).getType());
+            llvm::ArrayRef<int64_t> binaryShape = binaryType.getShape();
+
+            Value negOneVal = rewriter.create<arith::ConstantOp>(loc, rewriter.getF64Type(), rewriter.getF64FloatAttr(-1));
+            Value zeroVal = rewriter.create<arith::ConstantOp>(loc, rewriter.getF64Type(), rewriter.getF64FloatAttr(0));
+            Value oneVal = rewriter.create<arith::ConstantOp>(loc, rewriter.getF64Type(), rewriter.getF64FloatAttr(1));
+
+            // one dim loop
+            int64_t lb=0, ub=binaryShape[0], step=1;
+            AffineForOp forOp = rewriter.create<AffineForOp>(loc, lb, ub, step);
+            rewriter.setInsertionPointToStart(forOp.getBody());
+            auto iv = forOp.getInductionVar();
+
+            Value bit = rewriter.create<AffineLoadOp>(loc, binary, ValueRange{iv});
+
+            Value isOne = rewriter.create<arith::CmpFOp>(loc, arith::CmpFPredicate::OGE, bit, oneVal);
+
+            auto out = rewriter.create<arith::SelectOp>(loc, isOne, oneVal, zeroVal);
+
+            rewriter.create<AffineStoreOp>(loc, out, alloc, ValueRange{iv});
+
+            rewriter.setInsertionPointAfter(forOp);
+            rewriter.replaceOp(op, alloc);
+            return mlir::success();
+        }
+
+
+};
+
+}// namespace
 
 //===----------------------------------------------------------------------===//
 // ToyToAffineLoweringPass
@@ -8395,9 +8487,9 @@ void ToyToAffineLoweringPass::runOnOperation() {
       FIRFilterYSymmOptimizedOpLowering, FFT1DRealSymmOpLowering,
       FFT1DImgConjSymmOpLowering, FFTRealOpLowering, FFTImagOpLowering,
       Conv2DOpLowering, ShiftRightOpLowering, MatmulOpLowering,
-      ThresholdUpOpLowering, QamModulateRealOpLowering,
-      QamModulateImgOpLowering, QamDemodulateOpLowering, FindPeaksOpLowering,
-      BeamFormOpLowering, MedianFilterOpLowering>(&getContext());
+      ThresholdUpOpLowering, QamModulateRealOpLowering, QamModulateImgOpLowering, 
+      QamDemodulateOpLowering, FindPeaksOpLowering, BeamFormOpLowering, 
+      SpaceModulateOpLowering, SpaceDemodulateOpLowering>(&getContext());
 
   // With the target and rewrite patterns defined, we can now attempt the
   // conversion. The conversion will signal failure if any of our `illegal`
