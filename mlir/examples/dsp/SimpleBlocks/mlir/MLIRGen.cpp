@@ -934,6 +934,15 @@ private:
        }
        return builder.create<SpaceModulateOp>(location, operands[0]);
    }
+   // space_err_correction
+   if(callee == "space_err_correction") {
+       if(call.getArgs().size() != 1) {
+           emitError(location, "MLIR codegen encountered an error: dsp.SpaceErrCorrectionOp"
+                   "accepts 1 arguments");
+           return nullptr;
+       }
+       return builder.create<SpaceErrCorrectionOp>(location, operands[0]);
+   }
     // Builtin calls have their custom operation, meaning this is a
     // straightforward emission.
     // if(callee == "delay"){
