@@ -6,4 +6,5 @@ def main() {
 
         var d = "HELLO FROM SPACE";
         print(d);
+        print("abd");
 }
