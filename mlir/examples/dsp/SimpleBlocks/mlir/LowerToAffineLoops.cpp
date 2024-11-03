@@ -8987,10 +8987,11 @@ void ToyToAffineLoweringPass::runOnOperation() {
       FFT1DImgConjSymmOpLowering, FFTRealOpLowering, FFTImagOpLowering,
       Conv2DOpLowering, ShiftRightOpLowering, MatmulOpLowering,
       ThresholdUpOpLowering, QamModulateRealOpLowering,
-      QamModulateImgOpLowering, QamDemodulateOpLowering, FindPeaksOpLowering,
-      BeamFormOpLowering, SpaceModulateOpLowering, SpaceDemodulateOpLowering,
-      SpaceErrCorrectionOpLowering, FindPeaksOpLowering, MaxOpLowering,
-      MeanOpLowering, DiffOpLowering, GetSingleElemAtIdxOpLowering, Diff2MeanOptimizedOpLowering>(
+      QamModulateImgOpLowering, QamDemodulateOpLowering, BeamFormOpLowering,
+      SpaceModulateOpLowering, SpaceDemodulateOpLowering,
+      SpaceErrCorrectionOpLowering, MedianFilterOpLowering, FindPeaksOpLowering,
+      MaxOpLowering, MeanOpLowering, DiffOpLowering,
+      GetSingleElemAtIdxOpLowering, Diff2MeanOptimizedOpLowering>(
       &getContext());
 
   // With the target and rewrite patterns defined, we can now attempt the
