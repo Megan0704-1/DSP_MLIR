@@ -3032,20 +3032,20 @@ void QamModulateRealOp::inferShapes() {
 
 mlir::LogicalResult QamModulateRealOp::verify() {
 
-    auto signalType = llvm::dyn_cast<RankedTensorType>(getSignal().getType());
-
-    if(!signalType) {
-        llvm::errs() << "expect a ranked tensor for signal input, get " << getSignal();
-        return mlir::failure();
-    }
-
-    auto signalRank = signalType.getRank();
-
-    if(signalRank != 1 ) {
-        llvm::errs() << "expect 1 dimensional signal, get " << signalRank;
-        return mlir::failure();
-    }
-    
+    //auto signalType = llvm::dyn_cast<RankedTensorType>(getSignal().getType());
+//
+    //if(!signalType) {
+        //llvm::errs() << "expect a ranked tensor for signal input, get " << getSignal();
+        //return mlir::failure();
+    //}
+//
+    //auto signalRank = signalType.getRank();
+//
+    //if(signalRank != 1 ) {
+        //llvm::errs() << "expect 1 dimensional signal, get " << signalRank;
+        //return mlir::failure();
+    //}
+    //
   return mlir::success();
 }
 
@@ -3074,20 +3074,20 @@ void QamModulateImgOp::inferShapes() {
 
 mlir::LogicalResult QamModulateImgOp::verify() {
 
-    auto signalType = llvm::dyn_cast<RankedTensorType>(getSignal().getType());
-
-    if(!signalType) {
-        llvm::errs() << "expect a ranked tensor for signal input, get " << getSignal();
-        return mlir::failure();
-    }
-
-    auto signalRank = signalType.getRank();
-
-    if(signalRank != 1 ) {
-        llvm::errs() << "expect 1 dimensional signal, get " << signalRank;
-        return mlir::failure();
-    }
-    
+    // auto signalType = llvm::dyn_cast<RankedTensorType>(getSignal().getType());
+// 
+    // if(!signalType) {
+        // llvm::errs() << "expect a ranked tensor for signal input, get " << getSignal();
+        // return mlir::failure();
+    // }
+// 
+    // auto signalRank = signalType.getRank();
+// 
+    // if(signalRank != 1 ) {
+        // llvm::errs() << "expect 1 dimensional signal, get " << signalRank;
+        // return mlir::failure();
+    // }
+    // 
   return mlir::success();
 }
 
