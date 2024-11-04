@@ -702,7 +702,7 @@ struct SimplifySpaceModDemodulate : public mlir::OpRewritePattern<SpaceDemodulat
             auto iter = op.getOperand();
             while(iter.getDefiningOp()) {
                 auto pred = iter.getDefiningOp();
-                llvm::errs() << pred->getName().getStringRef() << "\n";
+                // llvm::errs() << pred->getName().getStringRef() << "\n";
                 if(llvm::dyn_cast<SpaceModulateOp>(*pred)) {
                     opt = true;
                     prev_mod = llvm::dyn_cast<SpaceModulateOp>(*pred);
@@ -714,7 +714,6 @@ struct SimplifySpaceModDemodulate : public mlir::OpRewritePattern<SpaceDemodulat
             if(!opt) return failure();
 
             auto constVal = prev_mod.getOperand().getDefiningOp();
-            llvm::errs() << "making sure op name: " << constVal->getName().getStringRef() << "\n";
             rewriter.replaceOp(op, constVal);
             return mlir::success();
         }
