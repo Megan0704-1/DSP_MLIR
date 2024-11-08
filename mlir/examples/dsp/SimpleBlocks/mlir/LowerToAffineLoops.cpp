@@ -9009,7 +9009,6 @@ struct QamDemodulateOpLowering : public ConversionPattern {
 }; // qam_demodulate op
 
 //===----------------------------------------------------------------------===//
-//===----------------------------------------------------------------------===//
 // ToyToAffine RewritePatterns: BeamForm operations
 //===----------------------------------------------------------------------===//
 
@@ -9481,8 +9480,70 @@ struct PowOpLowering : public ConversionPattern {
   }
 };
 
-} // namespace
 
+//===----------------------------------------------------------------------===//
+// ToyToAffine RewritePatterns: Normalize operations
+//===----------------------------------------------------------------------===//
+
+struct NormalizeOpLowering : public ConversionPattern {
+    NormalizeOpLowering(MLIRContext *ctx) 
+        : ConversionPattern(dsp::NormalizeOp::getOperationName(), 1, ctx) {}
+    
+    LogicalResult
+        matchAndRewrite(Operation *op, ArrayRef<Value> operands, ConversionPatternRewriter &rewriter) const final {
+            auto loc = op->getLoc();
+            
+            auto tensorType = llvm::dyn_cast<RankedTensorType>(*op->result_type_begin());
+            auto memRefType = convertTensorToMemRef(tensorType);
+            auto alloc = insertAllocAndDealloc(memRefType, loc, rewriter);
+            auto shape = tensorType.getShape()[0];
+
+            dsp::NormalizeOpAdaptor adaptor(operands);
+            Value signal = adaptor.getSignal();
+
+            Value min = rewriter.create<arith::ConstantOp>(loc, rewriter.getF64Type(), rewriter.getF64FloatAttr(1e8));
+            Value max = rewriter.create<arith::ConstantOp>(loc, rewriter.getF64Type(), rewriter.getF64FloatAttr(0));
+            
+            int64_t lb=0, ub=shape, step=1;
+            // finding min and max;
+            affine::AffineForOp forOp = rewriter.create<AffineForOp>(loc, lb, ub, step, ValueRange{min, max});
+            auto iv = forOp.getInductionVar();
+            rewriter.setInsertionPointToStart(forOp.getBody());
+
+            auto minVal = forOp.getBody()->getArgument(1);
+            auto maxVal = forOp.getBody()->getArgument(2);
+
+            auto cmpVal = rewriter.create<AffineLoadOp>(loc, signal, ValueRange{iv});
+            Value isMin = rewriter.create<arith::CmpFOp>(loc, arith::CmpFPredicate::OLT, cmpVal, minVal);
+            Value isMax = rewriter.create<arith::CmpFOp>(loc, arith::CmpFPredicate::OGT, cmpVal, maxVal);
+
+            auto minOut = rewriter.create<arith::SelectOp>(loc, isMin, cmpVal, minVal);
+            auto maxOut = rewriter.create<arith::SelectOp>(loc, isMax, cmpVal, maxVal);
+            
+            rewriter.create<AffineYieldOp>(loc, ValueRange{minOut.getResult(), maxOut.getResult()});
+            rewriter.setInsertionPointAfter(forOp);
+
+            auto minSignal = forOp.getResults()[0];
+            auto maxSignal = forOp.getResults()[1];
+
+            auto dividend = rewriter.create<arith::SubFOp>(loc, maxSignal, minSignal);
+            // ele-wise normalize
+            affine::AffineForOp forOpI = rewriter.create<AffineForOp>(loc, lb, ub, step);
+            auto ivI = forOpI.getInductionVar();
+            rewriter.setInsertionPointToStart(forOpI.getBody());
+
+            auto loadedVal = rewriter.create<AffineLoadOp>(loc, signal, ValueRange{ivI});
+            auto subVal = rewriter.create<arith::SubFOp>(loc, loadedVal, minSignal);
+            auto resultVal = rewriter.create<arith::DivFOp>(loc, subVal, dividend);
+
+            rewriter.create<AffineStoreOp>(loc, resultVal, alloc, ValueRange{ivI});
+            rewriter.setInsertionPointAfter(forOpI);
+            
+            rewriter.replaceOp(op, alloc);
+            return mlir::success();
+        }
+};
+}// namespace
 //===----------------------------------------------------------------------===//
 // ToyToAffineLoweringPass
 //===----------------------------------------------------------------------===//
@@ -9554,12 +9615,12 @@ void ToyToAffineLoweringPass::runOnOperation() {
       FFT1DImgConjSymmOpLowering, FFTRealOpLowering, FFTImagOpLowering,
       Conv2DOpLowering, ShiftRightOpLowering, MatmulOpLowering,
       ThresholdUpOpLowering, QamModulateRealOpLowering,
-      QamModulateImgOpLowering, QamDemodulateOpLowering, BeamFormOpLowering,
-      SpaceModulateOpLowering, SpaceDemodulateOpLowering,
-      SpaceErrCorrectionOpLowering, MedianFilterOpLowering, FindPeaksOpLowering,
-      MaxOpLowering, MeanOpLowering, DiffOpLowering, AbsOpLowering,
-      ArgMaxOpLowering, GetSingleElemAtIdxOpLowering,
-      Diff2MeanOptimizedOpLowering>(&getContext());
+      QamModulateImgOpLowering, QamDemodulateOpLowering, FindPeaksOpLowering,
+      BeamFormOpLowering, SpaceModulateOpLowering, SpaceDemodulateOpLowering,
+      SpaceErrCorrectionOpLowering, FindPeaksOpLowering, MaxOpLowering,
+      MeanOpLowering, DiffOpLowering, GetSingleElemAtIdxOpLowering, Diff2MeanOptimizedOpLowering,
+      NormalizeOpLowering>(
+      &getContext());
 
   // With the target and rewrite patterns defined, we can now attempt the
   // conversion. The conversion will signal failure if any of our `illegal`

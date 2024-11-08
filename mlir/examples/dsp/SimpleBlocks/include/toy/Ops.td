@@ -2568,6 +2568,24 @@ def ArgMaxOp : Dsp_Op<"argmax", [Pure , DeclareOpInterfaceMethods<ShapeInference
      OpBuilder<(ins "Value":$input, "int64_t":$axis)>
    ];
  }
+//===----------------------------------------------------------------------===//
+// NormalizeOp
+//===----------------------------------------------------------------------===//
+
+def NormalizeOp : Dsp_Op<"normalize", [Pure , DeclareOpInterfaceMethods<ShapeInferenceOpInterface>]> {
+   let summary = "normalize operation.";
+   let description = [{
+       normalization dsp operation.
+   }]; 
+
+   let arguments = (ins F64Tensor:$signal);
+   let results = (outs F64Tensor);
+   
+   let builders = [
+     OpBuilder<(ins "Value":$signal)>
+   ];
+
+ }
 
 
 #endif // TOY_OPS

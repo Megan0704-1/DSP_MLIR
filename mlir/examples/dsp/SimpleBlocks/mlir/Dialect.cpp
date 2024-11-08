@@ -3277,6 +3277,18 @@ mlir::LogicalResult SpaceErrCorrectionOp::verify() {
 }
 
 //===----------------------------------------------------------------------===//
+// NormalizeOp
+//===----------------------------------------------------------------------===//
+
+void NormalizeOp::build(mlir::OpBuilder &builder, mlir::OperationState &state, mlir::Value signal) {
+    state.addTypes({UnrankedTensorType::get(builder.getF64Type())});
+    state.addOperands({signal});
+}
+
+void NormalizeOp::inferShapes() { getResult().setType(getSignal().getType()); }
+
+
+//===----------------------------------------------------------------------===//
 // TableGen'd op method definitions
 //===----------------------------------------------------------------------===//
 
