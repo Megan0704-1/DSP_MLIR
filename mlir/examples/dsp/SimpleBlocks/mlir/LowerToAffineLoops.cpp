@@ -6760,7 +6760,6 @@ struct GainOpLowering : public ConversionPattern {
         rewriter.create<AffineForOp>(loc, lb, ub, step);
     auto ivY = forOpY.getInductionVar();
     rewriter.setInsertionPointToStart(forOpY.getBody());
-    auto zero = rewriter.create<arith::ConstantOp>(loc, rewriter.getIndexType(), rewriter.getIndexAttr(0));
 
     Value getLhs =
         rewriter.create<AffineLoadOp>(loc, gainOpOpAdaptor.getLhs(), ValueRange{ivY});
