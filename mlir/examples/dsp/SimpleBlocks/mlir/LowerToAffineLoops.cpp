@@ -6760,9 +6760,10 @@ struct GainOpLowering : public ConversionPattern {
         rewriter.create<AffineForOp>(loc, lb, ub, step);
     auto ivY = forOpY.getInductionVar();
     rewriter.setInsertionPointToStart(forOpY.getBody());
+    auto zero = rewriter.create<arith::ConstantOp>(loc, rewriter.getIndexType(), rewriter.getIndexAttr(0));
 
     Value getLhs =
-        rewriter.create<AffineLoadOp>(loc, gainOpOpAdaptor.getLhs(), ivY);
+        rewriter.create<AffineLoadOp>(loc, gainOpOpAdaptor.getLhs(), ValueRange{ivY});
     Value getRhs = rewriter.create<AffineLoadOp>(loc, gainOpOpAdaptor.getRhs(),
                                                  ValueRange{});
     Value mulProd = rewriter.create<arith::MulFOp>(loc, getLhs, getRhs);
@@ -8943,10 +8944,9 @@ struct QamDemodulateOpLowering : public ConversionPattern {
 
     // ranked tensor type
     auto realType =
-        llvm::dyn_cast<RankedTensorType>(op->getOperand(0).getType());
+        llvm::dyn_cast<RankedTensorType>(realVal.getType());
 
-    llvm::ArrayRef<int64_t> realShape = realType.getShape();
-    // llvm::ArrayRef<int64_t> outputShape = output.getShape();
+    int64_t realShape = output.getShape()[0] / 2;
 
     // constant vals;
     Value negOneVal = rewriter.create<arith::ConstantOp>(
@@ -8970,10 +8970,11 @@ struct QamDemodulateOpLowering : public ConversionPattern {
     AffineMap outputMapReal = AffineMap::get(1, 0, ArrayRef<AffineExpr>{d0 * 2},
                                              rewriter.getContext());
     AffineMap outputMapImagine = AffineMap::get(
-        1, 0, ArrayRef<AffineExpr>{d0 * 2 + 1}, rewriter.getContext());
+        1, 0, ArrayRef<AffineExpr>{(d0 * 2) + 1}, rewriter.getContext());
 
     // loops
-    int64_t lb = 0, step = 1, ub = realShape[0];
+    int64_t lb = 0, step = 1, ub = realShape;
+
     /* looping i*/
     AffineForOp forOpI = rewriter.create<AffineForOp>(loc, lb, ub, step);
     rewriter.setInsertionPointToStart(forOpI.getBody());
@@ -8995,9 +8996,10 @@ struct QamDemodulateOpLowering : public ConversionPattern {
     Value out2 =
         rewriter.create<arith::SelectOp>(loc, negImagine, zeroVal, oneVal);
 
-    rewriter.create<AffineStoreOp>(loc, out1, alloc, outputMapReal,
+    auto storeReal = rewriter.create<AffineStoreOp>(loc, out1, alloc, outputMapReal,
                                    ValueRange{ivI});
-    rewriter.create<AffineStoreOp>(loc, out2, alloc, outputMapImagine,
+
+    auto storeImg = rewriter.create<AffineStoreOp>(loc, out2, alloc, outputMapImagine,
                                    ValueRange{ivI});
 
     rewriter.setInsertionPointAfter(forOpI);
