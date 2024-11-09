@@ -3365,6 +3365,7 @@ mlir::LogicalResult NormLMSFilterResponseOptimizeOp::verify() {
 }
 
 //===----------------------------------------------------------------------===//
+<<<<<<< HEAD
 // FIRFilterResSymmThresholdUpOptimizedOp
 //===----------------------------------------------------------------------===//
 
@@ -3398,6 +3399,19 @@ void FIRFilterResSymmThresholdUpOptimizedOp::inferShapes() {
 
   // getResult().setType(getLhs().getType());
   getResult().setType(manipulatedType);
+=======
+// zeroCntOptimizeOp
+//===----------------------------------------------------------------------===//
+
+void zeroCntOptimizeOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,
+                        mlir::Value input, mlir::Value threshld) {
+  state.addTypes({UnrankedTensorType::get(builder.getF64Type())});
+  state.addOperands({input, threshld});
+}
+
+void zeroCntOptimizeOp::inferShapes() {
+  getResult().setType(getInput().getType());
+>>>>>>> d200cbeb0a5a (add opt zerocross + threshold op)
 }
 
 //===----------------------------------------------------------------------===//

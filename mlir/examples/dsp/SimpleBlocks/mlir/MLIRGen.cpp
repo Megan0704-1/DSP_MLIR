@@ -404,7 +404,7 @@ private:
     if (callee == "fftReal") {
       if (call.getArgs().size() != 1) {
         emitError(location,
-                  "MLIR codegen encountered an error: dsp.zeroCrossCount "
+                  "MLIR codegen encountered an error: dsp.fftReal "
                   "accepts only 1 arguments");
         return nullptr;
       }
@@ -414,7 +414,7 @@ private:
     if (callee == "fftImag") {
       if (call.getArgs().size() != 1) {
         emitError(location,
-                  "MLIR codegen encountered an error: dsp.zeroCrossCount "
+                  "MLIR codegen encountered an error: dsp.fftImg "
                   "accepts only 1 arguments");
         return nullptr;
       }
@@ -882,6 +882,7 @@ private:
                                          operands[2], operands[3], operands[4]);
     }
 
+    // threshold
     if (callee == "threshold") {
       if (call.getArgs().size() != 2) {
         emitError(location,
@@ -892,6 +893,18 @@ private:
       return builder.create<ThresholdOp>(location, operands[0], operands[1]);
     }
 
+    // zero cross count optimize
+    if (callee == "zero_cross_threshold_opt") {
+      if (call.getArgs().size() != 2) {
+        emitError(location,
+                  "MLIR codegen encountered an error: dsp.zero_cross_threshold_opt "
+                  "accepts only 2 arguments");
+        return nullptr;
+      }
+      return builder.create<zeroCntOptimizeOp>(location, operands[0], operands[1]);
+    }
+
+    // quantization
     if (callee == "quantization") {
       if (call.getArgs().size() != 4) {
         emitError(location,

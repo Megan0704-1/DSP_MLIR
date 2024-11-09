@@ -913,6 +913,7 @@ struct SimplifyDSSDPass : public mlir::OpRewritePattern<DivOp> {
         }
 };
 
+<<<<<<< HEAD
 struct SimplifyFIRFilterHammingThreholdUpOptimized
     : public mlir::OpRewritePattern<ThresholdUpOp> {
   SimplifyFIRFilterHammingThreholdUpOptimized(mlir::MLIRContext *context)
@@ -944,6 +945,35 @@ Value input2 = prev_FIRFilterSymmOp->getOperand(1);
 
     return mlir::success();
   }
+=======
+struct SimplifyZTpass : public mlir::OpRewritePattern<zeroCrossCountOp> {
+    SimplifyZTpass(mlir::MLIRContext *ctx) : OpRewritePattern<zeroCrossCountOp>(ctx, 1) {}
+
+    mlir::LogicalResult
+        matchAndRewrite(zeroCrossCountOp op, mlir::PatternRewriter &rewriter) const override {
+
+#define CHECK(x) if(!x) return failure();
+#define REMOVE(x) if(x->use_empty()) rewriter.eraseOp(x);
+#define DEBUG(x) {llvm::errs() << "check for " << x << "\n";}
+#define PASS llvm::errs() << "pass\n";
+
+            auto loc = op.getLoc();
+
+            // pattern -> CHECK()
+            Operation* thresholdOp = op.getOperand().getDefiningOp<ThresholdOp>();
+            CHECK(thresholdOp);
+
+            Value input = thresholdOp->getOperand(0);
+
+            // auto zeroCntOpt = rewriter.create<zeroCntOptimizeOp>(loc, input);
+
+            // rewriter.replaceOp(op, zeroCntOpt);
+
+            REMOVE(thresholdOp);
+
+            return mlir::success();
+        }
+>>>>>>> d200cbeb0a5a (add opt zerocross + threshold op)
 };
 
 
@@ -1084,8 +1114,14 @@ void DivOp::getCanonicalizationPatterns(RewritePatternSet &results, MLIRContext 
     }
 }
 
+<<<<<<< HEAD
 void ThresholdUpOp::getCanonicalizationPatterns(RewritePatternSet &results, MLIRContext *ctx) {
     if(getEnableCanonicalOpt()) {
         results.add<SimplifyFIRFilterHammingThreholdUpOptimized>(ctx);
+=======
+void zeroCrossCountOp::getCanonicalizationPatterns(RewritePatternSet &results, MLIRContext *ctx) {
+    if(getEnableCanonicalOpt()) {
+        results.add<SimplifyZTpass>(ctx);
+>>>>>>> d200cbeb0a5a (add opt zerocross + threshold op)
     }
 }

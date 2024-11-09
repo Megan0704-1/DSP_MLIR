@@ -643,25 +643,13 @@ def zeroCrossCountOp : Dsp_Op<"zeroCrossCount" ,
 
   let arguments = (ins F64Tensor:$lhs); //working -- F64
   let results =  (outs F64Tensor);
-  // let results = (outs I64);
 
-  // Indicate that the operation has a custom parser and printer method.
-  // let hasCustomAssemblyFormat = 1;
-  // let assemblyFormat = [{
-  //   `(` $input `:` type($input1 , $input2) `)` attr-dict `to` type(results)
-  // }];
-  // Allow building a zeroCrossCountOp with from the one input operands.
   let builders = [
     OpBuilder<(ins "Value":$lhs)>
   ];
 
-  // Indicate that the operation has a custom parser and printer method.
-  // let hasCustomAssemblyFormat = 1;
-  
-  // Enable registering canonicalization patterns with this operation.
-  //let hasCanonicalizer = 1;
+  let hasCanonicalizer = 1;
 
-  // let hasVerifier = 1;
 }
 
 
@@ -2677,6 +2665,25 @@ def FIRFilterResSymmThresholdUpOptimizedOp : Dsp_Op<"FIRFilterResSymmThresholdUp
     OpBuilder<(ins "Value":$lhs, "Value":$rhs, "Value":$threshold, "Value":$returnoriginal)>
   ];
 
+}
+
+//===----------------------------------------------------------------------===//
+// zeroCntOptimizeOp
+//===----------------------------------------------------------------------===//
+
+def zeroCntOptimizeOp : Dsp_Op<"zero_cross_threshold_opt",
+    [Pure, DeclareOpInterfaceMethods<ShapeInferenceOpInterface>]> {
+  let summary = "optimze op for zero cross count + threshold op";
+  let description = [{
+      val between given threshold are bound to 0, otherwise count + 1 if consecutive 2 elements have different sign.
+  }];
+
+  let arguments = (ins F64Tensor:$input, F64Tensor:$threshld);
+  let results = (outs F64Tensor);
+
+  let builders = [
+    OpBuilder<(ins "Value":$input, "Value":$threshld)>
+  ];
 }
 
 #endif // TOY_OPS
