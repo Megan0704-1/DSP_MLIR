@@ -2678,11 +2678,11 @@ def zeroCntOptimizeOp : Dsp_Op<"zero_cross_threshold_opt",
       val between given threshold are bound to 0, otherwise count + 1 if consecutive 2 elements have different sign.
   }];
 
-  let arguments = (ins F64Tensor:$input, F64Tensor:$threshld);
+  let arguments = (ins F64Tensor:$input, F64Tensor:$threshold);
   let results = (outs F64Tensor);
 
   let builders = [
-    OpBuilder<(ins "Value":$input, "Value":$threshld)>
+    OpBuilder<(ins "Value":$input, "Value":$threshold)>
   ];
 }
 

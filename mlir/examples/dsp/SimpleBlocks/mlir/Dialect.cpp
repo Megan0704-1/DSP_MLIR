@@ -3404,14 +3404,13 @@ void FIRFilterResSymmThresholdUpOptimizedOp::inferShapes() {
 //===----------------------------------------------------------------------===//
 
 void zeroCntOptimizeOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,
-                        mlir::Value input, mlir::Value threshld) {
+                        mlir::Value input, mlir::Value threshold) {
   state.addTypes({UnrankedTensorType::get(builder.getF64Type())});
-  state.addOperands({input, threshld});
+  state.addOperands({input, threshold});
 }
 
 void zeroCntOptimizeOp::inferShapes() {
-  getResult().setType(getInput().getType());
->>>>>>> d200cbeb0a5a (add opt zerocross + threshold op)
+  getResult().setType(getThreshold().getType());
 }
 
 //===----------------------------------------------------------------------===//

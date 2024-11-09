@@ -964,10 +964,11 @@ struct SimplifyZTpass : public mlir::OpRewritePattern<zeroCrossCountOp> {
             CHECK(thresholdOp);
 
             Value input = thresholdOp->getOperand(0);
+            Value threshold = thresholdOp->getOperand(1);
 
-            // auto zeroCntOpt = rewriter.create<zeroCntOptimizeOp>(loc, input);
+            auto zeroCntOpt = rewriter.create<zeroCntOptimizeOp>(loc, input, threshold);
 
-            // rewriter.replaceOp(op, zeroCntOpt);
+            rewriter.replaceOp(op, zeroCntOpt);
 
             REMOVE(thresholdOp);
 
