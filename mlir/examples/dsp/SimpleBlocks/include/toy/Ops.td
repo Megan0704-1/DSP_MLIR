@@ -2585,8 +2585,31 @@ def NormalizeOp : Dsp_Op<"normalize", [Pure , DeclareOpInterfaceMethods<ShapeInf
      OpBuilder<(ins "Value":$signal)>
    ];
 
+    let hasCanonicalizer = 1;
  }
 
+//===----------------------------------------------------------------------===//
+// NormLMSFilterResponseOptimizeOp
+//===----------------------------------------------------------------------===//
+
+
+def NormLMSFilterResponseOptimizeOp : Dsp_Op<"norm_LMSFilterResponse_opt",
+    [Pure, DeclareOpInterfaceMethods<ShapeInferenceOpInterface>]> {
+  let summary = "LMS filter Response + norm optimize";
+  let description = [{
+      norm + lmsfilter
+  }];
+
+  let arguments = (ins F64Tensor:$lhs, F64Tensor:$rhs, F64Tensor:$mu, F64Tensor:$filterLen);
+
+   let results = (outs F64Tensor);
+
+   let builders = [
+     OpBuilder<(ins "Value":$lhs, "Value":$rhs, "Value":$mu, "Value":$filterLen)>
+   ];
+
+   let hasVerifier = 1;
+}
 
 #endif // TOY_OPS
 

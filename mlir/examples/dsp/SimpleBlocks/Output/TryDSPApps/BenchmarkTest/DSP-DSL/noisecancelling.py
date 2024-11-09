@@ -19,11 +19,11 @@ var fs = 8000;
 
   var noisy_sig = clean_sig + noise1;
   # print(noisy_sig);
-  # print(clean_sig);
   var mu = 0.01;
   var filterSize = 32;
   var y = lmsFilterResponse(noisy_sig, clean_sig, mu, filterSize);
+  # var a = norm_LMSFilterResponse_opt(noisy_sig, clean_sig, mu, filterSize);
         var z = normalize(y);
-  print(z);
+        print(z);
 }
 

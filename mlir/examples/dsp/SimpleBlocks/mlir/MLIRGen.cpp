@@ -497,6 +497,16 @@ private:
       }
       return builder.create<NormalizeOp>(location, operands[0]);
     }
+   
+    // Normalize LMS filter Op
+    if (callee == "norm_LMSFilterResponse_opt") {
+      if (call.getArgs().size() != 4) {
+        emitError(location, "MLIR codegen encountered an error: dsp.norm_LMSFilterResponse_opt "
+                            "accepts 4 arguments ");
+        return nullptr;
+      }
+      return builder.create<NormLMSFilterResponseOptimizeOp>(location, operands[0], operands[1], operands[2], operands[3]);
+    }
 
     // Shift right Op
     if (callee == "shiftRight") {
