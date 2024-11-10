@@ -9753,7 +9753,6 @@ struct QamDemodulateOpLowering : public ConversionPattern {
 // ToyToAffine RewritePatterns: BeamForm operations
 //===----------------------------------------------------------------------===//
 
-#define DUMP(x) llvm::errs() << x << "\n";
 struct BeamFormOpLowering : public ConversionPattern {
   BeamFormOpLowering(MLIRContext *ctx)
       : ConversionPattern(dsp::BeamFormOp::getOperationName(), 1, ctx) {}
@@ -9781,6 +9780,7 @@ struct BeamFormOpLowering : public ConversionPattern {
     llvm::SmallVector<int64_t, 2> signalShapeVec{antennas, timeDim};
     llvm::ArrayRef<int64_t> signalShape(signalShapeVec);
 
+    auto signalType = output.clone(signalShape, output.getElementType()); 
     auto signalMemRefType = convertTensorToMemRef(signalType);
     auto allocSignal = insertAllocAndDealloc(signalMemRefType, loc, rewriter);
 
@@ -9852,7 +9852,6 @@ struct BeamFormOpLowering : public ConversionPattern {
     rewriter.create<AffineYieldOp>(loc, ValueRange{increFloatI});
 
     rewriter.setInsertionPointAfter(forOpI); // end for loop: i
-    DUMP("end for loop");
 
     ub = timeDim;
     affine::AffineForOp forOpIOut =
@@ -9883,7 +9882,6 @@ struct BeamFormOpLowering : public ConversionPattern {
 
     rewriter.setInsertionPointAfter(forOpJOut);
     rewriter.setInsertionPointAfter(forOpIOut);
-    DUMP("end 2nd for loop");
 
     rewriter.replaceOp(op, alloc);
 
