@@ -9753,6 +9753,7 @@ struct QamDemodulateOpLowering : public ConversionPattern {
 // ToyToAffine RewritePatterns: BeamForm operations
 //===----------------------------------------------------------------------===//
 
+#define DUMP(x) llvm::errs() << x << "\n";
 struct BeamFormOpLowering : public ConversionPattern {
   BeamFormOpLowering(MLIRContext *ctx)
       : ConversionPattern(dsp::BeamFormOp::getOperationName(), 1, ctx) {}
@@ -9780,7 +9781,6 @@ struct BeamFormOpLowering : public ConversionPattern {
     llvm::SmallVector<int64_t, 2> signalShapeVec{antennas, timeDim};
     llvm::ArrayRef<int64_t> signalShape(signalShapeVec);
 
-    auto signalType = output.clone(signalShape, output.getElementType());
     auto signalMemRefType = convertTensorToMemRef(signalType);
     auto allocSignal = insertAllocAndDealloc(signalMemRefType, loc, rewriter);
 
@@ -9795,6 +9795,10 @@ struct BeamFormOpLowering : public ConversionPattern {
     AffineMap timeMap =
         AffineMap::get(2 /* dim */, 0 /* sym */, ArrayRef<AffineExpr>{d1},
                        rewriter.getContext());
+
+    // // output map
+    // AffineMap outputMap =
+    // AffineMap::get(2, 0, ArrayRef<AffineExpr>{d0}, rewriter.getContext());
 
     auto pi = rewriter.create<arith::ConstantOp>(
         loc, rewriter.getF64Type(), rewriter.getF64FloatAttr(3.1415926));
@@ -9848,6 +9852,7 @@ struct BeamFormOpLowering : public ConversionPattern {
     rewriter.create<AffineYieldOp>(loc, ValueRange{increFloatI});
 
     rewriter.setInsertionPointAfter(forOpI); // end for loop: i
+    DUMP("end for loop");
 
     ub = timeDim;
     affine::AffineForOp forOpIOut =
@@ -9878,6 +9883,7 @@ struct BeamFormOpLowering : public ConversionPattern {
 
     rewriter.setInsertionPointAfter(forOpJOut);
     rewriter.setInsertionPointAfter(forOpIOut);
+    DUMP("end 2nd for loop");
 
     rewriter.replaceOp(op, alloc);
 
