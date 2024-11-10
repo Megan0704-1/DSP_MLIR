@@ -3367,7 +3367,6 @@ mlir::LogicalResult NormLMSFilterResponseOptimizeOp::verify() {
 }
 
 //===----------------------------------------------------------------------===//
-<<<<<<< HEAD
 // FIRFilterResSymmThresholdUpOptimizedOp
 //===----------------------------------------------------------------------===//
 
@@ -3401,7 +3400,9 @@ void FIRFilterResSymmThresholdUpOptimizedOp::inferShapes() {
 
   // getResult().setType(getLhs().getType());
   getResult().setType(manipulatedType);
-=======
+}
+
+//===----------------------------------------------------------------------===//
 // zeroCntOptimizeOp
 //===----------------------------------------------------------------------===//
 

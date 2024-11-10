@@ -10368,6 +10368,102 @@ Value constant00 = rewriter.create<arith::ConstantOp>(
   }
 };
 
+//===----------------------------------------------------------------------===//
+// ToyToAffine RewritePatterns: zeroCntOptimize operations
+//===----------------------------------------------------------------------===//
+
+struct zeroCntOptimizeOpLowering : public ConversionPattern {
+    zeroCntOptimizeOpLowering(MLIRContext *ctx)
+        : ConversionPattern(dsp::zeroCntOptimizeOp::getOperationName(), 1,
+                ctx) {}
+#define DUMP(x) llvm::errs() << "here " << x << "\n";
+    LogicalResult
+        matchAndRewrite(Operation *op, ArrayRef<Value> operands,
+                ConversionPatternRewriter &rewriter) const final {
+            auto loc = op->getLoc();
+
+            auto tensorType = llvm::dyn_cast<RankedTensorType>(*op->result_type_begin());
+            auto memrefType = convertTensorToMemRef(tensorType);
+            auto alloc = insertAllocAndDealloc(memrefType, loc, rewriter);
+            // DUMP("alloc");
+
+            // acumulator and threshold
+            Value zero = rewriter.create<arith::ConstantOp>(loc, rewriter.getF64Type(), rewriter.getF64FloatAttr(0));
+            Value one = rewriter.create<arith::ConstantOp>(loc, rewriter.getF64Type(), rewriter.getF64FloatAttr(1));
+            Value negOne = rewriter.create<arith::NegFOp>(loc, one);
+            // DUMP("constant");
+
+            zeroCntOptimizeOpAdaptor adaptor(operands);
+            auto inputType = llvm::cast<RankedTensorType>(adaptor.getInput().getType());
+            auto thresholdMem = adaptor.getThreshold();
+            auto threshold = rewriter.create<AffineLoadOp>(loc, thresholdMem, ValueRange{});
+            auto negThreshold = rewriter.create<arith::NegFOp>(loc, threshold);
+
+            int64_t lb=0, ub=inputType.getShape()[0], step=1;
+            affine::AffineForOp forOp = rewriter.create<AffineForOp>(loc, lb, ub, step, ValueRange{zero, zero});
+            auto iv = forOp.getInductionVar();
+            rewriter.setInsertionPointToStart(forOp.getBody());
+
+
+            auto ele = rewriter.create<AffineLoadOp>(loc, adaptor.getInput(), ValueRange{iv});
+            auto prev_sign = forOp.getBody()->getArgument(1);
+            auto zero_cnt = forOp.getBody()->getArgument(2);
+
+            // lt threshold
+            auto lt = rewriter.create<arith::CmpFOp>(loc, arith::CmpFPredicate::OLE, ele, threshold);
+            // gt threshold
+            auto gt = rewriter.create<arith::CmpFOp>(loc, arith::CmpFPredicate::OGE, ele, negThreshold);
+
+            auto cmp = rewriter.create<arith::AndIOp>(loc, lt, gt);
+            // DUMP("cmp");
+
+            auto ifOp = rewriter.create<scf::IfOp>(loc, TypeRange{rewriter.getF64Type(), rewriter.getF64Type()}, cmp, true);
+            // if ele in range, yield stored cnt out
+            rewriter.setInsertionPointToStart(ifOp.thenBlock());
+            // DUMP("1st if");
+            rewriter.create<scf::YieldOp>(loc, ValueRange{prev_sign, zero_cnt});
+
+            // else if prev_sign !=0 and cur_sign != prev_sign
+            rewriter.setInsertionPointToStart(ifOp.elseBlock());
+            // DUMP("1st else");
+
+            auto cur_sign_cmp = rewriter.create<arith::SelectOp>(loc, lt, negOne, one);
+            auto sign_add = rewriter.create<arith::AddFOp>(loc, cur_sign_cmp, prev_sign);
+            auto sign_diff = rewriter.create<arith::CmpFOp>(loc, arith::CmpFPredicate::OEQ, sign_add, zero);
+            // DUMP("sign diff");
+
+            auto valid = rewriter.create<scf::IfOp>(loc, TypeRange{rewriter.getF64Type()}, sign_diff, true);
+            // DUMP("2nd if");
+            rewriter.setInsertionPointToStart(valid.thenBlock());
+            auto incre_cnt = rewriter.create<arith::AddFOp>(loc, zero_cnt, one);
+            rewriter.create<scf::YieldOp>(loc, ValueRange{incre_cnt});
+            rewriter.setInsertionPointToStart(valid.elseBlock());
+            // DUMP("2nd else");
+            rewriter.create<scf::YieldOp>(loc, ValueRange{zero_cnt});
+            rewriter.setInsertionPointAfter(valid);
+
+            // DUMP("get result");
+            auto cntResult = valid.getResults()[0];
+
+            rewriter.create<scf::YieldOp>(loc, ValueRange{cur_sign_cmp, cntResult});
+            rewriter.setInsertionPointAfter(ifOp);
+
+            auto new_sign = ifOp.getResults()[0];
+            auto new_cnt = ifOp.getResults()[1];
+
+            rewriter.create<AffineYieldOp>(loc, ValueRange{new_sign, new_cnt});
+            rewriter.setInsertionPointAfter(forOp);
+            // DUMP("get answer");
+
+            auto result = forOp.getResult(1);
+            rewriter.create<AffineStoreOp>(loc, result, alloc, ValueRange{});
+
+            rewriter.replaceOp(op, alloc);
+            return mlir::success();
+  }
+
+};
+
 } // namespace
 
 //===----------------------------------------------------------------------===//
@@ -10449,7 +10545,7 @@ void ToyToAffineLoweringPass::runOnOperation() {
       NormalizeOpLowering, AbsOpLowering, MedianFilterOpLowering,
       LMS2FindPeaksOptimizedOpLowering, FindPeaks2Diff2MeanOptimizedOpLowering,
       NormLMSFilterResponseOptimizeOpLowering,
-      FIRFilterResSymmThresholdUpOptimizedOpLowering>(&getContext());
+      FIRFilterResSymmThresholdUpOptimizedOpLowering, zeroCntOptimizeOpLowering>(&getContext());
 
   // With the target and rewrite patterns defined, we can now attempt the
   // conversion. The conversion will signal failure if any of our `illegal`
