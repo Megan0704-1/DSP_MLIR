@@ -3,7 +3,8 @@
 #include <math.h>
 
 #define PI 3.14159265359
-#define INPUT_LENGTH 100000000
+#define INPUT_LENGTH 1000000000
+#define INCREMENT 0.000137
 
 double* getRangeOfVector(double start, int length, double increment);
 void gain(double* output, const double* input, double multiplier, int length);
@@ -64,19 +65,32 @@ void threshold(double* output, const double* input, double thresholdValue, int l
     }
 }
 
+inline int sign(int x) {
+    return (x > 0) - (x < 0);
+}
+
+// Function to count zero crossings
 int zeroCrossCount(const double* input, int length) {
     int count = 0;
-    for (int i = 1; i < length; i++) {
-        if ((input[i-1] > 0 && input[i] <= 0) || (input[i-1] < 0 && input[i] >= 0)) {
-            count++;
+    int previous_sign = 0;
+
+    for (int i = 0; i < length; i++) {
+        int current_sign = sign(input[i]);
+
+        if (current_sign != 0) {
+            if (previous_sign != 0 && current_sign != previous_sign) {
+                count++;
+            }
+            previous_sign = current_sign;
         }
     }
+
     return count;
 }
 
 int main() {
     int fs = 1000;
-    double* input = getRangeOfVector(0, INPUT_LENGTH, 1);
+    double* input = getRangeOfVector(0, INPUT_LENGTH, INCREMENT);
     
     double getMultiplier = 2 * PI * 5;
     double* getSinDuration = malloc(INPUT_LENGTH * sizeof(double));
@@ -97,10 +111,10 @@ int main() {
     
     int zcr = zeroCrossCount(GetThresholdReal, INPUT_LENGTH);
     
-    for (int i = 0; i < INPUT_LENGTH; i++) {
-        printf("%f ", GetThresholdReal[i]);
-    }
-    printf("\n");
+    // for (int i = 0; i < INPUT_LENGTH; i++) {
+    //     printf("%f ", GetThresholdReal[i]);
+    // }
+    // printf("\n");
     
     // Print zero-crossing count
     printf("Zero-crossing count: %d\n", zcr);

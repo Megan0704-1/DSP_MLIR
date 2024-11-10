@@ -6873,7 +6873,7 @@ struct BitwiseAndOpLowering : public ConversionPattern {
 };
 
 //===----------------------------------------------------------------------===//
-// ToyToAffine RewritePatterns: BitwiseAndOp operations
+// ToyToAffine RewritePatterns: zeroCrossCountOpLowering operations
 //===----------------------------------------------------------------------===//
 
 struct zeroCrossCountOpLowering : public ConversionPattern {
@@ -6897,15 +6897,15 @@ struct zeroCrossCountOpLowering : public ConversionPattern {
     // output for result type
     auto tensorType = llvm::cast<RankedTensorType>((*op->result_type_begin()));
     Type integerType = rewriter.getI64Type();
+    auto memrefType = convertTensorToMemRef(tensorType);
+
+    zeroCrossCountOpAdaptor zeroCrossCountOpAdaptor(operands);
+    auto inputType = llvm::cast<RankedTensorType>(zeroCrossCountOpAdaptor.getLhs().getType());
 
     // allocation & deallocation for the result of this operation
     // auto memRefType = convertTensorToMemRef(tensorType);
     // Force the result to be a tensor of size 1
-    auto alloc = insertAllocAndDealloc(
-        MemRefType::get(ArrayRef<int64_t>(1), tensorType.getElementType()), loc,
-        rewriter);
-    zeroCrossCountOpAdaptor zeroCrossCountOpAdaptor(operands);
-    DEBUG_PRINT_NO_ARGS();
+    auto alloc = insertAllocAndDealloc(memrefType, loc, rewriter);
 
     // Define constants
     Value constant0 = rewriter.create<arith::ConstantOp>(
@@ -6923,7 +6923,7 @@ struct zeroCrossCountOpLowering : public ConversionPattern {
     Value ub = rewriter.create<arith::ConstantOp>(
         loc, rewriter.getIndexType(),
         rewriter.getIntegerAttr(rewriter.getIndexType(),
-                                tensorType.getShape()[0]));
+                                inputType.getShape()[0]));
     Value step = rewriter.create<arith::ConstantIndexOp>(loc, 1);
 
     // Set up for loop
@@ -7002,12 +7002,13 @@ struct zeroCrossCountOpLowering : public ConversionPattern {
     Value finalCountArgFloat = rewriter.create<arith::SIToFPOp>(
         loc, rewriter.getF64Type(), finalCountArg);
 
-    rewriter.create<AffineStoreOp>(loc, finalCountArgFloat, alloc, Indx0);
+    rewriter.create<AffineStoreOp>(loc, finalCountArgFloat, alloc, ValueRange{});
     rewriter.replaceOp(op, alloc);
 
     return success();
   };
 };
+
 
 //===----------------------------------------------------------------------===//
 // ToyToAffine RewritePatterns: Binary operations

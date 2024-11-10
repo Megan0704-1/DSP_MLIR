@@ -879,15 +879,17 @@ mlir::LogicalResult PowOp::verify() {
 void zeroCrossCountOp::build(mlir::OpBuilder &builder,
                              mlir::OperationState &state, mlir::Value lhs) {
   state.addTypes(UnrankedTensorType::get(builder.getF64Type()));
-  // state.addTypes(builder.getF64Type()));
-  // state.addTypes(builder.getI64Type());
   state.addOperands({lhs});
 }
 
 /// Infer the output shape of the zeroCrossCountOp, this is required by the
 /// shape inference interface.
 void zeroCrossCountOp::inferShapes() {
-  getResult().setType(getLhs().getType());
+  auto tensorInput = getLhs().getType();
+  std::vector<int64_t> shapeForOutput;
+  mlir::TensorType manipulatedType = mlir::RankedTensorType::get(
+      shapeForOutput, tensorInput.getElementType());
+  getResult().setType(manipulatedType);
 }
 
 //===----------------------------------------------------------------------===//
