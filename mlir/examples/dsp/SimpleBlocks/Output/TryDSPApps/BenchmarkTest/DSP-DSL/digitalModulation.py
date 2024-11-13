@@ -1,6 +1,6 @@
 def main() {
         # var input = [1,0,1,1,0,1,0,0];
-	var input = getRangeOfVector(0, 100000, 0.000125);
+	var input = getRangeOfVector(0, 100, 0.000125);
         # print(c);
         var pi = 3.14159265359;
         var f_sig = 500;
