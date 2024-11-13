@@ -9660,7 +9660,7 @@ struct QamModulateImgOpLowering : public ConversionPattern {
 //===----------------------------------------------------------------------===//
 // ToyToAffine RewritePatterns: QAM demodulate operations
 //===----------------------------------------------------------------------===//
-#define DUMP(x) llvm::errs() << x << "\n";
+// #define DUMP(x) llvm::errs() << x << "\n";
 
 struct QamDemodulateOpLowering : public ConversionPattern {
   QamDemodulateOpLowering(MLIRContext *ctx)
@@ -9736,8 +9736,6 @@ struct QamDemodulateOpLowering : public ConversionPattern {
     rewriter.setInsertionPointAfter(forOpI);
     rewriter.replaceOp(op, alloc);
 
-
-    DUMP("success");
     return success();
   }
 }; // qam_demodulate op
