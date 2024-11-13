@@ -8879,6 +8879,8 @@ struct ThresholdUpOpLowering : public ConversionPattern {
 
     // load from X,
     ThresholdUpOpAdaptor thresholdUpAdaptor(operands);
+    auto input = thresholdUpAdaptor.getInput();
+    auto thresholdMemRef = thresholdUpAdaptor.getThreshold();
 
     int64_t lb = 0;
     int64_t ub = tensorType.getShape()[0];
@@ -8887,14 +8889,13 @@ struct ThresholdUpOpLowering : public ConversionPattern {
     // for loop from 0 to len(Output)
     affine::AffineForOp forOpY =
         rewriter.create<AffineForOp>(loc, lb, ub, step);
-    auto ivY = forOpY.getInductionVar();
     rewriter.setInsertionPointToStart(forOpY.getBody());
+    auto ivY = forOpY.getInductionVar();
 
     Value inputX =
-        rewriter.create<AffineLoadOp>(loc, thresholdUpAdaptor.getInput(), ivY);
+        rewriter.create<AffineLoadOp>(loc, input, ValueRange{ivY});
 
     // Load the threshold value from the memref
-    auto thresholdMemRef = thresholdUpAdaptor.getThreshold();
     auto returnOriginalMemRef = thresholdUpAdaptor.getReturnoriginal();
     auto threshold =
         rewriter.create<AffineLoadOp>(loc, thresholdMemRef, ValueRange{});
@@ -9543,7 +9544,7 @@ struct QamModulateRealOpLowering : public ConversionPattern {
                   ConversionPatternRewriter &rewriter) const final {
     auto loc = op->getLoc();
 
-    auto output = llvm::dyn_cast<RankedTensorType>((*op->result_type_begin()));
+    auto output = llvm::cast<RankedTensorType>((*op->result_type_begin()));
     auto outputMem = convertTensorToMemRef(output);
     auto alloc = insertAllocAndDealloc(outputMem, loc, rewriter);
 
@@ -9607,7 +9608,7 @@ struct QamModulateImgOpLowering : public ConversionPattern {
                   ConversionPatternRewriter &rewriter) const final {
     auto loc = op->getLoc();
 
-    auto output = llvm::dyn_cast<RankedTensorType>((*op->result_type_begin()));
+    auto output = llvm::cast<RankedTensorType>((*op->result_type_begin()));
     auto outputMem = convertTensorToMemRef(output);
     auto alloc = insertAllocAndDealloc(outputMem, loc, rewriter);
 
@@ -9631,10 +9632,6 @@ struct QamModulateImgOpLowering : public ConversionPattern {
     // real affine map
     AffineMap signalMap = AffineMap::get(1, 0, ArrayRef<AffineExpr>{d0 * 2 + 1},
                                          rewriter.getContext());
-    // output affine map
-    AffineMap outputImgMap =
-        AffineMap::get(1, 0, ArrayRef<AffineExpr>{d0}, rewriter.getContext());
-
     // loops
     int64_t lb = 0, step = 1, ub = outputShape[0];
     /* looping i*/
@@ -9652,8 +9649,7 @@ struct QamModulateImgOpLowering : public ConversionPattern {
     Value out =
         rewriter.create<arith::SelectOp>(loc, zeroReal, negOneVal, oneVal);
 
-    rewriter.create<AffineStoreOp>(loc, out, alloc, outputImgMap,
-                                   ValueRange{ivI});
+    rewriter.create<AffineStoreOp>(loc, out, alloc, ValueRange{ivI});
 
     rewriter.setInsertionPointAfter(forOpI);
     rewriter.replaceOp(op, alloc);
@@ -9664,6 +9660,7 @@ struct QamModulateImgOpLowering : public ConversionPattern {
 //===----------------------------------------------------------------------===//
 // ToyToAffine RewritePatterns: QAM demodulate operations
 //===----------------------------------------------------------------------===//
+#define DUMP(x) llvm::errs() << x << "\n";
 
 struct QamDemodulateOpLowering : public ConversionPattern {
   QamDemodulateOpLowering(MLIRContext *ctx)
@@ -9675,7 +9672,7 @@ struct QamDemodulateOpLowering : public ConversionPattern {
 
     auto loc = op->getLoc();
     // output mem alloc and dealloc
-    auto output = llvm::dyn_cast<RankedTensorType>((*op->result_type_begin()));
+    auto output = llvm::cast<RankedTensorType>((*op->result_type_begin()));
     auto outputMem = convertTensorToMemRef(output);
     auto alloc = insertAllocAndDealloc(outputMem, loc, rewriter);
 
@@ -9685,7 +9682,7 @@ struct QamDemodulateOpLowering : public ConversionPattern {
 
     // ranked tensor type
     auto realType =
-        llvm::dyn_cast<RankedTensorType>(op->getOperand(0).getType());
+        llvm::cast<RankedTensorType>(op->getOperand(0).getType());
 
     llvm::ArrayRef<int64_t> realShape = realType.getShape();
     // llvm::ArrayRef<int64_t> outputShape = output.getShape();
@@ -9702,12 +9699,6 @@ struct QamDemodulateOpLowering : public ConversionPattern {
     bindDims(rewriter.getContext(),
              d0); // bind affine expr d0 to current input (real array) dimension
 
-    // real affine map
-    AffineMap realMap =
-        AffineMap::get(1, 0, ArrayRef<AffineExpr>{d0}, rewriter.getContext());
-    // imagine affine map
-    AffineMap imgMap =
-        AffineMap::get(1, 0, ArrayRef<AffineExpr>{d0}, rewriter.getContext());
     // output affine map
     AffineMap outputMapReal = AffineMap::get(1, 0, ArrayRef<AffineExpr>{d0 * 2},
                                              rewriter.getContext());
@@ -9723,9 +9714,9 @@ struct QamDemodulateOpLowering : public ConversionPattern {
 
     // input bound check
     Value realNum =
-        rewriter.create<AffineLoadOp>(loc, realVal, realMap, ValueRange{ivI});
+        rewriter.create<AffineLoadOp>(loc, realVal, ValueRange{ivI});
     Value imgNum =
-        rewriter.create<AffineLoadOp>(loc, imgVal, imgMap, ValueRange{ivI});
+        rewriter.create<AffineLoadOp>(loc, imgVal, ValueRange{ivI});
 
     Value negReal = rewriter.create<arith::CmpFOp>(
         loc, arith::CmpFPredicate::OEQ, realNum, negOneVal);
@@ -9745,6 +9736,8 @@ struct QamDemodulateOpLowering : public ConversionPattern {
     rewriter.setInsertionPointAfter(forOpI);
     rewriter.replaceOp(op, alloc);
 
+
+    DUMP("success");
     return success();
   }
 }; // qam_demodulate op
